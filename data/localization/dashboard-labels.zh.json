@@ -1,0 +1,193 @@
+{
+  "sectionTitles": {
+    "profile": "简介",
+    "dashboard": "分析看板",
+    "tracks": "交付方向",
+    "methodology": "评估方法",
+    "growth": "演进记录",
+    "architecture": "系统架构",
+    "notebook": "工程笔记",
+    "contact": "联系方式"
+  },
+  "sectionCaptions": {
+    "profile": "是谁、在哪里、下一步做什么。",
+    "dashboard": "请先读这里。每个数字都能追溯到具名系统。",
+    "tracks": "按解决的问题分组，而非按技术栈。",
+    "methodology": "输出如何评分。指标如何赢得信任。",
+    "growth": "最新功能在前。",
+    "architecture": "节点、权重、边。",
+    "notebook": "可执行单元格。请运行。",
+    "contact": "邮件最快。"
+  },
+  "metricLabels": {
+    "tracked_repositories": "跟踪的仓库",
+    "featured_repositories": "覆盖的方向",
+    "commits_captured": "采集的提交",
+    "contributions_last_year": "近 12 个月贡献",
+    "active_days": "活跃天数",
+    "busiest_day": "单日最高",
+    "repositories_touched_180d": "180 天内改动",
+    "primary_language": "主要语言",
+    "languages_used": "统计的语言",
+    "stars_earned": "获得星标",
+    "open_issues": "未决议题与拉取请求",
+    "followers": "GitHub 关注者",
+    "latest_push": "最近一次推送",
+    "datasets_profiled": "剖析的数据集",
+    "public_health_rows": "公共卫生观测记录",
+    "public_health_groups": "覆盖的州",
+    "expenditure_life_correlation": "支出与预期寿命相关性",
+    "context_excluding_forks": "不含 fork",
+    "context_public_calendar": "公开日历",
+    "context_read_from_api": "自 API 读取",
+    "context_measured_bytes": "已计量字节中",
+    "context_raw_csv": "已计量原始 CSV",
+    "context_pushed_180d": "180 天内推送",
+    "context_commits_read": "已读取提交",
+    "context_active_days": "12 个月活跃日",
+    "context_busiest_day": "单日最高",
+    "context_language_groups": "语言分组",
+    "context_stars": "累计星标",
+    "context_open_issues": "未关闭议题",
+    "context_followers": "关注者",
+    "context_latest_push": "最近推送",
+    "context_datasets": "已剖析数据集",
+    "context_ph_rows": "观测行",
+    "context_ph_states": "覆盖州数",
+    "context_correlation": "最强相关性",
+    "context_tracked_tracks": "覆盖方向",
+    "context_largest_language": "主要语言"
+  },
+  "chartTitles": {
+    "contribution-heatmap": "贡献日历",
+    "language-mix": "语言构成",
+    "repository-activity": "代码库活跃度",
+    "repository-signals": "代码库信号"
+  },
+  "chartCaptions": {
+    "contribution-heatmap": "每天一格。空白周就留作空白。",
+    "language-mix": "按语言计量的字节。笔记本按其执行语言计为 Python。",
+    "repository-activity": "按提交发生的月份绘制的各代码库提交数。",
+    "repository-signals": "已跟踪代码库中实际存在的内容。不打分。"
+  },
+  "sourceLabels": {
+    "github": "GitHub API",
+    "derived": "流水线",
+    "config": "自行申报",
+    "dataset": "原始数据集，下载并剖析"
+  },
+  "trackLabels": {
+    "analytics": "分析与商业智能",
+    "evaluation": "LLM 评估与对齐数据",
+    "platform": "系统与网络研究"
+  },
+  "trackBlurbs": {
+    "analytics": "为运营决策搭建的看板、指标治理与报表流水线。",
+    "evaluation": "面向生产语言模型的评分标准设计、偏好数据与安全打分。",
+    "platform": "调度与图研究，数据模型驱动算法。"
+  },
+  "caseProblem": {
+    "healthcare_insights": "医院记录散落在电子表格里。不每季度人工重建一次，就无法跨机构比较结局、成本或吞吐量。",
+    "oil_gas_operations": "维护数据与生产数据存放在各自独立的抽取文件中。停机原因与支出从未被并列查看。",
+    "biasguard": "招聘模型未经公平性检查就上线。没有人能说明模型损害了哪些受保护群体，也没有人能说明损害有多大。",
+    "feedbackloop": "招聘助手靠主观意见调优。奖励信号背后没有可复现的流水线。",
+    "agrimanet_scheduler": "田间遥测与常规日志争用同一份无线容量，紧急跟踪数据包只能排在噪声之后。"
+  },
+  "caseMethod": {
+    "healthcare_insights": [
+      "剖析源抽取文件，定义机构级事实表。",
+      "把结局、成本与吞吐量建模为可比较的度量，并明确各自的分母。",
+      "构建看板，支持从全国到机构级的逐层下钻。",
+      "记录刷新路径，使构建过程无需人工干预即可重复。"
+    ],
+    "oil_gas_operations": [
+      "把维护与生产抽取文件合并为一个星型模型。",
+      "为停机小时数、每桶成本与排程达成率编写 DAX 度量值。",
+      "增加从管理层页面到资产级明细页面的钻取。",
+      "为每个数据源发布刷新计划与数据质量检查清单。"
+    ],
+    "biasguard": [
+      "定义受保护属性分组，并对生成文本做词元级打分。",
+      "构建均等指标，比较每个人口统计切片的通过率。",
+      "为每处被标记的差距生成一条缓解日志，并附上触发该差距的规则。",
+      "为打分路径编写测试，使回归问题直接导致构建失败。"
+    ],
+    "feedbackloop": [
+      "采集偏好对，并对每组比较给出评审一致度评分。",
+      "训练奖励模型，随后分别用 PPO 和 DPO 优化策略。",
+      "跟踪各轮对齐过程中的奖励漂移。",
+      "为每一轮发布可复现的评估脚本。"
+    ],
+    "agrimanet_scheduler": [
+      "对跨层队列建模，为跟踪流量与日志流量划分独立优先级类别。",
+      "实现加权轮询，并在每个调度周期做数据感知的权重更新。",
+      "在异构节点场中模拟拥塞。",
+      "按类别报告每次运行的公平性与时延。"
+    ]
+  },
+  "caseOutcome": {
+    "healthcare_insights": [
+      "管理层报表取代了每季度一次的人工重建。",
+      "机构之间的比较在一个视图内即可回答。",
+      "KPI 定义只记录一次，并在各报表中复用。"
+    ],
+    "oil_gas_operations": [
+      "停机原因与成本可以在同一视图内查看。",
+      "从管理层摘要页面即可进入资产级明细。",
+      "每个数据源都带有成文的刷新路径与质量检查清单。"
+    ],
+    "biasguard": [
+      "公平性差距按属性分组报告，而不是给一个总分。",
+      "审计作为流水线的一个阶段运行，而不是人工评审。",
+      "缓解措施与触发它们的规则一并记录。"
+    ],
+    "feedbackloop": [
+      "奖励训练通过一个配置值在 PPO 与 DPO 之间切换。",
+      "偏好对带有评审一致度，因此低置信度的偏好对可被过滤。",
+      "漂移监控能发现奖励模型不再跟随人类偏好。"
+    ],
+    "agrimanet_scheduler": [
+      "高优先级跟踪数据先于常规日志发出。",
+      "普通日志流量按有界批次延后，而不是被饿死。",
+      "每次运行都按优先级类别报告时延与公平性。"
+    ]
+  },
+  "caseRole": {
+    "healthcare_insights": "数据分析师：建模、看板搭建、KPI 定义",
+    "oil_gas_operations": "数据分析师：模型设计、DAX 度量值、报表治理",
+    "biasguard": "作者：公平性指标设计、审计流水线、测试",
+    "feedbackloop": "作者：偏好数据流水线、奖励训练、评估框架",
+    "agrimanet_scheduler": "作者：调度器设计、仿真、测量"
+  },
+  "caseTimeframe": {
+    "healthcare_insights": "2026",
+    "oil_gas_operations": "2025",
+    "biasguard": "2026，进行中",
+    "feedbackloop": "2026，进行中",
+    "agrimanet_scheduler": "2026"
+  },
+  "caseProvenance": {
+    "healthcare_insights": "可再分发的抽取数据。行数与范围由已提交的 CSV 计算得出。",
+    "oil_gas_operations": "数字来自已发布的 Power BI 模型。引用前请重新计算。",
+    "biasguard": "指标来自测试套件与对等性矩阵输出。",
+    "feedbackloop": "指标来自训练配置与每轮评估报告。",
+    "agrimanet_scheduler": "指标来自仿真测试框架的输出。"
+  },
+  "availability": {
+    "open-to-roles": "可全职：数据分析师、LLM 评估。",
+    "open-to-contract": "可承接合同与顾问工作。",
+    "not-available": "暂不接新工作。"
+  },
+  "contactLabels": {
+    "email": "邮箱",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "resume": "简历"
+  },
+  "verdicts": {
+    "sparse": "{months} 个月内仅 {activeDays} 个活跃日。是脉冲，不是持续流。",
+    "bursty": "{activeDays} 个活跃日内 {contributions} 次贡献，日均 {perActiveDay}。强度高但不连续。",
+    "steady": "{months} 个月内 {activeDays} 个活跃日、{contributions} 次贡献。节奏稳定。",
+    "sustained": "{activeDays} 个活跃日、{contributions} 次贡献。持续产出。"
+  }
+}

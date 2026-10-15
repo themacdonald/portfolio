@@ -1,167 +1,208 @@
 "use client";
 
-import { ChevronDown, ChevronRight, FileText, Folder } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import useActiveDocument from "@/hooks/useActiveDocument";
-import { explorer, ExplorerItem } from "@/data/navigation";
+import { useMemo, useState } from "react";
+import { ChevronDown, ChevronRight, X } from "lucide-react";
 
-interface ExplorerNodeProps {
-  item: ExplorerItem;
-  activeId: string;
-  depth?: number;
-}
+import { useWorkspace } from "@/components/workspace/WorkspaceProvider";
+import { caseStudies } from "@/data/config/case-studies";
+import { identity } from "@/data/config/identity";
+import { cn } from "@/lib/utils";
 
-function hasActiveDescendant(item: ExplorerItem, activeId: string): boolean {
-  if (item.type === "file") {
-    return item.target === activeId;
-  }
+const CELL_FILES: Record<number, string> = {
+  1: "01_summary.md",
+  2: "02_ledger.py",
+  3: "03_evaluation.py",
+  4: "04_nodes.md",
+};
 
-  return item.children.some((child) => hasActiveDescendant(child, activeId));
-}
+/** Editor-style workspace tree. Words stay short; the pane does the talking. */
+export default function Sidebar() {
+  const { payload, node, langKey, navOpen, setNavOpen } = useWorkspace();
+  const labels = node.dashboardLabels;
+  const [open, setOpen] = useState<Record<string, boolean>>({
+    work: true,
+    notebook: false,
+    dag: false,
+  });
 
-function ExplorerNode({
-  item,
-  activeId,
-  depth = 0,
-}: ExplorerNodeProps) {
-  if (item.type === "file") {
-    const isActive = activeId === item.target;
-    const ref = useRef<HTMLAnchorElement>(null);
+  const toggle = (key: string) =>
+    setOpen((current) => ({ ...current, [key]: !current[key] }));
 
-    useEffect(() => {
-      if (isActive && ref.current) {
-        ref.current.scrollIntoView({
-          block: "center",
-          behavior: "smooth",
-        });
-      }
-    }, [isActive]);
-
-    return (
-      <a
-        ref={ref}
-        href={`#${item.target}`}
-        className={`
-          flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors
-
-          ${
-            isActive
-              ? "border-l-2 border-syntax-branch bg-syntax-surface-muted font-medium text-syntax-text"
-              : "text-syntax-muted hover:bg-syntax-surface-muted hover:text-syntax-text"
-          }
-        `}
-        style={{
-          paddingLeft: `${depth * 16 + 10}px`,
-        }}
-      >
-        <FileText
-          size={14}
-          className="text-syntax-file shrink-0"
-        />
-
-        <span>{item.filename}</span>
-      </a>
-    );
-  }
-
-  const [open, setOpen] = useState(item.defaultOpen ?? false);
-
-  useEffect(() => {
-    if (hasActiveDescendant(item, activeId)) {
-      setOpen(true);
-    }
-  }, [activeId]);
+  const recent = useMemo(
+    () =>
+      [...payload.dashboard.repositories]
+        .sort((left, right) => right.pushedAt.localeCompare(left.pushedAt))
+        .slice(0, 4),
+    [payload.dashboard.repositories]
+  );
 
   return (
-    <div>
-
-      <button
-        onClick={() => setOpen(!open)}
-        className="
-          flex
-          w-full
-          items-center
-          gap-2
-          rounded-md
-          px-2
-          py-1.5
-          text-sm
-          text-syntax-muted
-          transition-colors
-          hover:bg-syntax-surface-muted
-          hover:text-syntax-text
-        "
-        style={{
-          paddingLeft: `${depth * 16 + 10}px`,
-        }}
-      >
-        {open ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-
-        <Folder
-          size={14}
-          className="text-syntax-folder"
+    <>
+      {navOpen && (
+        <button
+          type="button"
+          aria-label="close navigation"
+          onClick={() => setNavOpen(false)}
+          className="fixed inset-0 z-40 bg-black/60 lg:hidden"
         />
+      )}
 
-        {item.name}
-      </button>
+      <aside
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 flex w-64 shrink-0 flex-col border-r border-syntax-border bg-syntax-surface transition-transform duration-200 lg:static lg:z-auto lg:translate-x-0",
+          navOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        <header className="border-b border-syntax-border px-4 py-3">
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <h1 className="display-tight truncate text-[17px] text-syntax-text">
+                {identity.handle}
+              </h1>
+              <p className="label mt-1 truncate text-syntax-command">
+                {identity.secondaryTitle}
+              </p>
+              <p className="mt-0.5 truncate font-mono text-[10px] text-syntax-muted">
+                {identity.jobTitle}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setNavOpen(false)}
+              aria-label="close navigation"
+              className="rounded border border-syntax-border p-1 text-syntax-muted lg:hidden"
+            >
+              <X size={12} />
+            </button>
+          </div>
+        </header>
 
-      {open &&
-        item.children.map((child) => (
-          <ExplorerNode
-            key={child.type === "file" ? child.target : child.name}
-            item={child}
-            activeId={activeId}
-            depth={depth + 1}
+        <nav className="flex-1 overflow-y-auto px-2 py-3">
+          <a
+            href="#profile"
+            onClick={() => setNavOpen(false)}
+            className="mb-0.5 flex items-center gap-2 rounded px-2 py-1 font-mono text-[11.5px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
+          >
+            <span className="text-syntax-file">~</span>
+            {labels.sectionTitles.profile}
+          </a>
+          <a
+            href="#dashboard"
+            onClick={() => setNavOpen(false)}
+            className="mb-1.5 flex items-center gap-2 rounded px-2 py-1 font-mono text-[11.5px] text-syntax-branch transition-colors hover-syntax"
+          >
+            <span className="text-syntax-file">~/</span>
+            {labels.sectionTitles.dashboard}
+            <span className="ml-auto text-syntax-comment">{payload.dashboard.metrics.length}</span>
+          </a>
+
+          <Row
+            label={labels.sectionTitles.tracks}
+            open={open.work ?? false}
+            onToggle={() => toggle("work")}
           />
-        ))}
-    </div>
+          {open.work && (
+            <div className="mb-1">
+              {caseStudies.map((study) => (
+                <a
+                  key={study.slug}
+                  href={`#case-${study.slug}`}
+                  onClick={() => setNavOpen(false)}
+                  className="block truncate rounded py-1 pl-6 pr-2 font-mono text-[11px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
+                >
+                  {study.repo ?? study.slug}
+                </a>
+              ))}
+            </div>
+          )}
+
+          <Row
+            label={labels.sectionTitles.notebook}
+            open={open.notebook ?? false}
+            onToggle={() => toggle("notebook")}
+          />
+          {open.notebook && (
+            <div className="mb-1">
+              {node.notebookCells.map((cell) => (
+                <a
+                  key={cell.id}
+                  href={`#cell-${cell.id}`}
+                  onClick={() => setNavOpen(false)}
+                  className="flex items-center gap-2 rounded py-1 pl-6 pr-2 font-mono text-[11px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
+                >
+                  <span className="shrink-0 text-[9.5px] text-syntax-comment">
+                    [{cell.id}]
+                  </span>
+                  <span className="truncate">{CELL_FILES[cell.id]}</span>
+                </a>
+              ))}
+              <a
+                href="#architecture"
+                onClick={() => setNavOpen(false)}
+                className="block truncate rounded py-1 pl-6 pr-2 font-mono text-[11px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
+              >
+                {labels.sectionTitles.architecture}
+              </a>
+              <a
+                href="#methodology"
+                onClick={() => setNavOpen(false)}
+                className="block truncate rounded py-1 pl-6 pr-2 font-mono text-[11px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
+              >
+                {labels.sectionTitles.methodology}
+              </a>
+            </div>
+          )}
+
+          <Row
+            label="recently pushed"
+            open={open.dag ?? false}
+            onToggle={() => toggle("dag")}
+          />
+          {open.dag && (
+            <div className="mb-1">
+              {recent.map((repo) => (
+                <a
+                  key={repo.name}
+                  href={`#case-${repo.track === "analytics" ? "healthcare-insights" : repo.name.toLowerCase()}`}
+                  onClick={() => setNavOpen(false)}
+                  className="flex items-center gap-2 rounded py-1 pl-6 pr-2 font-mono text-[10.5px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
+                >
+                  <span className="truncate">{repo.name}</span>
+                  <span className="ml-auto shrink-0 text-syntax-comment">{repo.pushedAt}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </nav>
+
+        <footer className="border-t border-syntax-border px-4 py-2.5">
+          <p className="truncate font-mono text-[10px] text-syntax-muted">
+            <span className="text-syntax-branch">{langKey}</span> · {identity.location}
+          </p>
+          <p className="truncate font-mono text-[10px] text-syntax-comment">
+            snapshot {payload.dashboard.generatedAt.slice(0, 10)}
+          </p>
+        </footer>
+      </aside>
+    </>
   );
 }
 
-export default function Sidebar() {
-  const active = useActiveDocument();
+interface RowProps {
+  label: string;
+  open: boolean;
+  onToggle: () => void;
+}
 
+function Row({ label, open, onToggle }: RowProps) {
   return (
-    <aside
-      className="
-        flex
-        h-full
-        w-72
-        shrink-0
-        flex-col
-        overflow-y-auto
-        border-r
-        border-syntax-border
-        bg-syntax-surface
-      "
+    <button
+      type="button"
+      onClick={onToggle}
+      className="flex w-full items-center gap-1.5 rounded px-2 py-1 text-left font-mono text-[11.5px] text-syntax-muted transition-colors hover-syntax hover:text-syntax-text"
     >
-      <header className="border-b border-syntax-border px-5 py-4">
-
-        <div className="text-xs uppercase tracking-[0.28em] text-syntax-comment">
-          notebook
-        </div>
-
-        <h1 className="mt-3 text-base font-semibold text-syntax-heading">
-          themacdonald
-        </h1>
-
-      </header>
-
-      <nav className="flex-1 px-3 py-5">
-
-        <p className="mb-4 px-2 text-xs uppercase tracking-[0.28em] text-syntax-muted">
-          explorer
-        </p>
-
-        {explorer.map((item) => (
-          <ExplorerNode
-            key={item.type === "folder" ? item.name : item.target}
-            item={item}
-            activeId={active?.id ?? ""}
-          />
-        ))}
-
-      </nav>
-    </aside>
+      {open ? <ChevronDown size={12} /> : <ChevronRight size={12} />}
+      <span className="truncate">{label}</span>
+    </button>
   );
 }

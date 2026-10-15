@@ -1,17 +1,38 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+import { ProfileJsonLd, metadata as siteMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = siteMetadata;
+
+/** Display: a serif with optical sizing and a wonk axis, for the headline. */
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-display",
+  display: "swap",
+  axes: ["SOFT", "WONK", "opsz"],
+});
+
+/** Body: quiet, legible, gets out of the way. */
+const inter = Inter({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+/** Data: every label, figure, and code line. */
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   variable: "--font-mono",
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "themacdonald / notebook",
-  description: "Engineering notebook",
-};
+/**
+ * Paint the stored archetype and motion preference before hydration so the
+ * workspace never flashes the wrong theme.
+ */
+const BOOTSTRAP = `(function(){try{var d=document.documentElement;var t=localStorage.getItem("portfolio.theme");if(t==="light"||t==="dark"){d.dataset.theme=t;d.style.colorScheme=t;}var m=localStorage.getItem("portfolio.reduceMotion");d.dataset.reduceMotion=m==="true"?"true":"false";}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -19,8 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={jetbrainsMono.variable}>
+    <html lang="en" data-theme="dark" data-reduce-motion="false" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: BOOTSTRAP }} />
+        <ProfileJsonLd />
+      </head>
+      <body className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
         {children}
       </body>
     </html>

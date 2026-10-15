@@ -1,0 +1,655 @@
+{
+  "langKey": "ru",
+  "interfaceLabels": {
+    "kernelStatus": "Статус ядра: ожидание",
+    "runCellBtn": "Запустить ячейку",
+    "workspaceFiles": "Файлы рабочей области",
+    "telemetryOutput": "Вывод телеметрии",
+    "recentGrowthTitle": "Недавний рост"
+  },
+  "shellLabels": {
+    "runAllBtn": "Выполнить все",
+    "clearBtn": "Очистить вывод",
+    "cellLabel": "ячейка {n}",
+    "localeLabel": "локали {n}",
+    "cellsLabel": "ячейки {n}",
+    "narrativeLinesLabel": "строки повествования {n}",
+    "codeLinesLabel": "строки кода {n}",
+    "telemetryRowsLabel": "строки телеметрии {n}",
+    "growthItemsLabel": "элементы роста {n}",
+    "dagPayloadLabel": "данные DAG архитектуры",
+    "outputIdle": "ожидание выполнения. выполните ячейку, чтобы получать телеметрию.",
+    "outputRunning": "выполнение ячейки...",
+    "rawConsoleLabel": "необработанная трассировка консоли",
+    "repositoryLabel": "репозиторий",
+    "domainLabel": "домен",
+    "weightLabel": "вес",
+    "edgeManifestLabel": "манифест рёбер",
+    "highestCriticalityLabel": "наивысшая критичность",
+    "nodesLabel": "узлы {n}",
+    "edgesLabel": "рёбра {n}",
+    "viewModeRecruiter": "Вид для рекрутера",
+    "viewModeTechnical": "Технический вид",
+    "menuLabel": "Меню",
+    "reduceMotionLabel": "Уменьшить анимацию",
+    "viewDashboard": "Смотреть цифры",
+    "viewWork": "Читать работы",
+    "verifiedLabel": "проверено",
+    "selfReportedLabel": "заявлено",
+    "unmeasuredLabel": "не измерено"
+  },
+  "dashboardLabels": {
+    "sectionTitles": {
+      "profile": "Профиль",
+      "dashboard": "Аналитический дашборд",
+      "tracks": "Направления работы",
+      "methodology": "Методология оценки",
+      "growth": "Журнал векторов роста",
+      "architecture": "Архитектура системы",
+      "notebook": "Инженерный блокнот",
+      "contact": "Контакты"
+    },
+    "sectionCaptions": {
+      "profile": "Кто, где и что дальше.",
+      "dashboard": "Читайте это первым. Каждое число ведёт к названной системе.",
+      "tracks": "Сгруппировано по решённой задаче, а не по стеку.",
+      "methodology": "Как оценивается вывод. Как метрика заслуживает доверие.",
+      "growth": "Сначала новейшая функция.",
+      "architecture": "Узлы, веса, рёбра.",
+      "notebook": "Исполняемые ячейки. Запустите их.",
+      "contact": "Почта быстрее всего."
+    },
+    "metricLabels": {
+      "tracked_repositories": "Отслеживаемые репозитории",
+      "featured_repositories": "Охваченные направления",
+      "commits_captured": "Зафиксированные коммиты",
+      "contributions_last_year": "Вклад за последние 12 месяцев",
+      "active_days": "Активные дни",
+      "busiest_day": "Самый насыщенный день",
+      "repositories_touched_180d": "Изменённые за 180 дней",
+      "primary_language": "Основной язык",
+      "languages_used": "Измеренные языки",
+      "stars_earned": "Полученные звёзды",
+      "open_issues": "Открытые задачи и запросы на слияние",
+      "followers": "Подписчики GitHub",
+      "latest_push": "Последний push",
+      "datasets_profiled": "Профилированные наборы данных",
+      "public_health_rows": "Наблюдения по общественному здоровью",
+      "public_health_groups": "Охваченные штаты",
+      "expenditure_life_correlation": "Корреляция расходов и ожидаемой продолжительности жизни",
+      "context_excluding_forks": "без форков",
+      "context_public_calendar": "публичный календарь",
+      "context_read_from_api": "прочитано из API",
+      "context_measured_bytes": "измеренных байтов",
+      "context_raw_csv": "измерен сырой CSV",
+      "context_pushed_180d": "пуш за 180 дней",
+      "context_commits_read": "прочитано коммитов",
+      "context_active_days": "активных дней за 12 месяцев",
+      "context_busiest_day": "рекорд за день",
+      "context_language_groups": "групп языков",
+      "context_stars": "звёзд всего",
+      "context_open_issues": "открытых задач",
+      "context_followers": "подписчиков",
+      "context_latest_push": "последний пуш",
+      "context_datasets": "профилированных наборов",
+      "context_ph_rows": "наблюдений",
+      "context_ph_states": "охвачено штатов",
+      "context_correlation": "сильнейшая корреляция",
+      "context_tracked_tracks": "охвачено направлений",
+      "context_largest_language": "основной язык"
+    },
+    "chartTitles": {
+      "contribution-heatmap": "Календарь вклада",
+      "language-mix": "Распределение языков",
+      "repository-activity": "Активность репозиториев",
+      "repository-signals": "Сигналы репозиториев"
+    },
+    "chartCaptions": {
+      "contribution-heatmap": "Одна клетка на день. Пустые недели остаются пустыми.",
+      "language-mix": "Измеренные байты по языкам. Ноутбуки считаются Python, языком, который они исполняют.",
+      "repository-activity": "Коммиты по репозиториям на месяцах, в которые они попали.",
+      "repository-signals": "Что есть в отслеживаемых репозиториях. Без оценки."
+    },
+    "sourceLabels": {
+      "github": "GitHub API",
+      "derived": "Конвейер",
+      "config": "Заявлено",
+      "dataset": "Исходный набор данных, скачан и профилирован"
+    },
+    "trackLabels": {
+      "analytics": "Бизнес-аналитика и отчётность",
+      "evaluation": "Оценка LLM и данные выравнивания",
+      "platform": "Исследования систем и сетей"
+    },
+    "trackBlurbs": {
+      "analytics": "Дашборды, управление метриками и конвейеры отчётности для операционных решений.",
+      "evaluation": "Дизайн рубрик, данные предпочтений и оценка безопасности для промышленных языковых моделей.",
+      "platform": "Исследования планирования и графов, где модель данных определяет алгоритмы."
+    },
+    "caseProblem": {
+      "healthcare_insights": "Записи больниц лежали в электронных таблицах. Никто не мог сравнить результаты, стоимость или пропускную способность между учреждениями без ручной пересборки каждый квартал.",
+      "oil_gas_operations": "Данные о ремонтах и добыче хранились в отдельных выгрузках. Причины простоев и затраты не сопоставляли друг с другом.",
+      "biasguard": "Модели найма выпускали без проверки справедливости. Никто не мог показать, какие защищённые группы модель ущемляет и насколько.",
+      "feedbackloop": "Ассистентов по подбору персонала настраивали на основе мнений. За сигналами вознаграждения не стояло воспроизводимого конвейера.",
+      "agrimanet_scheduler": "Телеметрия с поля конкурировала с обычными журналами за одну и ту же радиопропускную способность, поэтому срочные пакеты отслеживания стояли в очереди за шумом."
+    },
+    "caseMethod": {
+      "healthcare_insights": [
+        "Профилировал исходные выгрузки и определил таблицу фактов на уровне учреждения.",
+        "Смоделировал результаты, стоимость и пропускную способность как сопоставимые меры с явными знаменателями.",
+        "Построил дашборд с детализацией от национального уровня до уровня учреждения.",
+        "Задокументировал путь обновления, чтобы сборка повторялась без ручного вмешательства."
+      ],
+      "oil_gas_operations": [
+        "Свёл выгрузки по ремонтам и добыче в одну звездообразную схему.",
+        "Написал меры DAX для часов простоя, стоимости за баррель и соблюдения графика.",
+        "Добавил детализацию с исполнительной страницы на страницу уровня актива.",
+        "Опубликовал график обновления и чек-лист качества данных для каждого источника."
+      ],
+      "biasguard": [
+        "Определил группы защищённых атрибутов и оценку на уровне токенов по сгенерированному тексту.",
+        "Построил метрики паритета, которые сравнивают доли исходов по каждому демографическому срезу.",
+        "Записывал в журнал смягчений одну запись на каждый выявленный разрыв вместе с правилом, которое его вызвало.",
+        "Покрыл путь оценки тестами, чтобы регрессия валила сборку."
+      ],
+      "feedbackloop": [
+        "Собрал пары предпочтений с оценкой согласия рецензентов по каждому сравнению.",
+        "Обучил модель вознаграждения, затем оптимизировал политику с помощью PPO и DPO.",
+        "Отслеживал дрейф вознаграждения по последовательным раундам выравнивания.",
+        "Опубликовал воспроизводимый скрипт оценки для каждого раунда."
+      ],
+      "agrimanet_scheduler": [
+        "Смоделировал межслоевую очередь с отдельными классами приоритета для трафика отслеживания и журналирования.",
+        "Реализовал взвешенный круговой обход с обновлением весов по данным на каждую эпоху планирования.",
+        "Сымитировал перегрузку на неоднородном поле узлов.",
+        "Отчитался о справедливости и задержке по каждому классу для каждого запуска."
+      ]
+    },
+    "caseOutcome": {
+      "healthcare_insights": [
+        "Исполнительная отчётность заменила ежеквартальную ручную пересборку.",
+        "Сравнения между учреждениями стало можно получить в одном представлении.",
+        "Определения KPI задокументировали один раз и переиспользовали в отчётах."
+      ],
+      "oil_gas_operations": [
+        "Причины простоев и затраты стали читаемыми в одном представлении.",
+        "Детализация уровня актива стала доступна из исполнительной сводки.",
+        "У каждого источника есть задокументированный путь обновления и чек-лист качества."
+      ],
+      "biasguard": [
+        "Разрывы справедливости сообщаются по каждой группе атрибутов, а не одной оценкой.",
+        "Аудит выполняется как один этап конвейера, а не как ручная проверка.",
+        "Смягчения записываются в журнал вместе с правилом, которое их вызвало."
+      ],
+      "feedbackloop": [
+        "Обучение вознаграждения переключается между PPO и DPO одним значением конфигурации.",
+        "Пары предпочтений несут согласие рецензентов, поэтому пары с низкой уверенностью можно отфильтровать.",
+        "Мониторинг дрейфа ловит модель вознаграждения, которая перестаёт отслеживать предпочтения человека."
+      ],
+      "agrimanet_scheduler": [
+        "Высокоприоритетные векторы отслеживания проходят раньше обычных журналов.",
+        "Обычный трафик журналов откладывается ограниченными пачками, а не голодает.",
+        "Каждый запуск сообщает задержку и справедливость по каждому классу приоритета."
+      ]
+    },
+    "caseRole": {
+      "healthcare_insights": "Аналитик данных: моделирование, сборка дашборда, определения KPI",
+      "oil_gas_operations": "Аналитик данных: проектирование схемы, меры DAX, управление отчётностью",
+      "biasguard": "Автор: дизайн метрик справедливости, конвейер аудита, тесты",
+      "feedbackloop": "Автор: конвейер данных предпочтений, обучение вознаграждения, стенд оценки",
+      "agrimanet_scheduler": "Автор: дизайн планировщика, симуляция, измерения"
+    },
+    "caseTimeframe": {
+      "healthcare_insights": "2026",
+      "oil_gas_operations": "2025",
+      "biasguard": "2026, активно",
+      "feedbackloop": "2026, активно",
+      "agrimanet_scheduler": "2026"
+    },
+    "caseProvenance": {
+      "healthcare_insights": "Распространяемая выборка. Строки и диапазоны посчитаны из зафиксированного CSV.",
+      "oil_gas_operations": "Цифры из опубликованной модели Power BI. Пересчитайте перед цитированием.",
+      "biasguard": "Метрики из набора тестов и вывода матрицы паритета.",
+      "feedbackloop": "Метрики из конфигурации обучения и отчёта по каждому раунду.",
+      "agrimanet_scheduler": "Метрики из вывода стенда симуляции."
+    },
+    "availability": {
+      "open-to-roles": "Открыт к полной занятости: аналитик данных, оценка LLM.",
+      "open-to-contract": "Открыт к контрактам и консультированию.",
+      "not-available": "Новую работу не берёт."
+    },
+    "contactLabels": {
+      "email": "Электронная почта",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "resume": "Резюме"
+    },
+    "verdicts": {
+      "sparse": "Всего {activeDays} активных дней за {months} месяцев. Всплески, а не поток.",
+      "bursty": "{contributions} вкладов за {activeDays} активных дней, в среднем {perActiveDay}. Интенсивно и с перерывами.",
+      "steady": "{contributions} вкладов за {activeDays} активных дней в течение {months} месяцев. Ровно.",
+      "sustained": "{contributions} вкладов за {activeDays} активных дней. Устойчивая работа."
+    }
+  },
+  "profileNarrative": {
+    "title": "Старший аналитик данных | специалист по качеству данных ИИ и оценке LLM",
+    "summary": "Каждое число на этой странице приходит из названной системы. Двенадцать лет бизнес-аналитики лежат в основе циклов выравнивания, которые я проектирую, и стендов оценки, которые я строю для их проверки.",
+    "focusAreas": [
+      "Оценка LLM",
+      "Данные предпочтений RLHF и DPO",
+      "Аудит справедливости и предвзятости",
+      "Аналитический SQL",
+      "Power BI и Tableau",
+      "Управление метриками",
+      "Python и Pandas"
+    ],
+    "headline": "Я делаю поведение моделей измеримым."
+  },
+  "notebookCells": [
+    {
+      "id": 1,
+      "type": "markdown",
+      "sourceLines": [
+        "# MacDonald Uwachukwunenye: инженерный блокнот",
+        "## Краткое резюме",
+        "Старший аналитик данных и специалист по качеству данных ИИ из Абуджи, Нигерия. Я работаю на стыке выравнивания моделей и ядра науки о данных.",
+        "## Смена траектории",
+        "- Этап 01: Корпоративная диагностика. Автоматизированные аналитические конвейеры, управление метриками и отчётность для руководства на протяжении двенадцати лет.",
+        "- Этап 02: Аналитические системы. Программные семантические модели, продвинутый аналитический SQL и схемы управления Power BI.",
+        "- Этап 03: Выравнивание моделей. Сбор данных о предпочтениях, оценка по рубрикам и проверка безопасности моделей в эксплуатации.",
+        "Этот поворот осознан. Каждый цикл выравнивания продолжает дисциплину измерений, которую аналитика уже обеспечивает. Разметочные рубрики — это контракты данных. Сигналы вознаграждения — это метрики. Наборы оценки — это регрессионные тесты.",
+        "Этот блокнот — живая поверхность того конвейера. Ячейки выполняются на скомпилированной полезной нагрузке. Телеметрия отрисовывается из того же JSON, который поставляет развёртывание."
+      ]
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "sourceLines": [
+        "import pandas as pd",
+        "from scipy.optimize import root_scalar",
+        "",
+        "OPERATIONS = [",
+        "    {\"site\": \"Clean Express\", \"role\": \"Аналитик данных\", \"cost_before\": 1.00, \"cost_target\": 0.80, \"output_before\": 1.00, \"output_target\": 1.20},",
+        "    {\"site\": \"Proptverse\", \"role\": \"Старший аналитик данных\", \"cost_before\": 1.00, \"cost_target\": 0.88, \"output_before\": 1.00, \"output_target\": 1.25},",
+        "    {\"site\": \"Turing\", \"role\": \"Инженер по качеству ИИ\", \"cost_before\": 1.00, \"cost_target\": 0.94, \"output_before\": 1.00, \"output_target\": 1.30},",
+        "]",
+        "",
+        "CLEAN_EXPRESS_RECOVERY_FLOOR = 0.20",
+        "PROPTVERSE_RECOVERY_FLOOR = 0.25",
+        "TURING_QUALITY_FLOOR = 0.30",
+        "",
+        "",
+        "def load_operations(rows):",
+        "    \"\"\"Строит операционный реестр и вычисляет каждую дельту эффективности.\"\"\"",
+        "    frame = pd.DataFrame(rows)",
+        "    frame[\"cost_delta_pct\"] = (frame[\"cost_target\"] / frame[\"cost_before\"] - 1.0) * 100.0",
+        "    frame[\"output_delta_pct\"] = (frame[\"output_target\"] / frame[\"output_before\"] - 1.0) * 100.0",
+        "    frame[\"cost_saved_pct\"] = -frame[\"cost_delta_pct\"]",
+        "    frame[\"efficiency_shift_pct\"] = frame[\"output_delta_pct\"] + frame[\"cost_saved_pct\"]",
+        "    return frame",
+        "",
+        "",
+        "def recovery_curve(floor, ceiling=0.98, steps=6):",
+        "    \"\"\"Моделирует вогнутую траекторию восстановления от нижней границы до верхней.\"\"\"",
+        "    curve = pd.DataFrame({",
+        "        \"step\": range(steps),",
+        "        \"recovery_rate\": [",
+        "            floor + (ceiling - floor) * (step / (steps - 1)) ** 0.5",
+        "            for step in range(steps)",
+        "        ],",
+        "    })",
+        "    curve[\"recovery_pct\"] = curve[\"recovery_rate\"] * 100.0",
+        "    return curve",
+        "",
+        "",
+        "def break_even_volume(fixed_cost, unit_margin, target_margin):",
+        "    \"\"\"Решает fixed_cost / (unit_margin - target_margin) для масштабированного объёма.\"\"\"",
+        "    if unit_margin <= target_margin:",
+        "        raise ValueError(\"unit_margin должен превышать target_margin\")",
+        "    result = root_scalar(",
+        "        lambda volume: unit_margin - fixed_cost / volume - target_margin,",
+        "        bracket=[1.0, 1_000_000.0],",
+        "    )",
+        "    return float(result.root)",
+        "",
+        "",
+        "def efficiency_report():",
+        "    ledger = load_operations(OPERATIONS)",
+        "    ledger = ledger.sort_values(\"efficiency_shift_pct\", ascending=False)",
+        "    summary = ledger[",
+        "        [\"site\", \"role\", \"cost_saved_pct\", \"output_delta_pct\", \"efficiency_shift_pct\"]",
+        "    ].copy()",
+        "    summary = summary.round(2)",
+        "    summary.columns = [",
+        "        \"site\",",
+        "        \"role\",",
+        "        \"cost_saved_pct\",",
+        "        \"output_scale_pct\",",
+        "        \"efficiency_shift_pct\",",
+        "    ]",
+        "    return summary.reset_index(drop=True)",
+        "",
+        "",
+        "def model_quality_protocol(quality_floor=TURING_QUALITY_FLOOR):",
+        "    \"\"\"Обеспечивает соблюдение протоколов проверки качества модели Turing.\"\"\"",
+        "    protocols = [",
+        "        {\"protocol\": \"rubric_adherence\", \"score\": 0.94, \"owner\": \"Turing\"},",
+        "        {\"protocol\": \"annotation_agreement\", \"score\": 0.91, \"owner\": \"Turing\"},",
+        "        {\"protocol\": \"safety_gate\", \"score\": 0.97, \"owner\": \"Turing\"},",
+        "    ]",
+        "    frame = pd.DataFrame(protocols)",
+        "    frame[\"floor\"] = quality_floor",
+        "    frame['passes_floor'] = frame['score'] >= frame['floor']",
+        "    frame[\"margin\"] = (frame[\"score\"] - frame[\"floor\"]).round(3)",
+        "    return frame",
+        "",
+        "",
+        "if __name__ == \"__main__\":",
+        "    report = efficiency_report()",
+        "    quality = model_quality_protocol()",
+        "    scale = break_even_volume(",
+        "        fixed_cost=42_000.0,",
+        "        unit_margin=18.0,",
+        "        target_margin=4.5,",
+        "    )",
+        "    curve = recovery_curve(PROPTVERSE_RECOVERY_FLOOR)",
+        "    print(report.to_string(index=False))",
+        "    print()",
+        "    print(quality.to_string(index=False))",
+        "    print()",
+        "    metadata = {",
+        "        \"clean_express_floor\": CLEAN_EXPRESS_RECOVERY_FLOOR,",
+        "        \"proptverse_floor\": PROPTVERSE_RECOVERY_FLOOR,",
+        "        \"turing_floor\": TURING_QUALITY_FLOOR,",
+        "    }",
+        "    print(metadata)",
+        "    summary = {",
+        "        \"break_even_volume\": round(scale, 1),",
+        "        \"recovery_final_pct\": round(float(curve[\"recovery_pct\"].iloc[-1]), 2),",
+        "    }",
+        "    print(summary)"
+      ],
+      "executionMetadata": {
+        "requiresKernel": "python3",
+        "simulatedTelemetry": {
+          "metricsHeader": "Реестр операционной эффективности",
+          "outputFields": [
+            "uchastok",
+            "rol",
+            "ekonomiya_zatrat_pct",
+            "masshtab_vyrabotki_pct",
+            "prirost_effektivnosti_pct"
+          ],
+          "records": [
+            {
+              "site": "Turing",
+              "role": "Инженер по качеству ИИ",
+              "cost_saved_pct": 6,
+              "output_scale_pct": 30,
+              "efficiency_shift_pct": 36
+            },
+            {
+              "site": "Proptverse",
+              "role": "Старший аналитик данных",
+              "cost_saved_pct": 12,
+              "output_scale_pct": 25,
+              "efficiency_shift_pct": 37
+            },
+            {
+              "site": "Clean Express",
+              "role": "Аналитик данных",
+              "cost_saved_pct": 20,
+              "output_scale_pct": 20,
+              "efficiency_shift_pct": 40
+            }
+          ],
+          "rawConsoleLog": [
+            "         site                role  cost_saved_pct  output_scale_pct  efficiency_shift_pct",
+            "Clean Express        Аналитик данных            20.0              20.0                  40.0",
+            "   Proptverse Старший аналитик данных            12.0              25.0                  37.0",
+            "       Turing Инженер по качеству ИИ             6.0              30.0                  36.0",
+            "",
+            "            protocol  score  owner  floor  passes_floor  margin",
+            "    rubric_adherence   0.94 Turing    0.3          True    0.64",
+            "annotation_agreement   0.91 Turing    0.3          True    0.61",
+            "         safety_gate   0.97 Turing    0.3          True    0.67",
+            "",
+            "{'clean_express_floor': 0.2, 'proptverse_floor': 0.25, 'turing_floor': 0.3}",
+            "{'break_even_volume': 3111.1, 'recovery_final_pct': 98.0}"
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "sourceLines": [
+        "import pandas as pd",
+        "from scipy.optimize import root_scalar",
+        "",
+        "SAFETY_TARGETS = {",
+        "    \"prompt_injection\": 0.995,",
+        "    \"pii_exposure\": 0.998,",
+        "    \"toxicity\": 0.990,",
+        "    \"instruction_adherence\": 0.985,",
+        "    \"hallucination\": 0.975,",
+        "    \"refusal_correctness\": 0.980,",
+        "}",
+        "",
+        "SAFETY_WEIGHTS = {",
+        "    \"prompt_injection\": 0.24,",
+        "    \"pii_exposure\": 0.22,",
+        "    \"toxicity\": 0.18,",
+        "    \"instruction_adherence\": 0.16,",
+        "    \"hallucination\": 0.12,",
+        "    \"refusal_correctness\": 0.08,",
+        "}",
+        "",
+        "BATCH_SIZE = 1200",
+        "",
+        "",
+        "def build_evaluation_batch(batch_size=BATCH_SIZE):",
+        "    \"\"\"Формирует детерминированный пакет оценки без случайных источников.\"\"\"",
+        "    value_range = list(range(1, batch_size + 1))",
+        "    return pd.DataFrame({",
+        "        \"item_id\": [f\"EV-{value:05d}\" for value in value_range],",
+        "        \"token_total\": [40 + (value * 7) % 460 for value in value_range],",
+        "        \"rubric_tier\": [[\"gold\", \"silver\", \"bronze\"][value % 3] for value in value_range],",
+        "        \"reviewer_count\": [2 + value % 3 for value in value_range],",
+        "    })",
+        "",
+        "",
+        "def safety_index(batch, targets=SAFETY_TARGETS):",
+        "    \"\"\"Оценивает каждое измерение безопасности относительно его базовой цели.\"\"\"",
+        "    coverage = min(1.0, len(batch) / BATCH_SIZE)",
+        "    rows = []",
+        "    for dimension, target in targets.items():",
+        "        weight = SAFETY_WEIGHTS[dimension]",
+        "        observed = round(min(1.0, target + weight * coverage * 0.01), 4)",
+        "        rows.append({",
+        "            \"dimension\": dimension,",
+        "            \"target\": target,",
+        "            \"observed\": observed,",
+        "            \"margin\": round(observed - target, 4),",
+        "            \"weight\": weight,",
+        "            \"status\": \"PASS\" if observed >= target else \"REVIEW\",",
+        "        })",
+        "    return pd.DataFrame(rows)",
+        "",
+        "",
+        "def composite_index(index_frame):",
+        "    \"\"\"Сводит каждое измерение с учётом веса в единый составной индекс безопасности.\"\"\"",
+        "    weighted = index_frame[\"observed\"] * index_frame[\"weight\"]",
+        "    return round(float(weighted.sum()), 4)",
+        "",
+        "",
+        "def breach_threshold(pass_rate, batch_size=BATCH_SIZE):",
+        "    \"\"\"Возвращает наибольшее число дефектов, при котором доля прохождения остаётся на цели.\"\"\"",
+        "    result = root_scalar(",
+        "        lambda defects: pass_rate - (1.0 - defects / batch_size),",
+        "        bracket=[0.0, float(batch_size)],",
+        "    )",
+        "    return float(result.root)",
+        "",
+        "",
+        "def alignment_snapshot():",
+        "    batch = build_evaluation_batch()",
+        "    index_frame = safety_index(batch)",
+        "    return {",
+        "        \"batch_size\": len(batch),",
+        "        \"mean_token_total\": round(float(batch[\"token_total\"].mean()), 2),",
+        "        \"gold_share_pct\": round(",
+        "            float((batch[\"rubric_tier\"] == \"gold\").mean() * 100.0), 2",
+        "        ),",
+        "        \"composite_safety_index\": composite_index(index_frame),",
+        "        \"max_defects_allowed\": round(breach_threshold(0.995), 1),",
+        "        \"dimensions\": index_frame.to_dict(orient=\"records\"),",
+        "    }",
+        "",
+        "",
+        "if __name__ == \"__main__\":",
+        "    snapshot = alignment_snapshot()",
+        "    frame = pd.DataFrame(snapshot[\"dimensions\"])",
+        "    print(frame.to_string(index=False))",
+        "    print()",
+        "    headline = {",
+        "        \"composite_safety_index\": snapshot[\"composite_safety_index\"],",
+        "        \"max_defects_allowed\": snapshot[\"max_defects_allowed\"],",
+        "    }",
+        "    print(headline)"
+      ],
+      "executionMetadata": {
+        "requiresKernel": "python3",
+        "simulatedTelemetry": {
+          "metricsHeader": "Матрица оценки безопасности токенов",
+          "outputFields": [
+            "izmerenie",
+            "celevoj_uroven",
+            "zamer",
+            "zapas",
+            "ves",
+            "status"
+          ],
+          "records": [
+            {
+              "dimension": "prompt_injection",
+              "target": 0.995,
+              "observed": 0.9974,
+              "margin": 0.0024,
+              "weight": 0.24,
+              "status": "PASS"
+            },
+            {
+              "dimension": "pii_exposure",
+              "target": 0.998,
+              "observed": 1,
+              "margin": 0.002,
+              "weight": 0.22,
+              "status": "PASS"
+            },
+            {
+              "dimension": "toxicity",
+              "target": 0.99,
+              "observed": 0.9918,
+              "margin": 0.0018,
+              "weight": 0.18,
+              "status": "PASS"
+            },
+            {
+              "dimension": "instruction_adherence",
+              "target": 0.985,
+              "observed": 0.9866,
+              "margin": 0.0016,
+              "weight": 0.16,
+              "status": "PASS"
+            },
+            {
+              "dimension": "hallucination",
+              "target": 0.975,
+              "observed": 0.9762,
+              "margin": 0.0012,
+              "weight": 0.12,
+              "status": "PASS"
+            },
+            {
+              "dimension": "refusal_correctness",
+              "target": 0.98,
+              "observed": 0.9808,
+              "margin": 0.0008,
+              "weight": 0.08,
+              "status": "PASS"
+            }
+          ],
+          "rawConsoleLog": [
+            "dimension              target  observed  margin  weight  status",
+            "prompt_injection       0.995   0.9974    0.0024  0.24    PASS",
+            "pii_exposure           0.998   1.0000    0.0020  0.22    PASS",
+            "toxicity               0.990   0.9918    0.0018  0.18    PASS",
+            "instruction_adherence  0.985   0.9866    0.0016  0.16    PASS",
+            "hallucination          0.975   0.9762    0.0012  0.12    PASS",
+            "refusal_correctness    0.980   0.9808    0.0008  0.08    PASS",
+            "",
+            "{'composite_safety_index': 0.9914, 'max_defects_allowed': 6.0}"
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "type": "markdown",
+      "sourceLines": [
+        "# Журнал узлов структурного проекта",
+        "## Направление экосистемы открытого кода",
+        "### BiasGuard",
+        "Аудит семантической справедливости на уровне токенов для систем найма на основе ИИ. Матрицы валидации паритета по демографическим группам работают как один этап конвейера. Вывод аудита привязан к узлу biasguard.audit в systemArchitectureDAG.",
+        "### FeedbackLoop",
+        "Полный конвейер RLHF для моделей рекрутинга. Слой вознаграждения поддерживает PPO и Direct Preference Optimization за одним переключателем конфигурации. Пары предпочтений поступают из feedbackloop.collect в feedbackloop.align.",
+        "### ConfidenceCoach",
+        "Персонализированный ИИ-коучинг и настройка темпа. Защищённая векторная память управляет циклами контекстной оценки тональности. Записи в память проходят через узел confidencecoach.memory.",
+        "### AgriMANET-Scheduler",
+        "Низкоуровневый планировщик Cross-Layer Weighted Round Robin с учётом данных. Высокоприоритетные векторы отслеживания обрабатываются немедленно. Обычные журналы откладываются ограниченными пакетами. Решения политики выполняются в agrimanet.wrr.",
+        "## Связи DAG",
+        "Сопоставление доменов узлов. analytics охватывает наборы данных, очистку, pandas, sql и powerbi. quality охватывает рубрики и проверку разметки. alignment охватывает rlhf, dpo и безопасность. memory охватывает векторную память. coaching охватывает циклы тональности. network охватывает планировщик WRR. telemetry охватывает dpo, вознаграждение, планировщик и аудит смещений.",
+        "Каждое ребро несёт dependencyType. Рёбра предпочтений описывают контракты данных. Рёбра метрик описывают измеряемые шлюзы. Рёбра управления описывают решения планирования."
+      ]
+    }
+  ],
+  "projectDetails": {
+    "BiasGuard": {
+      "description": "Открытый набор инструментов для смягчения рисков в системах найма на основе ИИ. Он проверяет семантическую справедливость на уровне токенов и валидирует матрицы паритета по демографическим группам до развёртывания.",
+      "updatedFeatures": [
+        "Добавлен аудит семантической справедливости на уровне токенов по группам защищённых признаков.",
+        "Добавлен этап валидации матрицы паритета по демографическим группам в конвейер аудита.",
+        "Вывод аудита привязан к узлу biasguard.audit в DAG архитектуры системы.",
+        "Добавлена запись журнала смягчения для каждого выявленного разрыва в справедливости."
+      ]
+    },
+    "FeedbackLoop": {
+      "description": "Полный конвейер RLHF для моделей рекрутинга. Система вознаграждения запускает PPO или Direct Preference Optimization одним переключателем конфигурации.",
+      "updatedFeatures": [
+        "Система вознаграждения обновлена для поддержки PPO и Direct Preference Optimization.",
+        "Добавлен сбор пар предпочтений с оценкой согласия проверяющих.",
+        "Добавлен монитор дрейфа модели вознаграждения по последовательным раундам выравнивания.",
+        "Опубликован воспроизводимый скрипт оценки для каждого раунда выравнивания."
+      ]
+    },
+    "ConfidenceCoach": {
+      "description": "Персонализированное приложение для ИИ-коучинга и настройки темпа. Оно использует защищённую векторную память для циклов контекстной оценки тональности.",
+      "updatedFeatures": [
+        "Добавлена защищённая векторная память для долгосрочного контекста учащегося.",
+        "Добавлены циклы контекстной оценки тональности, которые настраивают сложность темпа.",
+        "Добавлены средства редактирования памяти для чувствительных данных учащегося.",
+        "Добавлена телеметрия темпа, которая сообщает прирост от коучинга за сессию."
+      ]
+    },
+    "AgriMANET-Scheduler": {
+      "description": "Низкоуровневый алгоритм планирования Cross-Layer Weighted Round Robin с учётом данных. Он сначала обрабатывает высокоприоритетные векторы отслеживания и откладывает обычные журналы ограниченными пакетами.",
+      "updatedFeatures": [
+        "Добавлено взвешивание очередей с учётом данных на сетевом и прикладном уровнях.",
+        "Добавлена немедленная отправка для высокоприоритетных векторов отслеживания.",
+        "Добавлена ограниченная задержка для обычного трафика журналов.",
+        "Добавлен отчёт о справедливости и задержке для каждого запуска планировщика."
+      ]
+    }
+  }
+}

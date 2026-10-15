@@ -1,0 +1,193 @@
+{
+  "sectionTitles": {
+    "profile": "Perfil",
+    "dashboard": "Panel de analítica",
+    "tracks": "Líneas de entrega",
+    "methodology": "Metodología de evaluación",
+    "growth": "Registro de crecimiento",
+    "architecture": "Arquitectura del sistema",
+    "notebook": "Cuaderno de ingeniería",
+    "contact": "Contacto"
+  },
+  "sectionCaptions": {
+    "profile": "Quién, dónde y qué sigue.",
+    "dashboard": "Lee esto primero. Cada número remite a un sistema con nombre.",
+    "tracks": "Agrupado por problema resuelto, no por tecnología.",
+    "methodology": "Cómo se puntúa la salida. Cómo una métrica gana confianza.",
+    "growth": "Función más reciente primero.",
+    "architecture": "Nodos, pesos, aristas.",
+    "notebook": "Celdas ejecutables. Ejecútalas.",
+    "contact": "El correo es lo más rápido."
+  },
+  "metricLabels": {
+    "tracked_repositories": "Repositorios rastreados",
+    "featured_repositories": "Líneas cubiertas",
+    "commits_captured": "Commits capturados",
+    "contributions_last_year": "Contribuciones, últimos 12 meses",
+    "active_days": "Días activos",
+    "busiest_day": "Día de mayor actividad",
+    "repositories_touched_180d": "Modificados en 180 días",
+    "primary_language": "Lenguaje principal",
+    "languages_used": "Lenguajes medidos",
+    "stars_earned": "Estrellas obtenidas",
+    "open_issues": "Issues y pull requests abiertos",
+    "followers": "Seguidores en GitHub",
+    "latest_push": "Push más reciente",
+    "datasets_profiled": "Conjuntos de datos perfilados",
+    "public_health_rows": "Observaciones de salud pública",
+    "public_health_groups": "Estados cubiertos",
+    "expenditure_life_correlation": "Correlación entre gasto y esperanza de vida",
+    "context_excluding_forks": "sin forks",
+    "context_public_calendar": "calendario público",
+    "context_read_from_api": "leído de la API",
+    "context_measured_bytes": "de los bytes medidos",
+    "context_raw_csv": "CSV sin procesar",
+    "context_pushed_180d": "subido en 180 días",
+    "context_commits_read": "commits leídos",
+    "context_active_days": "días activos, 12 meses",
+    "context_busiest_day": "récord en un día",
+    "context_language_groups": "grupos de lenguajes",
+    "context_stars": "estrellas acumuladas",
+    "context_open_issues": "incidencias abiertas",
+    "context_followers": "seguidores",
+    "context_latest_push": "último push",
+    "context_datasets": "conjuntos perfilados",
+    "context_ph_rows": "observaciones",
+    "context_ph_states": "estados cubiertos",
+    "context_correlation": "correlación más fuerte",
+    "context_tracked_tracks": "pistas cubiertas",
+    "context_largest_language": "lenguaje principal"
+  },
+  "chartTitles": {
+    "contribution-heatmap": "Calendario de contribuciones",
+    "language-mix": "Mezcla de lenguajes",
+    "repository-activity": "Actividad de repositorios",
+    "repository-signals": "Señales de repositorios"
+  },
+  "chartCaptions": {
+    "contribution-heatmap": "Un cuadrado por día. Las semanas vacías quedan vacías.",
+    "language-mix": "Bytes medidos por lenguaje. Los cuadernos cuentan como Python, el lenguaje que ejecutan.",
+    "repository-activity": "Commits por repositorio, trazados en los meses en que ocurrieron.",
+    "repository-signals": "Lo que existe en los repositorios seguidos. Sin nota."
+  },
+  "sourceLabels": {
+    "github": "API de GitHub",
+    "derived": "Pipeline",
+    "config": "Declarado",
+    "dataset": "Conjunto de datos sin procesar, descargado y perfilado"
+  },
+  "trackLabels": {
+    "analytics": "Analítica e inteligencia de negocio",
+    "evaluation": "Evaluación de LLM y datos de alineación",
+    "platform": "Investigación en sistemas y redes"
+  },
+  "trackBlurbs": {
+    "analytics": "Paneles, gobernanza de métricas y pipelines de informes creados para decisiones operativas.",
+    "evaluation": "Diseño de rúbricas, datos de preferencia y puntuación de seguridad para modelos de lenguaje en producción.",
+    "platform": "Investigación en planificación y grafos donde el modelo de datos guía los algoritmos."
+  },
+  "caseProblem": {
+    "healthcare_insights": "Los registros hospitalarios estaban en hojas de cálculo. Nadie podía comparar resultados, coste o rendimiento entre centros sin una reconstrucción manual cada trimestre.",
+    "oil_gas_operations": "Los datos de mantenimiento y producción vivían en extractos separados. Los causantes del tiempo de inactividad y el gasto nunca se leían en paralelo.",
+    "biasguard": "Los modelos de contratación se publicaban sin una comprobación de equidad. Nadie podía mostrar a qué grupos protegidos perjudicaba un modelo, ni en qué medida.",
+    "feedbackloop": "Los asistentes de reclutamiento se ajustaban por opinión. Las señales de recompensa no tenían un pipeline reproducible detrás.",
+    "agrimanet_scheduler": "La telemetría de campo competía con los registros rutinarios por la misma capacidad de radio, así que los paquetes urgentes de seguimiento quedaban en cola detrás del ruido."
+  },
+  "caseMethod": {
+    "healthcare_insights": [
+      "Perfilé los extractos de origen y definí una tabla de hechos a nivel de centro.",
+      "Modelé resultados, coste y rendimiento como medidas comparables con denominadores explícitos.",
+      "Construí el panel con exploración desde el nivel nacional hasta el centro.",
+      "Documenté la ruta de actualización para que la construcción se repita sin intervención manual."
+    ],
+    "oil_gas_operations": [
+      "Consolidé los extractos de mantenimiento y producción en un único esquema en estrella.",
+      "Escribí medidas DAX para horas de inactividad, coste por barril y cumplimiento del calendario.",
+      "Añadí exploración detallada desde la página ejecutiva hasta la página de detalle a nivel de activo.",
+      "Publiqué un calendario de actualización y una lista de verificación de calidad de datos para cada origen."
+    ],
+    "biasguard": [
+      "Definí grupos de atributos protegidos y una pasada de puntuación a nivel de token sobre el texto generado.",
+      "Construí métricas de paridad que comparan tasas de resultados en cada segmento demográfico.",
+      "Emití una entrada de registro de mitigación por cada brecha marcada, con la regla que la activó.",
+      "Cubrí la ruta de puntuación con pruebas para que una regresión haga fallar la compilación."
+    ],
+    "feedbackloop": [
+      "Recopilé pares de preferencia con puntuación de acuerdo entre revisores en cada comparación.",
+      "Entrené el modelo de recompensa y luego optimicé la política con PPO y con DPO.",
+      "Seguí la deriva de la recompensa a lo largo de rondas sucesivas de alineación.",
+      "Publiqué un script de evaluación reproducible para cada ronda."
+    ],
+    "agrimanet_scheduler": [
+      "Modelé la cola entre capas con clases de prioridad separadas para el tráfico de seguimiento y de registro.",
+      "Implementé round robin ponderado con una actualización de pesos consciente de los datos en cada época de planificación.",
+      "Simulé la congestión en un campo de nodos heterogéneo.",
+      "Informé de equidad y latencia por clase en cada ejecución."
+    ]
+  },
+  "caseOutcome": {
+    "healthcare_insights": [
+      "Los informes ejecutivos sustituyeron una reconstrucción manual trimestral.",
+      "Las comparaciones entre centros pasaron a responderse en una sola vista.",
+      "Las definiciones de KPI se documentaron una vez y se reutilizaron en todos los informes."
+    ],
+    "oil_gas_operations": [
+      "Los causantes del tiempo de inactividad y el coste se leían en la misma vista.",
+      "El detalle a nivel de activo pasó a ser accesible desde el resumen ejecutivo.",
+      "Cada origen tiene una ruta de actualización documentada y una lista de verificación de calidad."
+    ],
+    "biasguard": [
+      "Las brechas de equidad se informan por grupo de atributos en lugar de como una única puntuación.",
+      "La auditoría se ejecuta como una etapa del pipeline en lugar de una revisión manual.",
+      "Las mitigaciones se registran con la regla que las activó."
+    ],
+    "feedbackloop": [
+      "El entrenamiento de recompensa alterna entre PPO y DPO con un único valor de configuración.",
+      "Los pares de preferencia incluyen el acuerdo entre revisores, así que los pares de baja confianza se pueden filtrar.",
+      "La monitorización de deriva detecta un modelo de recompensa que deja de seguir la preferencia humana."
+    ],
+    "agrimanet_scheduler": [
+      "Los vectores de seguimiento de alta prioridad pasan por delante de los registros rutinarios.",
+      "El tráfico de registro genérico se aplaza en lotes acotados en lugar de morir de inanición.",
+      "Cada ejecución informa de latencia y equidad por clase de prioridad."
+    ]
+  },
+  "caseRole": {
+    "healthcare_insights": "Analista de datos: modelado, construcción del panel, definiciones de KPI",
+    "oil_gas_operations": "Analista de datos: diseño de esquemas, medidas DAX, gobernanza de informes",
+    "biasguard": "Autor: diseño de métricas de equidad, pipeline de auditoría, pruebas",
+    "feedbackloop": "Autor: pipeline de datos de preferencia, entrenamiento de recompensa, arnés de evaluación",
+    "agrimanet_scheduler": "Autor: diseño del planificador, simulación, medición"
+  },
+  "caseTimeframe": {
+    "healthcare_insights": "2026",
+    "oil_gas_operations": "2025",
+    "biasguard": "2026, activo",
+    "feedbackloop": "2026, activo",
+    "agrimanet_scheduler": "2026"
+  },
+  "caseProvenance": {
+    "healthcare_insights": "Extracto redistribuible. Filas y rangos calculados desde el CSV versionado.",
+    "oil_gas_operations": "Cifras del modelo Power BI publicado. Recalcula antes de citarlas.",
+    "biasguard": "Métricas de la suite de pruebas y la salida de la matriz de paridad.",
+    "feedbackloop": "Métricas de la configuración de entrenamiento y el informe por ronda.",
+    "agrimanet_scheduler": "Métricas de la salida del banco de simulación."
+  },
+  "availability": {
+    "open-to-roles": "Abierto a puestos fijos: analista de datos, evaluación de LLM.",
+    "open-to-contract": "Abierto a contrato y asesoría.",
+    "not-available": "No acepta trabajo nuevo."
+  },
+  "contactLabels": {
+    "email": "Correo",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "resume": "Currículum"
+  },
+  "verdicts": {
+    "sparse": "Solo {activeDays} días activos en {months} meses. Rachas, no un flujo.",
+    "bursty": "{contributions} contribuciones en {activeDays} días activos, {perActiveDay} de media. Intenso e intermitente.",
+    "steady": "{contributions} contribuciones en {activeDays} días activos a lo largo de {months} meses. Constante.",
+    "sustained": "{contributions} contribuciones en {activeDays} días activos. Producción sostenida."
+  }
+}

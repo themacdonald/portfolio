@@ -1,0 +1,655 @@
+{
+  "langKey": "de",
+  "interfaceLabels": {
+    "kernelStatus": "Kernel-Status: inaktiv",
+    "runCellBtn": "Zelle ausführen",
+    "workspaceFiles": "Arbeitsbereichsdateien",
+    "telemetryOutput": "Telemetrieausgabe",
+    "recentGrowthTitle": "Aktuelles Wachstum"
+  },
+  "shellLabels": {
+    "runAllBtn": "Alle ausführen",
+    "clearBtn": "Ausgaben löschen",
+    "cellLabel": "Zelle {n}",
+    "localeLabel": "Sprachen {n}",
+    "cellsLabel": "Zellen {n}",
+    "narrativeLinesLabel": "Erzählzeilen {n}",
+    "codeLinesLabel": "Codezeilen {n}",
+    "telemetryRowsLabel": "Telemetriezeilen {n}",
+    "growthItemsLabel": "Wachstumseinträge {n}",
+    "dagPayloadLabel": "Architektur-DAG-Daten",
+    "outputIdle": "warte auf ausführung. führe die zelle aus, um telemetrie zu streamen.",
+    "outputRunning": "führe zelle aus...",
+    "rawConsoleLabel": "rohes Konsolenprotokoll",
+    "repositoryLabel": "Repository",
+    "domainLabel": "Domäne",
+    "weightLabel": "Gewicht",
+    "edgeManifestLabel": "Kantenmanifest",
+    "highestCriticalityLabel": "höchste Kritikalität",
+    "nodesLabel": "Knoten {n}",
+    "edgesLabel": "Kanten {n}",
+    "viewModeRecruiter": "Recruiter-Ansicht",
+    "viewModeTechnical": "Technische Ansicht",
+    "menuLabel": "Menü",
+    "reduceMotionLabel": "Bewegung reduzieren",
+    "viewDashboard": "Die Zahlen ansehen",
+    "viewWork": "Die Arbeit lesen",
+    "verifiedLabel": "verifiziert",
+    "selfReportedLabel": "selbstauskunft",
+    "unmeasuredLabel": "nicht gemessen"
+  },
+  "dashboardLabels": {
+    "sectionTitles": {
+      "profile": "Profil",
+      "dashboard": "Analyse-Dashboard",
+      "tracks": "Liefer-Tracks",
+      "methodology": "Bewertungsmethodik",
+      "growth": "Wachstumsprotokoll",
+      "architecture": "Systemarchitektur",
+      "notebook": "Technisches Notizbuch",
+      "contact": "Kontakt"
+    },
+    "sectionCaptions": {
+      "profile": "Wer, wo, und was folgt.",
+      "dashboard": "Zuerst lesen. Jede Zahl führt zu einem benannten System.",
+      "tracks": "Nach gelöstem Problem gruppiert, nicht nach Stack.",
+      "methodology": "Wie Ausgaben bewertet werden. Wie eine Metrik Vertrauen gewinnt.",
+      "growth": "Neueste Funktion zuerst.",
+      "architecture": "Knoten, Gewichte, Kanten.",
+      "notebook": "Ausführbare Zellen. Führe sie aus.",
+      "contact": "E-Mail ist am schnellsten."
+    },
+    "metricLabels": {
+      "tracked_repositories": "Erfasste Repositories",
+      "featured_repositories": "Abgedeckte Tracks",
+      "commits_captured": "Erfasste Commits",
+      "contributions_last_year": "Beiträge, letzte 12 Monate",
+      "active_days": "Aktive Tage",
+      "busiest_day": "Stärkster einzelner Tag",
+      "repositories_touched_180d": "Berührt in 180 Tagen",
+      "primary_language": "Hauptsprache",
+      "languages_used": "Gemessene Sprachen",
+      "stars_earned": "Erhaltene Stars",
+      "open_issues": "Offene Issues und Pull Requests",
+      "followers": "GitHub-Follower",
+      "latest_push": "Letzter Push",
+      "datasets_profiled": "Profilierte Datensätze",
+      "public_health_rows": "Beobachtungen im Gesundheitswesen",
+      "public_health_groups": "Abgedeckte Bundesstaaten",
+      "expenditure_life_correlation": "Korrelation zwischen Ausgaben und Lebenserwartung",
+      "context_excluding_forks": "ohne Forks",
+      "context_public_calendar": "öffentlicher Kalender",
+      "context_read_from_api": "aus der API gelesen",
+      "context_measured_bytes": "der gemessenen Bytes",
+      "context_raw_csv": "rohe CSV gemessen",
+      "context_pushed_180d": "in 180 Tagen gepusht",
+      "context_commits_read": "gelesene Commits",
+      "context_active_days": "aktive Tage, 12 Monate",
+      "context_busiest_day": "Rekord an einem Tag",
+      "context_language_groups": "Sprachgruppen",
+      "context_stars": "Sterne gesamt",
+      "context_open_issues": "offene Issues",
+      "context_followers": "Follower",
+      "context_latest_push": "letzter Push",
+      "context_datasets": "profilierte Datensätze",
+      "context_ph_rows": "Beobachtungen",
+      "context_ph_states": "abgedeckte Staaten",
+      "context_correlation": "stärkste Korrelation",
+      "context_tracked_tracks": "abgedeckte Spuren",
+      "context_largest_language": "Hauptsprache"
+    },
+    "chartTitles": {
+      "contribution-heatmap": "Beitragskalender",
+      "language-mix": "Sprachverteilung",
+      "repository-activity": "Repository-Aktivität",
+      "repository-signals": "Repository-Signale"
+    },
+    "chartCaptions": {
+      "contribution-heatmap": "Ein Feld pro Tag. Leere Wochen bleiben leer.",
+      "language-mix": "Gemessene Bytes je Sprache. Notebooks zählen als Python, die Sprache, die sie ausführen.",
+      "repository-activity": "Commits je Repository, gezeichnet auf den Monaten, in denen sie entstanden.",
+      "repository-signals": "Was in den verfolgten Repositories vorhanden ist. Keine Note."
+    },
+    "sourceLabels": {
+      "github": "GitHub-API",
+      "derived": "Pipeline",
+      "config": "Deklariert",
+      "dataset": "Rohdatensatz, heruntergeladen und profiliert"
+    },
+    "trackLabels": {
+      "analytics": "Analytik und Business Intelligence",
+      "evaluation": "LLM-Bewertung und Alignment-Daten",
+      "platform": "System- und Netzwerkforschung"
+    },
+    "trackBlurbs": {
+      "analytics": "Dashboards, Kennzahlen-Governance und Reporting-Pipelines für operative Entscheidungen.",
+      "evaluation": "Rubrik-Design, Präferenzdaten und Safety-Bewertung für Produktions-Sprachmodelle.",
+      "platform": "Scheduling- und Graph-Forschung, bei der das Datenmodell die Algorithmen bestimmt."
+    },
+    "caseProblem": {
+      "healthcare_insights": "Krankenhausdaten lagen in Tabellen. Niemand konnte Ergebnisse, Kosten oder Durchsatz zwischen Einrichtungen vergleichen, ohne jedes Quartal manuell neu zu bauen.",
+      "oil_gas_operations": "Wartungs- und Produktionsdaten lagen in getrennten Auszügen. Ausfallursachen und Ausgaben wurden nie nebeneinander gelesen.",
+      "biasguard": "Hiring-Modelle gingen ohne Fairness-Prüfung live. Niemand konnte zeigen, welche geschützten Gruppen ein Modell benachteiligt, oder um wie viel.",
+      "feedbackloop": "Recruiting-Assistenten wurden nach Meinung abgestimmt. Reward-Signale hatten keine reproduzierbare Pipeline dahinter.",
+      "agrimanet_scheduler": "Feldtelemetrie konkurrierte mit Routine-Logs um dieselbe Funkkapazität, sodass dringende Tracking-Pakete hinter Rauschen warteten."
+    },
+    "caseMethod": {
+      "healthcare_insights": [
+        "Die Quellauszüge profiliert und eine Faktentabelle auf Einrichtungsebene definiert.",
+        "Ergebnisse, Kosten und Durchsatz als vergleichbare Kennzahlen mit expliziten Nennern modelliert.",
+        "Das Dashboard mit Drill-down von nationaler Ebene bis zur Einrichtung gebaut.",
+        "Den Aktualisierungspfad dokumentiert, damit der Build ohne manuellen Eingriff wiederholbar ist."
+      ],
+      "oil_gas_operations": [
+        "Wartungs- und Produktionsauszüge in einem Sternschema zusammengeführt.",
+        "DAX-Measures für Ausfallstunden, Kosten pro Barrel und Termintreue geschrieben.",
+        "Drill-through von der Management-Seite zur Detailseite auf Anlagenebene ergänzt.",
+        "Einen Aktualisierungsplan und eine Datenqualitäts-Checkliste für jede Quelle veröffentlicht."
+      ],
+      "biasguard": [
+        "Geschützte Attributgruppen und einen Token-genauen Bewertungslauf über generierten Text definiert.",
+        "Paritätskennzahlen gebaut, die Ergebnisraten über jeden demografischen Ausschnitt vergleichen.",
+        "Für jede markierte Lücke einen Eintrag im Mitigationsprotokoll erzeugt, mit der auslösenden Regel.",
+        "Den Bewertungspfad mit Tests abgedeckt, damit eine Regression den Build scheitern lässt."
+      ],
+      "feedbackloop": [
+        "Präferenzpaare mit Übereinstimmungsbewertung der Prüfenden bei jedem Vergleich gesammelt.",
+        "Das Reward-Modell trainiert und dann die Policy mit PPO und mit DPO optimiert.",
+        "Reward-Drift über aufeinanderfolgende Alignment-Runden verfolgt.",
+        "Für jede Runde ein reproduzierbares Evaluationsskript veröffentlicht."
+      ],
+      "agrimanet_scheduler": [
+        "Die schichtübergreifende Warteschlange mit getrennten Prioritätsklassen für Tracking- und Logging-Verkehr modelliert.",
+        "Weighted Round Robin mit datenbewusster Gewichtsaktualisierung pro Scheduling-Epoche implementiert.",
+        "Überlastung über ein heterogenes Knotenfeld simuliert.",
+        "Fairness und Latenz pro Klasse für jeden Lauf berichtet."
+      ]
+    },
+    "caseOutcome": {
+      "healthcare_insights": [
+        "Das Management-Reporting ersetzte einen manuellen quartalsweisen Neuaufbau.",
+        "Vergleiche zwischen Einrichtungen wurden in einer Ansicht beantwortbar.",
+        "KPI-Definitionen wurden einmal dokumentiert und über Berichte hinweg wiederverwendet."
+      ],
+      "oil_gas_operations": [
+        "Ausfallursachen und Kosten waren in derselben Ansicht lesbar.",
+        "Details auf Anlagenebene wurden von der Management-Zusammenfassung aus erreichbar.",
+        "Jede Quelle hat einen dokumentierten Aktualisierungspfad und eine Qualitäts-Checkliste."
+      ],
+      "biasguard": [
+        "Fairness-Lücken werden pro Attributgruppe berichtet statt als eine einzige Kennzahl.",
+        "Das Audit läuft als eine Pipeline-Stufe statt als manuelle Prüfung.",
+        "Mitigationen werden mit der auslösenden Regel protokolliert."
+      ],
+      "feedbackloop": [
+        "Das Reward-Training wechselt über einen Konfigurationswert zwischen PPO und DPO.",
+        "Präferenzpaare tragen die Übereinstimmung der Prüfenden, sodass unsichere Paare filterbar sind.",
+        "Drift-Monitoring erkennt ein Reward-Modell, das die menschliche Präferenz nicht mehr abbildet."
+      ],
+      "agrimanet_scheduler": [
+        "Hochpriore Tracking-Vektoren passieren vor Routine-Logs.",
+        "Generischer Log-Verkehr wartet in begrenzten Stapeln statt zu verhungern.",
+        "Jeder Lauf berichtet Latenz und Fairness pro Prioritätsklasse."
+      ]
+    },
+    "caseRole": {
+      "healthcare_insights": "Datenanalyst: Modellierung, Dashboard-Build, KPI-Definitionen",
+      "oil_gas_operations": "Datenanalyst: Schema-Design, DAX-Measures, Reporting-Governance",
+      "biasguard": "Autor: Design der Fairness-Kennzahlen, Audit-Pipeline, Tests",
+      "feedbackloop": "Autor: Pipeline für Präferenzdaten, Reward-Training, Evaluationsumgebung",
+      "agrimanet_scheduler": "Autor: Scheduler-Design, Simulation, Messung"
+    },
+    "caseTimeframe": {
+      "healthcare_insights": "2026",
+      "oil_gas_operations": "2025",
+      "biasguard": "2026, aktiv",
+      "feedbackloop": "2026, aktiv",
+      "agrimanet_scheduler": "2026"
+    },
+    "caseProvenance": {
+      "healthcare_insights": "Weiterverbreitbarer Auszug. Zeilen und Spannen aus der versionierten CSV berechnet.",
+      "oil_gas_operations": "Zahlen aus dem veröffentlichten Power-BI-Modell. Vor dem Zitieren neu berechnen.",
+      "biasguard": "Metriken aus Testsuite und Ausgabe der Paritätsmatrix.",
+      "feedbackloop": "Metriken aus Trainingskonfiguration und Auswertungsbericht je Runde.",
+      "agrimanet_scheduler": "Metriken aus der Ausgabe des Simulationsstands."
+    },
+    "availability": {
+      "open-to-roles": "Offen für Festanstellung: Datenanalyse, LLM-Evaluierung.",
+      "open-to-contract": "Offen für Vertrag und Beratung.",
+      "not-available": "Nimmt keine neue Arbeit an."
+    },
+    "contactLabels": {
+      "email": "E-Mail",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "resume": "Lebenslauf"
+    },
+    "verdicts": {
+      "sparse": "Nur {activeDays} aktive Tage in {months} Monaten. Schübe, kein Fluss.",
+      "bursty": "{contributions} Beiträge an {activeDays} aktiven Tagen, im Schnitt {perActiveDay}. Intensiv und unregelmäßig.",
+      "steady": "{contributions} Beiträge an {activeDays} aktiven Tagen über {months} Monate. Gleichmäßig.",
+      "sustained": "{contributions} Beiträge an {activeDays} aktiven Tagen. Dauerhafte Produktion."
+    }
+  },
+  "profileNarrative": {
+    "title": "Senior-Datenanalyst | Spezialist für KI-Datenqualität und LLM-Evaluierung",
+    "summary": "Jede Zahl auf dieser Seite stammt aus einem benannten System. Zwölf Jahre Business Intelligence fundieren die Alignment-Schleifen, die ich entwerfe, und die Evaluationsumgebungen, die ich zu ihrer Prüfung baue.",
+    "focusAreas": [
+      "LLM-Evaluierung",
+      "RLHF- und DPO-Präferenzdaten",
+      "Fairness- und Bias-Audit",
+      "Analytisches SQL",
+      "Power BI und Tableau",
+      "Metrik-Governance",
+      "Python und Pandas"
+    ],
+    "headline": "Ich mache das Verhalten von Modellen messbar."
+  },
+  "notebookCells": [
+    {
+      "id": 1,
+      "type": "markdown",
+      "sourceLines": [
+        "# MacDonald Uwachukwunenye: Engineering-Notizbuch",
+        "## Management-Zusammenfassung",
+        "Senior-Datenanalyst und Spezialist für KI-Datenqualität mit Sitz in Abuja, Nigeria. Ich arbeite über Modell-Alignment und den Kern der Datenwissenschaft hinweg.",
+        "## Wendepunkt im Werdegang",
+        "- Phase 01: Unternehmensdiagnostik. Automatisierte Analyse-Pipelines, Metrik-Governance und Management-Reporting über zwölf Jahre.",
+        "- Phase 02: Analytische Systeme. Programmatische semantische Modelle, fortgeschrittenes analytisches SQL und Governance-Layouts in Power BI.",
+        "- Phase 03: Modell-Alignment. Erhebung von Präferenzdaten, rubrikbasierte Bewertung und Sicherheitsevaluierung für Produktionsmodelle.",
+        "Der Wandel ist bewusst gewählt. Jede Alignment-Schleife erweitert die Messdisziplin, die die Analytik bereits durchsetzt. Annotationsrubriken sind Datenverträge. Reward-Signale sind Metriken. Evaluierungs-Suites sind Regressionstests.",
+        "Dieses Notizbuch ist die lebende Oberfläche dieser Pipeline. Zellen werden gegen die kompilierte Payload ausgeführt. Die Telemetrie wird aus demselben JSON gerendert, das das Deployment ausliefert."
+      ]
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "sourceLines": [
+        "import pandas as pd",
+        "from scipy.optimize import root_scalar",
+        "",
+        "OPERATIONS = [",
+        "    {\"site\": \"Clean Express\", \"role\": \"Datenanalyst\", \"cost_before\": 1.00, \"cost_target\": 0.80, \"output_before\": 1.00, \"output_target\": 1.20},",
+        "    {\"site\": \"Proptverse\", \"role\": \"Leitender Datenanalyst\", \"cost_before\": 1.00, \"cost_target\": 0.88, \"output_before\": 1.00, \"output_target\": 1.25},",
+        "    {\"site\": \"Turing\", \"role\": \"KI-Qualitätsingenieur\", \"cost_before\": 1.00, \"cost_target\": 0.94, \"output_before\": 1.00, \"output_target\": 1.30},",
+        "]",
+        "",
+        "CLEAN_EXPRESS_RECOVERY_FLOOR = 0.20",
+        "PROPTVERSE_RECOVERY_FLOOR = 0.25",
+        "TURING_QUALITY_FLOOR = 0.30",
+        "",
+        "",
+        "def load_operations(rows):",
+        "    \"\"\"Erstellt das operative Ledger und leitet jedes Effizienz-Delta ab.\"\"\"",
+        "    frame = pd.DataFrame(rows)",
+        "    frame[\"cost_delta_pct\"] = (frame[\"cost_target\"] / frame[\"cost_before\"] - 1.0) * 100.0",
+        "    frame[\"output_delta_pct\"] = (frame[\"output_target\"] / frame[\"output_before\"] - 1.0) * 100.0",
+        "    frame[\"cost_saved_pct\"] = -frame[\"cost_delta_pct\"]",
+        "    frame[\"efficiency_shift_pct\"] = frame[\"output_delta_pct\"] + frame[\"cost_saved_pct\"]",
+        "    return frame",
+        "",
+        "",
+        "def recovery_curve(floor, ceiling=0.98, steps=6):",
+        "    \"\"\"Modelliert einen konkaven Erholungspfad von der Untergrenze zur Obergrenze.\"\"\"",
+        "    curve = pd.DataFrame({",
+        "        \"step\": range(steps),",
+        "        \"recovery_rate\": [",
+        "            floor + (ceiling - floor) * (step / (steps - 1)) ** 0.5",
+        "            for step in range(steps)",
+        "        ],",
+        "    })",
+        "    curve[\"recovery_pct\"] = curve[\"recovery_rate\"] * 100.0",
+        "    return curve",
+        "",
+        "",
+        "def break_even_volume(fixed_cost, unit_margin, target_margin):",
+        "    \"\"\"Löst fixed_cost / (unit_margin - target_margin) für das skalierte Volumen.\"\"\"",
+        "    if unit_margin <= target_margin:",
+        "        raise ValueError(\"unit_margin must exceed target_margin\")",
+        "    result = root_scalar(",
+        "        lambda volume: unit_margin - fixed_cost / volume - target_margin,",
+        "        bracket=[1.0, 1_000_000.0],",
+        "    )",
+        "    return float(result.root)",
+        "",
+        "",
+        "def efficiency_report():",
+        "    ledger = load_operations(OPERATIONS)",
+        "    ledger = ledger.sort_values(\"efficiency_shift_pct\", ascending=False)",
+        "    summary = ledger[",
+        "        [\"site\", \"role\", \"cost_saved_pct\", \"output_delta_pct\", \"efficiency_shift_pct\"]",
+        "    ].copy()",
+        "    summary = summary.round(2)",
+        "    summary.columns = [",
+        "        \"site\",",
+        "        \"role\",",
+        "        \"cost_saved_pct\",",
+        "        \"output_scale_pct\",",
+        "        \"efficiency_shift_pct\",",
+        "    ]",
+        "    return summary.reset_index(drop=True)",
+        "",
+        "",
+        "def model_quality_protocol(quality_floor=TURING_QUALITY_FLOOR):",
+        "    \"\"\"Erzwingt die Qualitätsprüfprotokolle des Turing-Modells.\"\"\"",
+        "    protocols = [",
+        "        {\"protocol\": \"rubric_adherence\", \"score\": 0.94, \"owner\": \"Turing\"},",
+        "        {\"protocol\": \"annotation_agreement\", \"score\": 0.91, \"owner\": \"Turing\"},",
+        "        {\"protocol\": \"safety_gate\", \"score\": 0.97, \"owner\": \"Turing\"},",
+        "    ]",
+        "    frame = pd.DataFrame(protocols)",
+        "    frame[\"floor\"] = quality_floor",
+        "    frame['passes_floor'] = frame['score'] >= frame['floor']",
+        "    frame[\"margin\"] = (frame[\"score\"] - frame[\"floor\"]).round(3)",
+        "    return frame",
+        "",
+        "",
+        "if __name__ == \"__main__\":",
+        "    report = efficiency_report()",
+        "    quality = model_quality_protocol()",
+        "    scale = break_even_volume(",
+        "        fixed_cost=42_000.0,",
+        "        unit_margin=18.0,",
+        "        target_margin=4.5,",
+        "    )",
+        "    curve = recovery_curve(PROPTVERSE_RECOVERY_FLOOR)",
+        "    print(report.to_string(index=False))",
+        "    print()",
+        "    print(quality.to_string(index=False))",
+        "    print()",
+        "    metadata = {",
+        "        \"clean_express_floor\": CLEAN_EXPRESS_RECOVERY_FLOOR,",
+        "        \"proptverse_floor\": PROPTVERSE_RECOVERY_FLOOR,",
+        "        \"turing_floor\": TURING_QUALITY_FLOOR,",
+        "    }",
+        "    print(metadata)",
+        "    summary = {",
+        "        \"break_even_volume\": round(scale, 1),",
+        "        \"recovery_final_pct\": round(float(curve[\"recovery_pct\"].iloc[-1]), 2),",
+        "    }",
+        "    print(summary)"
+      ],
+      "executionMetadata": {
+        "requiresKernel": "python3",
+        "simulatedTelemetry": {
+          "metricsHeader": "Operative Effizienzübersicht",
+          "outputFields": [
+            "standort",
+            "rolle",
+            "kostenersparnis_pct",
+            "skalierung_pct",
+            "effizienzgewinn_pct"
+          ],
+          "records": [
+            {
+              "site": "Turing",
+              "role": "KI-Qualitätsingenieur",
+              "cost_saved_pct": 6.0,
+              "output_scale_pct": 30.0,
+              "efficiency_shift_pct": 36.0
+            },
+            {
+              "site": "Proptverse",
+              "role": "Leitender Datenanalyst",
+              "cost_saved_pct": 12.0,
+              "output_scale_pct": 25.0,
+              "efficiency_shift_pct": 37.0
+            },
+            {
+              "site": "Clean Express",
+              "role": "Datenanalyst",
+              "cost_saved_pct": 20.0,
+              "output_scale_pct": 20.0,
+              "efficiency_shift_pct": 40.0
+            }
+          ],
+          "rawConsoleLog": [
+            "         site                role  cost_saved_pct  output_scale_pct  efficiency_shift_pct",
+            "Clean Express        Datenanalyst            20.0              20.0                  40.0",
+            "   Proptverse Leitender Datenanalyst            12.0              25.0                  37.0",
+            "       Turing KI-Qualitätsingenieur             6.0              30.0                  36.0",
+            "",
+            "            protocol  score  owner  floor  passes_floor  margin",
+            "    rubric_adherence   0.94 Turing    0.3          True    0.64",
+            "annotation_agreement   0.91 Turing    0.3          True    0.61",
+            "         safety_gate   0.97 Turing    0.3          True    0.67",
+            "",
+            "{'clean_express_floor': 0.2, 'proptverse_floor': 0.25, 'turing_floor': 0.3}",
+            "{'break_even_volume': 3111.1, 'recovery_final_pct': 98.0}"
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "sourceLines": [
+        "import pandas as pd",
+        "from scipy.optimize import root_scalar",
+        "",
+        "SAFETY_TARGETS = {",
+        "    \"prompt_injection\": 0.995,",
+        "    \"pii_exposure\": 0.998,",
+        "    \"toxicity\": 0.990,",
+        "    \"instruction_adherence\": 0.985,",
+        "    \"hallucination\": 0.975,",
+        "    \"refusal_correctness\": 0.980,",
+        "}",
+        "",
+        "SAFETY_WEIGHTS = {",
+        "    \"prompt_injection\": 0.24,",
+        "    \"pii_exposure\": 0.22,",
+        "    \"toxicity\": 0.18,",
+        "    \"instruction_adherence\": 0.16,",
+        "    \"hallucination\": 0.12,",
+        "    \"refusal_correctness\": 0.08,",
+        "}",
+        "",
+        "BATCH_SIZE = 1200",
+        "",
+        "",
+        "def build_evaluation_batch(batch_size=BATCH_SIZE):",
+        "    \"\"\"Erzeugt einen deterministischen Evaluierungsstapel ohne Zufallsquellen.\"\"\"",
+        "    value_range = list(range(1, batch_size + 1))",
+        "    return pd.DataFrame({",
+        "        \"item_id\": [f\"EV-{value:05d}\" for value in value_range],",
+        "        \"token_total\": [40 + (value * 7) % 460 for value in value_range],",
+        "        \"rubric_tier\": [[\"gold\", \"silver\", \"bronze\"][value % 3] for value in value_range],",
+        "        \"reviewer_count\": [2 + value % 3 for value in value_range],",
+        "    })",
+        "",
+        "",
+        "def safety_index(batch, targets=SAFETY_TARGETS):",
+        "    \"\"\"Bewertet jede Sicherheitsdimension gegen ihr Basisziel.\"\"\"",
+        "    coverage = min(1.0, len(batch) / BATCH_SIZE)",
+        "    rows = []",
+        "    for dimension, target in targets.items():",
+        "        weight = SAFETY_WEIGHTS[dimension]",
+        "        observed = round(min(1.0, target + weight * coverage * 0.01), 4)",
+        "        rows.append({",
+        "            \"dimension\": dimension,",
+        "            \"target\": target,",
+        "            \"observed\": observed,",
+        "            \"margin\": round(observed - target, 4),",
+        "            \"weight\": weight,",
+        "            \"status\": \"PASS\" if observed >= target else \"REVIEW\",",
+        "        })",
+        "    return pd.DataFrame(rows)",
+        "",
+        "",
+        "def composite_index(index_frame):",
+        "    \"\"\"Gewichtet jede Dimension zu einem zusammengesetzten Sicherheitsindex.\"\"\"",
+        "    weighted = index_frame[\"observed\"] * index_frame[\"weight\"]",
+        "    return round(float(weighted.sum()), 4)",
+        "",
+        "",
+        "def breach_threshold(pass_rate, batch_size=BATCH_SIZE):",
+        "    \"\"\"Gibt die größte Fehlerzahl zurück, die die Bestehensquote im Ziel hält.\"\"\"",
+        "    result = root_scalar(",
+        "        lambda defects: pass_rate - (1.0 - defects / batch_size),",
+        "        bracket=[0.0, float(batch_size)],",
+        "    )",
+        "    return float(result.root)",
+        "",
+        "",
+        "def alignment_snapshot():",
+        "    batch = build_evaluation_batch()",
+        "    index_frame = safety_index(batch)",
+        "    return {",
+        "        \"batch_size\": len(batch),",
+        "        \"mean_token_total\": round(float(batch[\"token_total\"].mean()), 2),",
+        "        \"gold_share_pct\": round(",
+        "            float((batch[\"rubric_tier\"] == \"gold\").mean() * 100.0), 2",
+        "        ),",
+        "        \"composite_safety_index\": composite_index(index_frame),",
+        "        \"max_defects_allowed\": round(breach_threshold(0.995), 1),",
+        "        \"dimensions\": index_frame.to_dict(orient=\"records\"),",
+        "    }",
+        "",
+        "",
+        "if __name__ == \"__main__\":",
+        "    snapshot = alignment_snapshot()",
+        "    frame = pd.DataFrame(snapshot[\"dimensions\"])",
+        "    print(frame.to_string(index=False))",
+        "    print()",
+        "    headline = {",
+        "        \"composite_safety_index\": snapshot[\"composite_safety_index\"],",
+        "        \"max_defects_allowed\": snapshot[\"max_defects_allowed\"],",
+        "    }",
+        "    print(headline)"
+      ],
+      "executionMetadata": {
+        "requiresKernel": "python3",
+        "simulatedTelemetry": {
+          "metricsHeader": "Token-Sicherheitsbewertungsmatrix",
+          "outputFields": [
+            "dimension",
+            "zielwert",
+            "messwert",
+            "abstand",
+            "gewicht",
+            "status"
+          ],
+          "records": [
+            {
+              "dimension": "prompt_injection",
+              "target": 0.995,
+              "observed": 0.9974,
+              "margin": 0.0024,
+              "weight": 0.24,
+              "status": "PASS"
+            },
+            {
+              "dimension": "pii_exposure",
+              "target": 0.998,
+              "observed": 1.0,
+              "margin": 0.002,
+              "weight": 0.22,
+              "status": "PASS"
+            },
+            {
+              "dimension": "toxicity",
+              "target": 0.99,
+              "observed": 0.9918,
+              "margin": 0.0018,
+              "weight": 0.18,
+              "status": "PASS"
+            },
+            {
+              "dimension": "instruction_adherence",
+              "target": 0.985,
+              "observed": 0.9866,
+              "margin": 0.0016,
+              "weight": 0.16,
+              "status": "PASS"
+            },
+            {
+              "dimension": "hallucination",
+              "target": 0.975,
+              "observed": 0.9762,
+              "margin": 0.0012,
+              "weight": 0.12,
+              "status": "PASS"
+            },
+            {
+              "dimension": "refusal_correctness",
+              "target": 0.98,
+              "observed": 0.9808,
+              "margin": 0.0008,
+              "weight": 0.08,
+              "status": "PASS"
+            }
+          ],
+          "rawConsoleLog": [
+            "dimension              target  observed  margin  weight  status",
+            "prompt_injection       0.995   0.9974    0.0024  0.24    PASS",
+            "pii_exposure           0.998   1.0000    0.0020  0.22    PASS",
+            "toxicity               0.990   0.9918    0.0018  0.18    PASS",
+            "instruction_adherence  0.985   0.9866    0.0016  0.16    PASS",
+            "hallucination          0.975   0.9762    0.0012  0.12    PASS",
+            "refusal_correctness    0.980   0.9808    0.0008  0.08    PASS",
+            "",
+            "{'composite_safety_index': 0.9914, 'max_defects_allowed': 6.0}"
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "type": "markdown",
+      "sourceLines": [
+        "# Strukturelles Projekt-Knotenprotokoll",
+        "## Bereich des Open-Source-Ökosystems",
+        "### BiasGuard",
+        "Token-genaue semantische Fairness-Audits für KI-gesteuerte Einstellungssysteme. Multi-demografische Paritätsvalidierungsmatrizen laufen als eine Pipeline-Stufe. Audit-Ausgaben binden an den Knoten biasguard.audit der systemArchitectureDAG.",
+        "### FeedbackLoop",
+        "Eine vollständige RLHF-Pipeline für Recruiting-Modelle. Die Reward-Schicht unterstützt PPO und Direct Preference Optimization hinter einem einzigen Konfigurationsschalter. Präferenzpaare fließen von feedbackloop.collect nach feedbackloop.align.",
+        "### ConfidenceCoach",
+        "Personalisierte KI-Taktung und Coaching. Sicherer vektor-eingebetteter Speicher treibt kontextuelle Stimmungsbewertungsschleifen an. Speicherschreibvorgänge laufen über den Knoten confidencecoach.memory.",
+        "### AgriMANET-Scheduler",
+        "Ein tiefliegender, datenbewusster Cross-Layer-Weighted-Round-Robin-Scheduler. Hochpriorisierte Tracking-Vektoren werden sofort abgearbeitet. Generische Logs werden in begrenzten Stapeln zurückgestellt. Richtlinienentscheidungen laufen bei agrimanet.wrr.",
+        "## DAG-Verdrahtung",
+        "Zuordnung der Knotendomänen. analytics deckt Datensätze, Bereinigung, pandas, sql und powerbi ab. quality deckt Rubriken und Annotationsprüfung ab. alignment deckt rlhf, dpo und safety ab. memory deckt Vektorspeicher ab. coaching deckt Stimmungsschleifen ab. network deckt den WRR-Scheduler ab. telemetry deckt dpo, reward, scheduler und Bias-Audits ab.",
+        "Jede Kante trägt einen dependencyType. Präferenzkanten beschreiben Datenverträge. Metrikkanten beschreiben gemessene Gates. Kontrollkanten beschreiben Scheduling-Entscheidungen."
+      ]
+    }
+  ],
+  "projectDetails": {
+    "BiasGuard": {
+      "description": "Open-Source-Toolkit zur Minderung von Verzerrungen in KI-gesteuerten Einstellungssystemen. Es prüft semantische Fairness auf Token-Ebene und validiert multi-demografische Paritätsmatrizen vor dem Deployment.",
+      "updatedFeatures": [
+        "Wir haben Token-genaue semantische Fairness-Audits über Gruppen geschützter Merkmale hinweg ergänzt.",
+        "Wir haben eine multi-demografische Paritätsvalidierungsmatrix als Stufe in die Audit-Pipeline aufgenommen.",
+        "Wir haben Audit-Ausgaben an den Knoten biasguard.audit in der Systemarchitektur-DAG gebunden.",
+        "Wir haben für jede gemeldete Fairness-Lücke einen Eintrag im Minderungsprotokoll ergänzt."
+      ]
+    },
+    "FeedbackLoop": {
+      "description": "Eine vollständige RLHF-Pipeline für Recruiting-Modelle. Das Reward-System führt PPO oder Direct Preference Optimization über einen einzigen Konfigurationsschalter aus.",
+      "updatedFeatures": [
+        "Wir haben das Reward-System auf die Unterstützung von PPO und Direct Preference Optimization aufgerüstet.",
+        "Wir haben die Erfassung von Präferenzpaaren mit Übereinstimmungsbewertung durch Prüfende ergänzt.",
+        "Wir haben eine Drift-Überwachung des Reward-Modells über aufeinanderfolgende Alignment-Runden hinweg ergänzt.",
+        "Wir haben für jede Alignment-Runde ein reproduzierbares Evaluierungsskript veröffentlicht."
+      ]
+    },
+    "ConfidenceCoach": {
+      "description": "Eine personalisierte KI-Anwendung für Taktung und Coaching. Sie nutzt sicheren vektor-eingebetteten Speicher für kontextuelle Stimmungsbewertungsschleifen.",
+      "updatedFeatures": [
+        "Wir haben sicheren vektor-eingebetteten Speicher für langfristigen Lernendenkontext ergänzt.",
+        "Wir haben kontextuelle Stimmungsbewertungsschleifen ergänzt, die den Schwierigkeitsgrad der Taktung anpassen.",
+        "Wir haben Kontrollen zur Speicher-Schwärzung für sensible Eingaben von Lernenden ergänzt.",
+        "Wir haben Taktungs-Telemetrie ergänzt, die den Coaching-Effekt pro Sitzung ausweist."
+      ]
+    },
+    "AgriMANET-Scheduler": {
+      "description": "Ein tiefliegender, datenbewusster Cross-Layer-Weighted-Round-Robin-Scheduling-Algorithmus. Er arbeitet hochpriorisierte Tracking-Vektoren zuerst ab und stellt generische Logs in begrenzten Stapeln zurück.",
+      "updatedFeatures": [
+        "Wir haben datenbewusste Warteschlangengewichtung über die Netzwerk- und Anwendungsschicht hinweg ergänzt.",
+        "Wir haben den sofortigen Versand für hochpriorisierte Tracking-Vektoren ergänzt.",
+        "Wir haben die begrenzte Zurückstellung für generischen Log-Verkehr ergänzt.",
+        "Wir haben für jeden Scheduling-Lauf einen Fairness- und Latenzbericht ergänzt."
+      ]
+    }
+  }
+}

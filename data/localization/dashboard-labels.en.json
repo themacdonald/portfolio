@@ -1,0 +1,193 @@
+{
+  "sectionTitles": {
+    "profile": "Profile",
+    "dashboard": "Analytics dashboard",
+    "tracks": "Delivery tracks",
+    "methodology": "Evaluation methodology",
+    "growth": "Growth vector log",
+    "architecture": "System architecture",
+    "notebook": "Engineering notebook",
+    "contact": "Contact"
+  },
+  "sectionCaptions": {
+    "profile": "Who, where, and what is next.",
+    "dashboard": "Read this first. Every number traces to a named system.",
+    "tracks": "Grouped by the problem solved, not the stack used.",
+    "methodology": "How output gets scored. How a metric earns trust.",
+    "growth": "Newest feature first.",
+    "architecture": "Nodes, weights, edges.",
+    "notebook": "Executable cells. Run them.",
+    "contact": "Email is fastest."
+  },
+  "metricLabels": {
+    "tracked_repositories": "Tracked repositories",
+    "featured_repositories": "Tracks covered",
+    "commits_captured": "Commits captured",
+    "contributions_last_year": "Contributions, last 12 months",
+    "active_days": "Active days",
+    "busiest_day": "Busiest single day",
+    "repositories_touched_180d": "Touched in 180 days",
+    "primary_language": "Primary language",
+    "languages_used": "Languages measured",
+    "stars_earned": "Stars earned",
+    "open_issues": "Open issues and pull requests",
+    "followers": "GitHub followers",
+    "latest_push": "Most recent push",
+    "datasets_profiled": "Datasets profiled",
+    "public_health_rows": "Public health observations",
+    "public_health_groups": "States covered",
+    "expenditure_life_correlation": "Spend to life expectancy correlation",
+    "context_excluding_forks": "excluding forks",
+    "context_public_calendar": "public calendar",
+    "context_read_from_api": "read from the API",
+    "context_measured_bytes": "of measured bytes",
+    "context_raw_csv": "raw CSV measured",
+    "context_pushed_180d": "pushed in 180 days",
+    "context_commits_read": "commits read from the API",
+    "context_active_days": "active days, 12 months",
+    "context_busiest_day": "busiest single day",
+    "context_language_groups": "measured byte groups",
+    "context_stars": "stars across tracked repos",
+    "context_open_issues": "open issues and PRs",
+    "context_followers": "GitHub followers",
+    "context_latest_push": "most recent push",
+    "context_datasets": "raw datasets profiled",
+    "context_ph_rows": "observations",
+    "context_ph_states": "states covered",
+    "context_correlation": "strongest correlation",
+    "context_tracked_tracks": "tracks covered",
+    "context_largest_language": "largest language by bytes"
+  },
+  "chartTitles": {
+    "contribution-heatmap": "Contribution calendar",
+    "language-mix": "Language mix",
+    "repository-activity": "Repository activity",
+    "repository-signals": "Repository signals"
+  },
+  "chartCaptions": {
+    "contribution-heatmap": "One square per day. Empty weeks stay empty.",
+    "language-mix": "Bytes measured per language. Notebooks count as Python, the language they run.",
+    "repository-activity": "Commits per repository, plotted on the months they landed.",
+    "repository-signals": "What is present across the tracked repositories. No score."
+  },
+  "sourceLabels": {
+    "github": "GitHub API",
+    "derived": "Pipeline",
+    "config": "Declared",
+    "dataset": "Raw dataset, downloaded and profiled"
+  },
+  "trackLabels": {
+    "analytics": "Analytics and business intelligence",
+    "evaluation": "LLM evaluation and alignment data",
+    "platform": "Systems and networking research"
+  },
+  "trackBlurbs": {
+    "analytics": "Dashboards, metric governance and reporting pipelines built for operational decisions.",
+    "evaluation": "Rubric design, preference data and safety scoring for production language models.",
+    "platform": "Scheduling and graph research where the data model drives the algorithms."
+  },
+  "caseProblem": {
+    "healthcare_insights": "Hospital records sat in spreadsheets. Nobody could compare outcomes, cost or throughput across facilities without a manual rebuild every quarter.",
+    "oil_gas_operations": "Maintenance and production data lived in separate extracts. Downtime drivers and spend were never read side by side.",
+    "biasguard": "Hiring models shipped without a fairness check. No one could show which protected groups a model disadvantaged, or by how much.",
+    "feedbackloop": "Recruiting assistants were tuned by opinion. Reward signals had no reproducible pipeline behind them.",
+    "agrimanet_scheduler": "Field telemetry competed with routine logs for the same radio capacity, so urgent tracking packets queued behind noise."
+  },
+  "caseMethod": {
+    "healthcare_insights": [
+      "Profiled the source extracts and defined a facility-level fact table.",
+      "Modelled outcomes, cost and throughput as comparable measures with explicit denominators.",
+      "Built the dashboard with drill-down from national to facility level.",
+      "Documented the refresh path so the build repeats without manual intervention."
+    ],
+    "oil_gas_operations": [
+      "Consolidated maintenance and production extracts into one star schema.",
+      "Wrote DAX measures for downtime hours, cost per barrel and schedule adherence.",
+      "Added drill-through from the executive page to the asset-level detail page.",
+      "Published a refresh schedule and a data-quality checklist for each source."
+    ],
+    "biasguard": [
+      "Defined protected attribute groups and a token-level scoring pass over generated text.",
+      "Built parity metrics that compare outcome rates across every demographic slice.",
+      "Emitted a mitigation log entry for each flagged gap, with the rule that triggered it.",
+      "Covered the scoring path with tests so a regression fails the build."
+    ],
+    "feedbackloop": [
+      "Collected preference pairs with reviewer agreement scoring on every comparison.",
+      "Trained the reward model, then optimised the policy with PPO and with DPO.",
+      "Tracked reward drift across successive alignment rounds.",
+      "Published a reproducible evaluation script for each round."
+    ],
+    "agrimanet_scheduler": [
+      "Modelled the cross-layer queue with separate priority classes for tracking and logging traffic.",
+      "Implemented weighted round robin with a data-aware weight update per scheduling epoch.",
+      "Simulated congestion across a heterogeneous node field.",
+      "Reported fairness and latency per class for each run."
+    ]
+  },
+  "caseOutcome": {
+    "healthcare_insights": [
+      "Executive reporting replaced a quarterly manual rebuild.",
+      "Facility comparisons became answerable in one view.",
+      "KPI definitions were documented once and reused across reports."
+    ],
+    "oil_gas_operations": [
+      "Downtime drivers and cost were readable in the same view.",
+      "Asset-level detail became reachable from the executive summary.",
+      "Every source carries a documented refresh path and quality checklist."
+    ],
+    "biasguard": [
+      "Fairness gaps are reported per attribute group instead of as a single score.",
+      "The audit runs as one pipeline stage rather than a manual review.",
+      "Mitigations are logged with the rule that triggered them."
+    ],
+    "feedbackloop": [
+      "Reward training switches between PPO and DPO through one configuration value.",
+      "Preference pairs carry reviewer agreement, so low-confidence pairs are filterable.",
+      "Drift monitoring catches a reward model that stops tracking human preference."
+    ],
+    "agrimanet_scheduler": [
+      "High-priority tracking vectors clear ahead of routine logs.",
+      "Generic log traffic defers in bounded batches instead of starving.",
+      "Every run reports latency and fairness per priority class."
+    ]
+  },
+  "caseRole": {
+    "healthcare_insights": "Data analyst: modelling, dashboard build, KPI definitions",
+    "oil_gas_operations": "Data analyst: schema design, DAX measures, reporting governance",
+    "biasguard": "Author: fairness metric design, audit pipeline, tests",
+    "feedbackloop": "Author: preference data pipeline, reward training, evaluation harness",
+    "agrimanet_scheduler": "Author: scheduler design, simulation, measurement"
+  },
+  "caseTimeframe": {
+    "healthcare_insights": "2026",
+    "oil_gas_operations": "2025",
+    "biasguard": "2026, active",
+    "feedbackloop": "2026, active",
+    "agrimanet_scheduler": "2026"
+  },
+  "caseProvenance": {
+    "healthcare_insights": "Redistributable extract. Row counts and ranges computed from the committed CSV.",
+    "oil_gas_operations": "Figures come from the published Power BI model. Recompute before quoting.",
+    "biasguard": "Metrics come from the repository test suite and the parity matrix output.",
+    "feedbackloop": "Metrics come from the training config and the per-round evaluation report.",
+    "agrimanet_scheduler": "Metrics come from the simulation harness output."
+  },
+  "availability": {
+    "open-to-roles": "Open to full-time roles: data analyst, LLM evaluation.",
+    "open-to-contract": "Open to contract and advisory work.",
+    "not-available": "Not taking new work."
+  },
+  "contactLabels": {
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "resume": "Resume"
+  },
+  "verdicts": {
+    "sparse": "Only {activeDays} active days in {months} months. Bursts, not a stream.",
+    "bursty": "{contributions} contributions in {activeDays} active days, averaging {perActiveDay} each. Intense and intermittent.",
+    "steady": "{contributions} contributions across {activeDays} active days in {months} months. Consistent.",
+    "sustained": "{contributions} contributions across {activeDays} active days. Sustained output."
+  }
+}

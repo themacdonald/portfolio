@@ -1,0 +1,193 @@
+{
+  "sectionTitles": {
+    "profile": "Profil",
+    "dashboard": "Analyse-Dashboard",
+    "tracks": "Liefer-Tracks",
+    "methodology": "Bewertungsmethodik",
+    "growth": "Wachstumsprotokoll",
+    "architecture": "Systemarchitektur",
+    "notebook": "Technisches Notizbuch",
+    "contact": "Kontakt"
+  },
+  "sectionCaptions": {
+    "profile": "Wer, wo, und was folgt.",
+    "dashboard": "Zuerst lesen. Jede Zahl führt zu einem benannten System.",
+    "tracks": "Nach gelöstem Problem gruppiert, nicht nach Stack.",
+    "methodology": "Wie Ausgaben bewertet werden. Wie eine Metrik Vertrauen gewinnt.",
+    "growth": "Neueste Funktion zuerst.",
+    "architecture": "Knoten, Gewichte, Kanten.",
+    "notebook": "Ausführbare Zellen. Führe sie aus.",
+    "contact": "E-Mail ist am schnellsten."
+  },
+  "metricLabels": {
+    "tracked_repositories": "Erfasste Repositories",
+    "featured_repositories": "Abgedeckte Tracks",
+    "commits_captured": "Erfasste Commits",
+    "contributions_last_year": "Beiträge, letzte 12 Monate",
+    "active_days": "Aktive Tage",
+    "busiest_day": "Stärkster einzelner Tag",
+    "repositories_touched_180d": "Berührt in 180 Tagen",
+    "primary_language": "Hauptsprache",
+    "languages_used": "Gemessene Sprachen",
+    "stars_earned": "Erhaltene Stars",
+    "open_issues": "Offene Issues und Pull Requests",
+    "followers": "GitHub-Follower",
+    "latest_push": "Letzter Push",
+    "datasets_profiled": "Profilierte Datensätze",
+    "public_health_rows": "Beobachtungen im Gesundheitswesen",
+    "public_health_groups": "Abgedeckte Bundesstaaten",
+    "expenditure_life_correlation": "Korrelation zwischen Ausgaben und Lebenserwartung",
+    "context_excluding_forks": "ohne Forks",
+    "context_public_calendar": "öffentlicher Kalender",
+    "context_read_from_api": "aus der API gelesen",
+    "context_measured_bytes": "der gemessenen Bytes",
+    "context_raw_csv": "rohe CSV gemessen",
+    "context_pushed_180d": "in 180 Tagen gepusht",
+    "context_commits_read": "gelesene Commits",
+    "context_active_days": "aktive Tage, 12 Monate",
+    "context_busiest_day": "Rekord an einem Tag",
+    "context_language_groups": "Sprachgruppen",
+    "context_stars": "Sterne gesamt",
+    "context_open_issues": "offene Issues",
+    "context_followers": "Follower",
+    "context_latest_push": "letzter Push",
+    "context_datasets": "profilierte Datensätze",
+    "context_ph_rows": "Beobachtungen",
+    "context_ph_states": "abgedeckte Staaten",
+    "context_correlation": "stärkste Korrelation",
+    "context_tracked_tracks": "abgedeckte Spuren",
+    "context_largest_language": "Hauptsprache"
+  },
+  "chartTitles": {
+    "contribution-heatmap": "Beitragskalender",
+    "language-mix": "Sprachverteilung",
+    "repository-activity": "Repository-Aktivität",
+    "repository-signals": "Repository-Signale"
+  },
+  "chartCaptions": {
+    "contribution-heatmap": "Ein Feld pro Tag. Leere Wochen bleiben leer.",
+    "language-mix": "Gemessene Bytes je Sprache. Notebooks zählen als Python, die Sprache, die sie ausführen.",
+    "repository-activity": "Commits je Repository, gezeichnet auf den Monaten, in denen sie entstanden.",
+    "repository-signals": "Was in den verfolgten Repositories vorhanden ist. Keine Note."
+  },
+  "sourceLabels": {
+    "github": "GitHub-API",
+    "derived": "Pipeline",
+    "config": "Deklariert",
+    "dataset": "Rohdatensatz, heruntergeladen und profiliert"
+  },
+  "trackLabels": {
+    "analytics": "Analytik und Business Intelligence",
+    "evaluation": "LLM-Bewertung und Alignment-Daten",
+    "platform": "System- und Netzwerkforschung"
+  },
+  "trackBlurbs": {
+    "analytics": "Dashboards, Kennzahlen-Governance und Reporting-Pipelines für operative Entscheidungen.",
+    "evaluation": "Rubrik-Design, Präferenzdaten und Safety-Bewertung für Produktions-Sprachmodelle.",
+    "platform": "Scheduling- und Graph-Forschung, bei der das Datenmodell die Algorithmen bestimmt."
+  },
+  "caseProblem": {
+    "healthcare_insights": "Krankenhausdaten lagen in Tabellen. Niemand konnte Ergebnisse, Kosten oder Durchsatz zwischen Einrichtungen vergleichen, ohne jedes Quartal manuell neu zu bauen.",
+    "oil_gas_operations": "Wartungs- und Produktionsdaten lagen in getrennten Auszügen. Ausfallursachen und Ausgaben wurden nie nebeneinander gelesen.",
+    "biasguard": "Hiring-Modelle gingen ohne Fairness-Prüfung live. Niemand konnte zeigen, welche geschützten Gruppen ein Modell benachteiligt, oder um wie viel.",
+    "feedbackloop": "Recruiting-Assistenten wurden nach Meinung abgestimmt. Reward-Signale hatten keine reproduzierbare Pipeline dahinter.",
+    "agrimanet_scheduler": "Feldtelemetrie konkurrierte mit Routine-Logs um dieselbe Funkkapazität, sodass dringende Tracking-Pakete hinter Rauschen warteten."
+  },
+  "caseMethod": {
+    "healthcare_insights": [
+      "Die Quellauszüge profiliert und eine Faktentabelle auf Einrichtungsebene definiert.",
+      "Ergebnisse, Kosten und Durchsatz als vergleichbare Kennzahlen mit expliziten Nennern modelliert.",
+      "Das Dashboard mit Drill-down von nationaler Ebene bis zur Einrichtung gebaut.",
+      "Den Aktualisierungspfad dokumentiert, damit der Build ohne manuellen Eingriff wiederholbar ist."
+    ],
+    "oil_gas_operations": [
+      "Wartungs- und Produktionsauszüge in einem Sternschema zusammengeführt.",
+      "DAX-Measures für Ausfallstunden, Kosten pro Barrel und Termintreue geschrieben.",
+      "Drill-through von der Management-Seite zur Detailseite auf Anlagenebene ergänzt.",
+      "Einen Aktualisierungsplan und eine Datenqualitäts-Checkliste für jede Quelle veröffentlicht."
+    ],
+    "biasguard": [
+      "Geschützte Attributgruppen und einen Token-genauen Bewertungslauf über generierten Text definiert.",
+      "Paritätskennzahlen gebaut, die Ergebnisraten über jeden demografischen Ausschnitt vergleichen.",
+      "Für jede markierte Lücke einen Eintrag im Mitigationsprotokoll erzeugt, mit der auslösenden Regel.",
+      "Den Bewertungspfad mit Tests abgedeckt, damit eine Regression den Build scheitern lässt."
+    ],
+    "feedbackloop": [
+      "Präferenzpaare mit Übereinstimmungsbewertung der Prüfenden bei jedem Vergleich gesammelt.",
+      "Das Reward-Modell trainiert und dann die Policy mit PPO und mit DPO optimiert.",
+      "Reward-Drift über aufeinanderfolgende Alignment-Runden verfolgt.",
+      "Für jede Runde ein reproduzierbares Evaluationsskript veröffentlicht."
+    ],
+    "agrimanet_scheduler": [
+      "Die schichtübergreifende Warteschlange mit getrennten Prioritätsklassen für Tracking- und Logging-Verkehr modelliert.",
+      "Weighted Round Robin mit datenbewusster Gewichtsaktualisierung pro Scheduling-Epoche implementiert.",
+      "Überlastung über ein heterogenes Knotenfeld simuliert.",
+      "Fairness und Latenz pro Klasse für jeden Lauf berichtet."
+    ]
+  },
+  "caseOutcome": {
+    "healthcare_insights": [
+      "Das Management-Reporting ersetzte einen manuellen quartalsweisen Neuaufbau.",
+      "Vergleiche zwischen Einrichtungen wurden in einer Ansicht beantwortbar.",
+      "KPI-Definitionen wurden einmal dokumentiert und über Berichte hinweg wiederverwendet."
+    ],
+    "oil_gas_operations": [
+      "Ausfallursachen und Kosten waren in derselben Ansicht lesbar.",
+      "Details auf Anlagenebene wurden von der Management-Zusammenfassung aus erreichbar.",
+      "Jede Quelle hat einen dokumentierten Aktualisierungspfad und eine Qualitäts-Checkliste."
+    ],
+    "biasguard": [
+      "Fairness-Lücken werden pro Attributgruppe berichtet statt als eine einzige Kennzahl.",
+      "Das Audit läuft als eine Pipeline-Stufe statt als manuelle Prüfung.",
+      "Mitigationen werden mit der auslösenden Regel protokolliert."
+    ],
+    "feedbackloop": [
+      "Das Reward-Training wechselt über einen Konfigurationswert zwischen PPO und DPO.",
+      "Präferenzpaare tragen die Übereinstimmung der Prüfenden, sodass unsichere Paare filterbar sind.",
+      "Drift-Monitoring erkennt ein Reward-Modell, das die menschliche Präferenz nicht mehr abbildet."
+    ],
+    "agrimanet_scheduler": [
+      "Hochpriore Tracking-Vektoren passieren vor Routine-Logs.",
+      "Generischer Log-Verkehr wartet in begrenzten Stapeln statt zu verhungern.",
+      "Jeder Lauf berichtet Latenz und Fairness pro Prioritätsklasse."
+    ]
+  },
+  "caseRole": {
+    "healthcare_insights": "Datenanalyst: Modellierung, Dashboard-Build, KPI-Definitionen",
+    "oil_gas_operations": "Datenanalyst: Schema-Design, DAX-Measures, Reporting-Governance",
+    "biasguard": "Autor: Design der Fairness-Kennzahlen, Audit-Pipeline, Tests",
+    "feedbackloop": "Autor: Pipeline für Präferenzdaten, Reward-Training, Evaluationsumgebung",
+    "agrimanet_scheduler": "Autor: Scheduler-Design, Simulation, Messung"
+  },
+  "caseTimeframe": {
+    "healthcare_insights": "2026",
+    "oil_gas_operations": "2025",
+    "biasguard": "2026, aktiv",
+    "feedbackloop": "2026, aktiv",
+    "agrimanet_scheduler": "2026"
+  },
+  "caseProvenance": {
+    "healthcare_insights": "Weiterverbreitbarer Auszug. Zeilen und Spannen aus der versionierten CSV berechnet.",
+    "oil_gas_operations": "Zahlen aus dem veröffentlichten Power-BI-Modell. Vor dem Zitieren neu berechnen.",
+    "biasguard": "Metriken aus Testsuite und Ausgabe der Paritätsmatrix.",
+    "feedbackloop": "Metriken aus Trainingskonfiguration und Auswertungsbericht je Runde.",
+    "agrimanet_scheduler": "Metriken aus der Ausgabe des Simulationsstands."
+  },
+  "availability": {
+    "open-to-roles": "Offen für Festanstellung: Datenanalyse, LLM-Evaluierung.",
+    "open-to-contract": "Offen für Vertrag und Beratung.",
+    "not-available": "Nimmt keine neue Arbeit an."
+  },
+  "contactLabels": {
+    "email": "E-Mail",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "resume": "Lebenslauf"
+  },
+  "verdicts": {
+    "sparse": "Nur {activeDays} aktive Tage in {months} Monaten. Schübe, kein Fluss.",
+    "bursty": "{contributions} Beiträge an {activeDays} aktiven Tagen, im Schnitt {perActiveDay}. Intensiv und unregelmäßig.",
+    "steady": "{contributions} Beiträge an {activeDays} aktiven Tagen über {months} Monate. Gleichmäßig.",
+    "sustained": "{contributions} Beiträge an {activeDays} aktiven Tagen. Dauerhafte Produktion."
+  }
+}

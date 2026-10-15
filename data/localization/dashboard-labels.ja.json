@@ -1,0 +1,193 @@
+{
+  "sectionTitles": {
+    "profile": "プロフィール",
+    "dashboard": "分析ダッシュボード",
+    "tracks": "提供トラック",
+    "methodology": "評価手法",
+    "growth": "成長ベクターログ",
+    "architecture": "システムアーキテクチャ",
+    "notebook": "エンジニアリングノート",
+    "contact": "連絡先"
+  },
+  "sectionCaptions": {
+    "profile": "誰が、どこで、次に何を。",
+    "dashboard": "まずここを読んでください。すべての数字は名前のあるシステムに辿れます。",
+    "tracks": "使った技術ではなく、解いた問題で分類しています。",
+    "methodology": "出力をどう採点するか。指標がどう信頼を得るか。",
+    "growth": "新しい機能から順に。",
+    "architecture": "ノード、重み、エッジ。",
+    "notebook": "実行できるセルです。実行してください。",
+    "contact": "メールが最速です。"
+  },
+  "metricLabels": {
+    "tracked_repositories": "追跡リポジトリ",
+    "featured_repositories": "対象トラック",
+    "commits_captured": "取得コミット",
+    "contributions_last_year": "貢献数、直近12か月",
+    "active_days": "活動日数",
+    "busiest_day": "最も多忙な1日",
+    "repositories_touched_180d": "180日以内に更新",
+    "primary_language": "主要言語",
+    "languages_used": "計測言語",
+    "stars_earned": "獲得スター",
+    "open_issues": "オープンissueとプルリクエスト",
+    "followers": "GitHubフォロワー",
+    "latest_push": "直近のプッシュ",
+    "datasets_profiled": "プロファイル済みデータセット",
+    "public_health_rows": "公衆衛生の観測件数",
+    "public_health_groups": "対象州",
+    "expenditure_life_correlation": "支出と平均寿命の相関",
+    "context_excluding_forks": "フォークを除く",
+    "context_public_calendar": "公開カレンダー",
+    "context_read_from_api": "APIから取得",
+    "context_measured_bytes": "計測バイトのうち",
+    "context_raw_csv": "生CSVを計測",
+    "context_pushed_180d": "180日以内にpush",
+    "context_commits_read": "取得コミット",
+    "context_active_days": "12か月の稼働日",
+    "context_busiest_day": "1日の最多",
+    "context_language_groups": "言語グループ",
+    "context_stars": "累計スター",
+    "context_open_issues": "未解決issue",
+    "context_followers": "フォロワー",
+    "context_latest_push": "最新push",
+    "context_datasets": "計測したデータセット",
+    "context_ph_rows": "観測行",
+    "context_ph_states": "対象州",
+    "context_correlation": "最強の相関",
+    "context_tracked_tracks": "対象トラック",
+    "context_largest_language": "主要言語"
+  },
+  "chartTitles": {
+    "contribution-heatmap": "コントリビューションカレンダー",
+    "language-mix": "言語の構成",
+    "repository-activity": "リポジトリの活動",
+    "repository-signals": "リポジトリのシグナル"
+  },
+  "chartCaptions": {
+    "contribution-heatmap": "1日1マス。空の週は空のまま残します。",
+    "language-mix": "言語ごとの計測バイト。ノートブックは実行言語であるPythonとして数えます。",
+    "repository-activity": "コミットが発生した月に描いたリポジトリ別コミット数。",
+    "repository-signals": "追跡リポジトリにあるもの。点数は付けません。"
+  },
+  "sourceLabels": {
+    "github": "GitHub API",
+    "derived": "パイプライン",
+    "config": "申告値",
+    "dataset": "生データセット、ダウンロードしてプロファイル済み"
+  },
+  "trackLabels": {
+    "analytics": "分析とビジネスインテリジェンス",
+    "evaluation": "LLM評価とアラインメントデータ",
+    "platform": "システムとネットワークの研究"
+  },
+  "trackBlurbs": {
+    "analytics": "運用判断のために構築したダッシュボード、指標ガバナンス、レポートパイプライン。",
+    "evaluation": "本番言語モデル向けのルーブリック設計、選好データ、安全性スコアリング。",
+    "platform": "データモデルがアルゴリズムを駆動するスケジューリングとグラフの研究。"
+  },
+  "caseProblem": {
+    "healthcare_insights": "病院記録はスプレッドシートに分散していました。四半期ごとに手作業で作り直さない限り、施設間で成果、コスト、処理量を比較できませんでした。",
+    "oil_gas_operations": "保守データと生産データは別々の抽出物にありました。停止要因と支出を並べて読むことはありませんでした。",
+    "biasguard": "採用モデルは公平性の確認なしに出荷されていました。どの保護グループをどれだけ不利に扱ったかを示せませんでした。",
+    "feedbackloop": "採用支援アシスタントは意見で調整されていました。報酬シグナルを支える再現可能なパイプラインはありませんでした。",
+    "agrimanet_scheduler": "圃場テレメトリが通常ログと同じ無線容量を奪い合い、緊急の追跡パケットが雑音の後ろで待たされていました。"
+  },
+  "caseMethod": {
+    "healthcare_insights": [
+      "元の抽出物をプロファイルし、施設レベルのファクトテーブルを定義しました。",
+      "成果、コスト、処理量を分母の明確な比較可能な指標としてモデル化しました。",
+      "全国から施設レベルへドリルダウンできるダッシュボードを構築しました。",
+      "手作業なしでビルドが繰り返せるよう更新手順を文書化しました。"
+    ],
+    "oil_gas_operations": [
+      "保守と生産の抽出物を1つのスタースキーマに統合しました。",
+      "停止時間、バレル当たりコスト、スケジュール遵守率のDAXメジャーを記述しました。",
+      "経営ページから資産レベルの詳細ページへのドリルスルーを追加しました。",
+      "各ソースの更新スケジュールとデータ品質チェックリストを公開しました。"
+    ],
+    "biasguard": [
+      "保護属性グループを定義し、生成テキストに対するトークン単位の採点処理を実装しました。",
+      "すべての属性スライスで結果率を比較する公平性指標を構築しました。",
+      "検出した格差ごとに、引き金となったルールとともに緩和ログの項目を出力しました。",
+      "採点経路をテストで覆い、退行があればビルドが失敗するようにしました。"
+    ],
+    "feedbackloop": [
+      "すべての比較でレビュアー一致スコアを付けて選好ペアを収集しました。",
+      "報酬モデルを訓練し、その後PPOとDPOで方策を最適化しました。",
+      "アラインメントの各ラウンドを通じて報酬のドリフトを追跡しました。",
+      "各ラウンドの再現可能な評価スクリプトを公開しました。"
+    ],
+    "agrimanet_scheduler": [
+      "追跡トラフィックとログトラフィックに別々の優先度クラスを持つクロスレイヤキューをモデル化しました。",
+      "スケジューリング周期ごとにデータを考慮した重み更新を行う重み付きラウンドロビンを実装しました。",
+      "異種ノード群にわたる輻輳をシミュレーションしました。",
+      "各実行についてクラス別の公平性と遅延を報告しました。"
+    ]
+  },
+  "caseOutcome": {
+    "healthcare_insights": [
+      "経営レポートが四半期ごとの手作業の作り直しを置き換えました。",
+      "施設間の比較が1つの画面で答えられるようになりました。",
+      "KPI定義を一度文書化し、レポート間で再利用しました。"
+    ],
+    "oil_gas_operations": [
+      "停止要因とコストを同じ画面で読めるようになりました。",
+      "経営サマリーから資産レベルの詳細に到達できるようになりました。",
+      "すべてのソースに文書化された更新手順と品質チェックリストがあります。"
+    ],
+    "biasguard": [
+      "公平性の格差は単一スコアではなく属性グループごとに報告されます。",
+      "監査は手作業のレビューではなく1つのパイプライン段階として実行されます。",
+      "緩和策は引き金となったルールとともに記録されます。"
+    ],
+    "feedbackloop": [
+      "報酬の訓練は1つの設定値でPPOとDPOを切り替えます。",
+      "選好ペアはレビュアー一致度を持つため、信頼度の低いペアを除外できます。",
+      "ドリフト監視が、人間の選好を追わなくなった報酬モデルを検出します。"
+    ],
+    "agrimanet_scheduler": [
+      "優先度の高い追跡ベクターが通常ログより先に処理されます。",
+      "通常のログトラフィックは枯渇せず、上限付きのバッチで待機します。",
+      "各実行が優先度クラス別の遅延と公平性を報告します。"
+    ]
+  },
+  "caseRole": {
+    "healthcare_insights": "データアナリスト：モデリング、ダッシュボード構築、KPI定義",
+    "oil_gas_operations": "データアナリスト：スキーマ設計、DAXメジャー、レポートガバナンス",
+    "biasguard": "著者：公平性指標の設計、監査パイプライン、テスト",
+    "feedbackloop": "著者：選好データパイプライン、報酬訓練、評価ハーネス",
+    "agrimanet_scheduler": "著者：スケジューラ設計、シミュレーション、計測"
+  },
+  "caseTimeframe": {
+    "healthcare_insights": "2026",
+    "oil_gas_operations": "2025",
+    "biasguard": "2026、活動中",
+    "feedbackloop": "2026、活動中",
+    "agrimanet_scheduler": "2026"
+  },
+  "caseProvenance": {
+    "healthcare_insights": "再配布可能な抽出データ。行数と範囲はコミット済みCSVから計算しています。",
+    "oil_gas_operations": "数値は公開Power BIモデル由来です。引用前に再計算してください。",
+    "biasguard": "指標はテストスイートとパリティ行列の出力から得ています。",
+    "feedbackloop": "指標は学習設定とラウンド別評価レポートから得ています。",
+    "agrimanet_scheduler": "指標はシミュレーションハーネスの出力から得ています。"
+  },
+  "availability": {
+    "open-to-roles": "正社員可：データアナリスト、LLM評価。",
+    "open-to-contract": "業務委託と助言可。",
+    "not-available": "新規の仕事は受けていません。"
+  },
+  "contactLabels": {
+    "email": "メール",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "resume": "履歴書"
+  },
+  "verdicts": {
+    "sparse": "{months}か月で稼働日は{activeDays}日のみ。流れではなく断続的な集中です。",
+    "bursty": "{activeDays}日の稼働日に{contributions}件、1日平均{perActiveDay}件。集中と中断を繰り返しています。",
+    "steady": "{months}か月で{activeDays}日稼働、{contributions}件。安定しています。",
+    "sustained": "{activeDays}日の稼働で{contributions}件。継続的な産出です。"
+  }
+}

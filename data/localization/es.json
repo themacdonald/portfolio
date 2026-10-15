@@ -1,0 +1,655 @@
+{
+  "langKey": "es",
+  "interfaceLabels": {
+    "kernelStatus": "Estado del kernel: inactivo",
+    "runCellBtn": "Ejecutar celda",
+    "workspaceFiles": "Archivos del espacio de trabajo",
+    "telemetryOutput": "Salida de telemetría",
+    "recentGrowthTitle": "Crecimiento reciente"
+  },
+  "shellLabels": {
+    "runAllBtn": "Ejecutar todo",
+    "clearBtn": "Limpiar salidas",
+    "cellLabel": "celda {n}",
+    "localeLabel": "idiomas {n}",
+    "cellsLabel": "celdas {n}",
+    "narrativeLinesLabel": "líneas narrativas {n}",
+    "codeLinesLabel": "líneas de código {n}",
+    "telemetryRowsLabel": "filas de telemetría {n}",
+    "growthItemsLabel": "elementos de crecimiento {n}",
+    "dagPayloadLabel": "datos del DAG de arquitectura",
+    "outputIdle": "en espera de ejecución. ejecuta la celda para emitir telemetría.",
+    "outputRunning": "ejecutando celda...",
+    "rawConsoleLabel": "traza de consola sin procesar",
+    "repositoryLabel": "repositorio",
+    "domainLabel": "dominio",
+    "weightLabel": "peso",
+    "edgeManifestLabel": "manifiesto de aristas",
+    "highestCriticalityLabel": "criticidad más alta",
+    "nodesLabel": "nodos {n}",
+    "edgesLabel": "aristas {n}",
+    "viewModeRecruiter": "Vista de reclutador",
+    "viewModeTechnical": "Vista técnica",
+    "menuLabel": "Menú",
+    "reduceMotionLabel": "Reducir movimiento",
+    "viewDashboard": "Ver los números",
+    "viewWork": "Leer el trabajo",
+    "verifiedLabel": "verificado",
+    "selfReportedLabel": "autodeclarado",
+    "unmeasuredLabel": "sin medir"
+  },
+  "dashboardLabels": {
+    "sectionTitles": {
+      "profile": "Perfil",
+      "dashboard": "Panel de analítica",
+      "tracks": "Líneas de entrega",
+      "methodology": "Metodología de evaluación",
+      "growth": "Registro de crecimiento",
+      "architecture": "Arquitectura del sistema",
+      "notebook": "Cuaderno de ingeniería",
+      "contact": "Contacto"
+    },
+    "sectionCaptions": {
+      "profile": "Quién, dónde y qué sigue.",
+      "dashboard": "Lee esto primero. Cada número remite a un sistema con nombre.",
+      "tracks": "Agrupado por problema resuelto, no por tecnología.",
+      "methodology": "Cómo se puntúa la salida. Cómo una métrica gana confianza.",
+      "growth": "Función más reciente primero.",
+      "architecture": "Nodos, pesos, aristas.",
+      "notebook": "Celdas ejecutables. Ejecútalas.",
+      "contact": "El correo es lo más rápido."
+    },
+    "metricLabels": {
+      "tracked_repositories": "Repositorios rastreados",
+      "featured_repositories": "Líneas cubiertas",
+      "commits_captured": "Commits capturados",
+      "contributions_last_year": "Contribuciones, últimos 12 meses",
+      "active_days": "Días activos",
+      "busiest_day": "Día de mayor actividad",
+      "repositories_touched_180d": "Modificados en 180 días",
+      "primary_language": "Lenguaje principal",
+      "languages_used": "Lenguajes medidos",
+      "stars_earned": "Estrellas obtenidas",
+      "open_issues": "Issues y pull requests abiertos",
+      "followers": "Seguidores en GitHub",
+      "latest_push": "Push más reciente",
+      "datasets_profiled": "Conjuntos de datos perfilados",
+      "public_health_rows": "Observaciones de salud pública",
+      "public_health_groups": "Estados cubiertos",
+      "expenditure_life_correlation": "Correlación entre gasto y esperanza de vida",
+      "context_excluding_forks": "sin forks",
+      "context_public_calendar": "calendario público",
+      "context_read_from_api": "leído de la API",
+      "context_measured_bytes": "de los bytes medidos",
+      "context_raw_csv": "CSV sin procesar",
+      "context_pushed_180d": "subido en 180 días",
+      "context_commits_read": "commits leídos",
+      "context_active_days": "días activos, 12 meses",
+      "context_busiest_day": "récord en un día",
+      "context_language_groups": "grupos de lenguajes",
+      "context_stars": "estrellas acumuladas",
+      "context_open_issues": "incidencias abiertas",
+      "context_followers": "seguidores",
+      "context_latest_push": "último push",
+      "context_datasets": "conjuntos perfilados",
+      "context_ph_rows": "observaciones",
+      "context_ph_states": "estados cubiertos",
+      "context_correlation": "correlación más fuerte",
+      "context_tracked_tracks": "pistas cubiertas",
+      "context_largest_language": "lenguaje principal"
+    },
+    "chartTitles": {
+      "contribution-heatmap": "Calendario de contribuciones",
+      "language-mix": "Mezcla de lenguajes",
+      "repository-activity": "Actividad de repositorios",
+      "repository-signals": "Señales de repositorios"
+    },
+    "chartCaptions": {
+      "contribution-heatmap": "Un cuadrado por día. Las semanas vacías quedan vacías.",
+      "language-mix": "Bytes medidos por lenguaje. Los cuadernos cuentan como Python, el lenguaje que ejecutan.",
+      "repository-activity": "Commits por repositorio, trazados en los meses en que ocurrieron.",
+      "repository-signals": "Lo que existe en los repositorios seguidos. Sin nota."
+    },
+    "sourceLabels": {
+      "github": "API de GitHub",
+      "derived": "Pipeline",
+      "config": "Declarado",
+      "dataset": "Conjunto de datos sin procesar, descargado y perfilado"
+    },
+    "trackLabels": {
+      "analytics": "Analítica e inteligencia de negocio",
+      "evaluation": "Evaluación de LLM y datos de alineación",
+      "platform": "Investigación en sistemas y redes"
+    },
+    "trackBlurbs": {
+      "analytics": "Paneles, gobernanza de métricas y pipelines de informes creados para decisiones operativas.",
+      "evaluation": "Diseño de rúbricas, datos de preferencia y puntuación de seguridad para modelos de lenguaje en producción.",
+      "platform": "Investigación en planificación y grafos donde el modelo de datos guía los algoritmos."
+    },
+    "caseProblem": {
+      "healthcare_insights": "Los registros hospitalarios estaban en hojas de cálculo. Nadie podía comparar resultados, coste o rendimiento entre centros sin una reconstrucción manual cada trimestre.",
+      "oil_gas_operations": "Los datos de mantenimiento y producción vivían en extractos separados. Los causantes del tiempo de inactividad y el gasto nunca se leían en paralelo.",
+      "biasguard": "Los modelos de contratación se publicaban sin una comprobación de equidad. Nadie podía mostrar a qué grupos protegidos perjudicaba un modelo, ni en qué medida.",
+      "feedbackloop": "Los asistentes de reclutamiento se ajustaban por opinión. Las señales de recompensa no tenían un pipeline reproducible detrás.",
+      "agrimanet_scheduler": "La telemetría de campo competía con los registros rutinarios por la misma capacidad de radio, así que los paquetes urgentes de seguimiento quedaban en cola detrás del ruido."
+    },
+    "caseMethod": {
+      "healthcare_insights": [
+        "Perfilé los extractos de origen y definí una tabla de hechos a nivel de centro.",
+        "Modelé resultados, coste y rendimiento como medidas comparables con denominadores explícitos.",
+        "Construí el panel con exploración desde el nivel nacional hasta el centro.",
+        "Documenté la ruta de actualización para que la construcción se repita sin intervención manual."
+      ],
+      "oil_gas_operations": [
+        "Consolidé los extractos de mantenimiento y producción en un único esquema en estrella.",
+        "Escribí medidas DAX para horas de inactividad, coste por barril y cumplimiento del calendario.",
+        "Añadí exploración detallada desde la página ejecutiva hasta la página de detalle a nivel de activo.",
+        "Publiqué un calendario de actualización y una lista de verificación de calidad de datos para cada origen."
+      ],
+      "biasguard": [
+        "Definí grupos de atributos protegidos y una pasada de puntuación a nivel de token sobre el texto generado.",
+        "Construí métricas de paridad que comparan tasas de resultados en cada segmento demográfico.",
+        "Emití una entrada de registro de mitigación por cada brecha marcada, con la regla que la activó.",
+        "Cubrí la ruta de puntuación con pruebas para que una regresión haga fallar la compilación."
+      ],
+      "feedbackloop": [
+        "Recopilé pares de preferencia con puntuación de acuerdo entre revisores en cada comparación.",
+        "Entrené el modelo de recompensa y luego optimicé la política con PPO y con DPO.",
+        "Seguí la deriva de la recompensa a lo largo de rondas sucesivas de alineación.",
+        "Publiqué un script de evaluación reproducible para cada ronda."
+      ],
+      "agrimanet_scheduler": [
+        "Modelé la cola entre capas con clases de prioridad separadas para el tráfico de seguimiento y de registro.",
+        "Implementé round robin ponderado con una actualización de pesos consciente de los datos en cada época de planificación.",
+        "Simulé la congestión en un campo de nodos heterogéneo.",
+        "Informé de equidad y latencia por clase en cada ejecución."
+      ]
+    },
+    "caseOutcome": {
+      "healthcare_insights": [
+        "Los informes ejecutivos sustituyeron una reconstrucción manual trimestral.",
+        "Las comparaciones entre centros pasaron a responderse en una sola vista.",
+        "Las definiciones de KPI se documentaron una vez y se reutilizaron en todos los informes."
+      ],
+      "oil_gas_operations": [
+        "Los causantes del tiempo de inactividad y el coste se leían en la misma vista.",
+        "El detalle a nivel de activo pasó a ser accesible desde el resumen ejecutivo.",
+        "Cada origen tiene una ruta de actualización documentada y una lista de verificación de calidad."
+      ],
+      "biasguard": [
+        "Las brechas de equidad se informan por grupo de atributos en lugar de como una única puntuación.",
+        "La auditoría se ejecuta como una etapa del pipeline en lugar de una revisión manual.",
+        "Las mitigaciones se registran con la regla que las activó."
+      ],
+      "feedbackloop": [
+        "El entrenamiento de recompensa alterna entre PPO y DPO con un único valor de configuración.",
+        "Los pares de preferencia incluyen el acuerdo entre revisores, así que los pares de baja confianza se pueden filtrar.",
+        "La monitorización de deriva detecta un modelo de recompensa que deja de seguir la preferencia humana."
+      ],
+      "agrimanet_scheduler": [
+        "Los vectores de seguimiento de alta prioridad pasan por delante de los registros rutinarios.",
+        "El tráfico de registro genérico se aplaza en lotes acotados en lugar de morir de inanición.",
+        "Cada ejecución informa de latencia y equidad por clase de prioridad."
+      ]
+    },
+    "caseRole": {
+      "healthcare_insights": "Analista de datos: modelado, construcción del panel, definiciones de KPI",
+      "oil_gas_operations": "Analista de datos: diseño de esquemas, medidas DAX, gobernanza de informes",
+      "biasguard": "Autor: diseño de métricas de equidad, pipeline de auditoría, pruebas",
+      "feedbackloop": "Autor: pipeline de datos de preferencia, entrenamiento de recompensa, arnés de evaluación",
+      "agrimanet_scheduler": "Autor: diseño del planificador, simulación, medición"
+    },
+    "caseTimeframe": {
+      "healthcare_insights": "2026",
+      "oil_gas_operations": "2025",
+      "biasguard": "2026, activo",
+      "feedbackloop": "2026, activo",
+      "agrimanet_scheduler": "2026"
+    },
+    "caseProvenance": {
+      "healthcare_insights": "Extracto redistribuible. Filas y rangos calculados desde el CSV versionado.",
+      "oil_gas_operations": "Cifras del modelo Power BI publicado. Recalcula antes de citarlas.",
+      "biasguard": "Métricas de la suite de pruebas y la salida de la matriz de paridad.",
+      "feedbackloop": "Métricas de la configuración de entrenamiento y el informe por ronda.",
+      "agrimanet_scheduler": "Métricas de la salida del banco de simulación."
+    },
+    "availability": {
+      "open-to-roles": "Abierto a puestos fijos: analista de datos, evaluación de LLM.",
+      "open-to-contract": "Abierto a contrato y asesoría.",
+      "not-available": "No acepta trabajo nuevo."
+    },
+    "contactLabels": {
+      "email": "Correo",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "resume": "Currículum"
+    },
+    "verdicts": {
+      "sparse": "Solo {activeDays} días activos en {months} meses. Rachas, no un flujo.",
+      "bursty": "{contributions} contribuciones en {activeDays} días activos, {perActiveDay} de media. Intenso e intermitente.",
+      "steady": "{contributions} contribuciones en {activeDays} días activos a lo largo de {months} meses. Constante.",
+      "sustained": "{contributions} contribuciones en {activeDays} días activos. Producción sostenida."
+    }
+  },
+  "profileNarrative": {
+    "title": "Analista de Datos Senior | Especialista en Calidad de Datos de IA y Evaluación de LLM",
+    "summary": "Cada número de esta página proviene de un sistema con nombre. Doce años de business intelligence sustentan los bucles de alineación que diseño y los bancos de evaluación que construyo para verificarlos.",
+    "focusAreas": [
+      "Evaluación de LLM",
+      "Datos de preferencia RLHF y DPO",
+      "Auditoría de equidad y sesgo",
+      "SQL analítico",
+      "Power BI y Tableau",
+      "Gobernanza de métricas",
+      "Python y Pandas"
+    ],
+    "headline": "Hago medible el comportamiento de los modelos."
+  },
+  "notebookCells": [
+    {
+      "id": 1,
+      "type": "markdown",
+      "sourceLines": [
+        "# MacDonald Uwachukwunenye: Cuaderno de Ingeniería",
+        "## Resumen ejecutivo",
+        "Analista de Datos Senior y especialista en Calidad de Datos de IA con base en Abuya, Nigeria. Trabajo en la intersección entre la alineación de modelos y el núcleo de la ciencia de datos.",
+        "## Giro cronológico",
+        "- Fase 01: Diagnóstico empresarial. Pipelines analíticos automatizados, gobernanza de métricas e informes ejecutivos a lo largo de doce años.",
+        "- Fase 02: Sistemas analíticos. Modelos semánticos programáticos, SQL analítico avanzado y esquemas de gobernanza de Power BI.",
+        "- Fase 03: Alineación de modelos. Recolección de datos de preferencia, puntuación guiada por rúbricas y evaluación de seguridad para modelos en producción.",
+        "El giro es deliberado. Cada bucle de alineación extiende la disciplina de medición que la analítica ya impone. Las rúbricas de anotación son contratos de datos. Las señales de recompensa son métricas. Las suites de evaluación son pruebas de regresión.",
+        "Este cuaderno es la superficie viva de ese pipeline. Las celdas se ejecutan contra el payload compilado. La telemetría se renderiza desde el mismo JSON que publica el despliegue."
+      ]
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "sourceLines": [
+        "import pandas as pd",
+        "from scipy.optimize import root_scalar",
+        "",
+        "OPERATIONS = [",
+        "    {\"site\": \"Clean Express\", \"role\": \"Analista de Datos\", \"cost_before\": 1.00, \"cost_target\": 0.80, \"output_before\": 1.00, \"output_target\": 1.20},",
+        "    {\"site\": \"Proptverse\", \"role\": \"Analista de Datos Senior\", \"cost_before\": 1.00, \"cost_target\": 0.88, \"output_before\": 1.00, \"output_target\": 1.25},",
+        "    {\"site\": \"Turing\", \"role\": \"Ingeniero de Calidad de IA\", \"cost_before\": 1.00, \"cost_target\": 0.94, \"output_before\": 1.00, \"output_target\": 1.30},",
+        "]",
+        "",
+        "CLEAN_EXPRESS_RECOVERY_FLOOR = 0.20",
+        "PROPTVERSE_RECOVERY_FLOOR = 0.25",
+        "TURING_QUALITY_FLOOR = 0.30",
+        "",
+        "",
+        "def load_operations(rows):",
+        "    \"\"\"Construye el libro operativo y deriva cada delta de eficiencia.\"\"\"",
+        "    frame = pd.DataFrame(rows)",
+        "    frame[\"cost_delta_pct\"] = (frame[\"cost_target\"] / frame[\"cost_before\"] - 1.0) * 100.0",
+        "    frame[\"output_delta_pct\"] = (frame[\"output_target\"] / frame[\"output_before\"] - 1.0) * 100.0",
+        "    frame[\"cost_saved_pct\"] = -frame[\"cost_delta_pct\"]",
+        "    frame[\"efficiency_shift_pct\"] = frame[\"output_delta_pct\"] + frame[\"cost_saved_pct\"]",
+        "    return frame",
+        "",
+        "",
+        "def recovery_curve(floor, ceiling=0.98, steps=6):",
+        "    \"\"\"Modela una trayectoria de recuperación cóncava desde el piso hasta el techo.\"\"\"",
+        "    curve = pd.DataFrame({",
+        "        \"step\": range(steps),",
+        "        \"recovery_rate\": [",
+        "            floor + (ceiling - floor) * (step / (steps - 1)) ** 0.5",
+        "            for step in range(steps)",
+        "        ],",
+        "    })",
+        "    curve[\"recovery_pct\"] = curve[\"recovery_rate\"] * 100.0",
+        "    return curve",
+        "",
+        "",
+        "def break_even_volume(fixed_cost, unit_margin, target_margin):",
+        "    \"\"\"Resuelve fixed_cost / (unit_margin - target_margin) para el volumen escalado.\"\"\"",
+        "    if unit_margin <= target_margin:",
+        "        raise ValueError(\"unit_margin debe superar target_margin\")",
+        "    result = root_scalar(",
+        "        lambda volume: unit_margin - fixed_cost / volume - target_margin,",
+        "        bracket=[1.0, 1_000_000.0],",
+        "    )",
+        "    return float(result.root)",
+        "",
+        "",
+        "def efficiency_report():",
+        "    ledger = load_operations(OPERATIONS)",
+        "    ledger = ledger.sort_values(\"efficiency_shift_pct\", ascending=False)",
+        "    summary = ledger[",
+        "        [\"site\", \"role\", \"cost_saved_pct\", \"output_delta_pct\", \"efficiency_shift_pct\"]",
+        "    ].copy()",
+        "    summary = summary.round(2)",
+        "    summary.columns = [",
+        "        \"site\",",
+        "        \"role\",",
+        "        \"cost_saved_pct\",",
+        "        \"output_scale_pct\",",
+        "        \"efficiency_shift_pct\",",
+        "    ]",
+        "    return summary.reset_index(drop=True)",
+        "",
+        "",
+        "def model_quality_protocol(quality_floor=TURING_QUALITY_FLOOR):",
+        "    \"\"\"Aplica los protocolos de control de calidad del modelo Turing.\"\"\"",
+        "    protocols = [",
+        "        {\"protocol\": \"rubric_adherence\", \"score\": 0.94, \"owner\": \"Turing\"},",
+        "        {\"protocol\": \"annotation_agreement\", \"score\": 0.91, \"owner\": \"Turing\"},",
+        "        {\"protocol\": \"safety_gate\", \"score\": 0.97, \"owner\": \"Turing\"},",
+        "    ]",
+        "    frame = pd.DataFrame(protocols)",
+        "    frame[\"floor\"] = quality_floor",
+        "    frame['passes_floor'] = frame['score'] >= frame['floor']",
+        "    frame[\"margin\"] = (frame[\"score\"] - frame[\"floor\"]).round(3)",
+        "    return frame",
+        "",
+        "",
+        "if __name__ == \"__main__\":",
+        "    report = efficiency_report()",
+        "    quality = model_quality_protocol()",
+        "    scale = break_even_volume(",
+        "        fixed_cost=42_000.0,",
+        "        unit_margin=18.0,",
+        "        target_margin=4.5,",
+        "    )",
+        "    curve = recovery_curve(PROPTVERSE_RECOVERY_FLOOR)",
+        "    print(report.to_string(index=False))",
+        "    print()",
+        "    print(quality.to_string(index=False))",
+        "    print()",
+        "    metadata = {",
+        "        \"clean_express_floor\": CLEAN_EXPRESS_RECOVERY_FLOOR,",
+        "        \"proptverse_floor\": PROPTVERSE_RECOVERY_FLOOR,",
+        "        \"turing_floor\": TURING_QUALITY_FLOOR,",
+        "    }",
+        "    print(metadata)",
+        "    summary = {",
+        "        \"break_even_volume\": round(scale, 1),",
+        "        \"recovery_final_pct\": round(float(curve[\"recovery_pct\"].iloc[-1]), 2),",
+        "    }",
+        "    print(summary)"
+      ],
+      "executionMetadata": {
+        "requiresKernel": "python3",
+        "simulatedTelemetry": {
+          "metricsHeader": "Libro de eficiencia operativa",
+          "outputFields": [
+            "sitio",
+            "rol",
+            "costo_ahorrado_pct",
+            "escala_produccion_pct",
+            "mejora_eficiencia_pct"
+          ],
+          "records": [
+            {
+              "site": "Turing",
+              "role": "Ingeniero de Calidad de IA",
+              "cost_saved_pct": 6.0,
+              "output_scale_pct": 30.0,
+              "efficiency_shift_pct": 36.0
+            },
+            {
+              "site": "Proptverse",
+              "role": "Analista de Datos Senior",
+              "cost_saved_pct": 12.0,
+              "output_scale_pct": 25.0,
+              "efficiency_shift_pct": 37.0
+            },
+            {
+              "site": "Clean Express",
+              "role": "Analista de Datos",
+              "cost_saved_pct": 20.0,
+              "output_scale_pct": 20.0,
+              "efficiency_shift_pct": 40.0
+            }
+          ],
+          "rawConsoleLog": [
+            "         site                role  cost_saved_pct  output_scale_pct  efficiency_shift_pct",
+            "Clean Express        Analista de Datos            20.0              20.0                  40.0",
+            "   Proptverse Analista de Datos Senior            12.0              25.0                  37.0",
+            "       Turing Ingeniero de Calidad de IA             6.0              30.0                  36.0",
+            "",
+            "            protocol  score  owner  floor  passes_floor  margin",
+            "    rubric_adherence   0.94 Turing    0.3          True    0.64",
+            "annotation_agreement   0.91 Turing    0.3          True    0.61",
+            "         safety_gate   0.97 Turing    0.3          True    0.67",
+            "",
+            "{'clean_express_floor': 0.2, 'proptverse_floor': 0.25, 'turing_floor': 0.3}",
+            "{'break_even_volume': 3111.1, 'recovery_final_pct': 98.0}"
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "sourceLines": [
+        "import pandas as pd",
+        "from scipy.optimize import root_scalar",
+        "",
+        "SAFETY_TARGETS = {",
+        "    \"prompt_injection\": 0.995,",
+        "    \"pii_exposure\": 0.998,",
+        "    \"toxicity\": 0.990,",
+        "    \"instruction_adherence\": 0.985,",
+        "    \"hallucination\": 0.975,",
+        "    \"refusal_correctness\": 0.980,",
+        "}",
+        "",
+        "SAFETY_WEIGHTS = {",
+        "    \"prompt_injection\": 0.24,",
+        "    \"pii_exposure\": 0.22,",
+        "    \"toxicity\": 0.18,",
+        "    \"instruction_adherence\": 0.16,",
+        "    \"hallucination\": 0.12,",
+        "    \"refusal_correctness\": 0.08,",
+        "}",
+        "",
+        "BATCH_SIZE = 1200",
+        "",
+        "",
+        "def build_evaluation_batch(batch_size=BATCH_SIZE):",
+        "    \"\"\"Emite un lote de evaluación determinista sin fuentes aleatorias.\"\"\"",
+        "    value_range = list(range(1, batch_size + 1))",
+        "    return pd.DataFrame({",
+        "        \"item_id\": [f\"EV-{value:05d}\" for value in value_range],",
+        "        \"token_total\": [40 + (value * 7) % 460 for value in value_range],",
+        "        \"rubric_tier\": [[\"gold\", \"silver\", \"bronze\"][value % 3] for value in value_range],",
+        "        \"reviewer_count\": [2 + value % 3 for value in value_range],",
+        "    })",
+        "",
+        "",
+        "def safety_index(batch, targets=SAFETY_TARGETS):",
+        "    \"\"\"Puntúa cada dimensión de seguridad contra su objetivo de referencia.\"\"\"",
+        "    coverage = min(1.0, len(batch) / BATCH_SIZE)",
+        "    rows = []",
+        "    for dimension, target in targets.items():",
+        "        weight = SAFETY_WEIGHTS[dimension]",
+        "        observed = round(min(1.0, target + weight * coverage * 0.01), 4)",
+        "        rows.append({",
+        "            \"dimension\": dimension,",
+        "            \"target\": target,",
+        "            \"observed\": observed,",
+        "            \"margin\": round(observed - target, 4),",
+        "            \"weight\": weight,",
+        "            \"status\": \"PASS\" if observed >= target else \"REVIEW\",",
+        "        })",
+        "    return pd.DataFrame(rows)",
+        "",
+        "",
+        "def composite_index(index_frame):",
+        "    \"\"\"Pondera cada dimensión en un único índice compuesto de seguridad.\"\"\"",
+        "    weighted = index_frame[\"observed\"] * index_frame[\"weight\"]",
+        "    return round(float(weighted.sum()), 4)",
+        "",
+        "",
+        "def breach_threshold(pass_rate, batch_size=BATCH_SIZE):",
+        "    \"\"\"Devuelve el mayor recuento de defectos que mantiene la tasa de aprobación en el objetivo.\"\"\"",
+        "    result = root_scalar(",
+        "        lambda defects: pass_rate - (1.0 - defects / batch_size),",
+        "        bracket=[0.0, float(batch_size)],",
+        "    )",
+        "    return float(result.root)",
+        "",
+        "",
+        "def alignment_snapshot():",
+        "    batch = build_evaluation_batch()",
+        "    index_frame = safety_index(batch)",
+        "    return {",
+        "        \"batch_size\": len(batch),",
+        "        \"mean_token_total\": round(float(batch[\"token_total\"].mean()), 2),",
+        "        \"gold_share_pct\": round(",
+        "            float((batch[\"rubric_tier\"] == \"gold\").mean() * 100.0), 2",
+        "        ),",
+        "        \"composite_safety_index\": composite_index(index_frame),",
+        "        \"max_defects_allowed\": round(breach_threshold(0.995), 1),",
+        "        \"dimensions\": index_frame.to_dict(orient=\"records\"),",
+        "    }",
+        "",
+        "",
+        "if __name__ == \"__main__\":",
+        "    snapshot = alignment_snapshot()",
+        "    frame = pd.DataFrame(snapshot[\"dimensions\"])",
+        "    print(frame.to_string(index=False))",
+        "    print()",
+        "    headline = {",
+        "        \"composite_safety_index\": snapshot[\"composite_safety_index\"],",
+        "        \"max_defects_allowed\": snapshot[\"max_defects_allowed\"],",
+        "    }",
+        "    print(headline)"
+      ],
+      "executionMetadata": {
+        "requiresKernel": "python3",
+        "simulatedTelemetry": {
+          "metricsHeader": "Matriz de evaluación de seguridad de tokens",
+          "outputFields": [
+            "dimension",
+            "objetivo",
+            "medido",
+            "margen",
+            "peso",
+            "estado"
+          ],
+          "records": [
+            {
+              "dimension": "prompt_injection",
+              "target": 0.995,
+              "observed": 0.9974,
+              "margin": 0.0024,
+              "weight": 0.24,
+              "status": "PASS"
+            },
+            {
+              "dimension": "pii_exposure",
+              "target": 0.998,
+              "observed": 1.0,
+              "margin": 0.002,
+              "weight": 0.22,
+              "status": "PASS"
+            },
+            {
+              "dimension": "toxicity",
+              "target": 0.99,
+              "observed": 0.9918,
+              "margin": 0.0018,
+              "weight": 0.18,
+              "status": "PASS"
+            },
+            {
+              "dimension": "instruction_adherence",
+              "target": 0.985,
+              "observed": 0.9866,
+              "margin": 0.0016,
+              "weight": 0.16,
+              "status": "PASS"
+            },
+            {
+              "dimension": "hallucination",
+              "target": 0.975,
+              "observed": 0.9762,
+              "margin": 0.0012,
+              "weight": 0.12,
+              "status": "PASS"
+            },
+            {
+              "dimension": "refusal_correctness",
+              "target": 0.98,
+              "observed": 0.9808,
+              "margin": 0.0008,
+              "weight": 0.08,
+              "status": "PASS"
+            }
+          ],
+          "rawConsoleLog": [
+            "dimension              target  observed  margin  weight  status",
+            "prompt_injection       0.995   0.9974    0.0024  0.24    PASS",
+            "pii_exposure           0.998   1.0000    0.0020  0.22    PASS",
+            "toxicity               0.990   0.9918    0.0018  0.18    PASS",
+            "instruction_adherence  0.985   0.9866    0.0016  0.16    PASS",
+            "hallucination          0.975   0.9762    0.0012  0.12    PASS",
+            "refusal_correctness    0.980   0.9808    0.0008  0.08    PASS",
+            "",
+            "{'composite_safety_index': 0.9914, 'max_defects_allowed': 6.0}"
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "type": "markdown",
+      "sourceLines": [
+        "# Registro estructural de nodos de proyecto",
+        "## Ruta del ecosistema de código abierto",
+        "### BiasGuard",
+        "Auditorías de equidad semántica a nivel de token para sistemas de contratación impulsados por IA. Las matrices de validación de paridad multidemográfica se ejecutan como una sola etapa del pipeline. La salida de auditoría se vincula al nodo biasguard.audit del systemArchitectureDAG.",
+        "### FeedbackLoop",
+        "Un pipeline RLHF completo para modelos de reclutamiento. La capa de recompensa admite PPO y Optimización Directa de Preferencias tras un único interruptor de configuración. Los pares de preferencia fluyen de feedbackloop.collect a feedbackloop.align.",
+        "### ConfidenceCoach",
+        "Ritmo y coaching de IA personalizados. La memoria segura con vectores embebidos impulsa bucles de evaluación contextual de sentimiento. Las escrituras de memoria se resuelven a través del nodo confidencecoach.memory.",
+        "### AgriMANET-Scheduler",
+        "Un planificador Round Robin Ponderado entre Capas de bajo nivel y consciente de los datos. Los vectores de seguimiento de alta prioridad se despachan de inmediato. Los registros genéricos se difieren en lotes acotados. Las decisiones de política se ejecutan en agrimanet.wrr.",
+        "## Cableado del DAG",
+        "Mapeo de dominios de nodos. analytics cubre datasets, limpieza, pandas, sql y powerbi. quality cubre rúbricas y revisión de anotaciones. alignment cubre rlhf, dpo y seguridad. memory cubre memoria vectorial. coaching cubre bucles de sentimiento. network cubre el planificador WRR. telemetry cubre dpo, recompensa, planificador y auditorías de sesgo.",
+        "Cada arista lleva un dependencyType. Las aristas de preferencia describen contratos de datos. Las aristas de métricas describen puertas medidas. Las aristas de control describen decisiones de planificación."
+      ]
+    }
+  ],
+  "projectDetails": {
+    "BiasGuard": {
+      "description": "Kit de mitigación de código abierto para sistemas de contratación impulsados por IA. Audita la equidad semántica a nivel de token y valida matrices de paridad multidemográfica antes del despliegue.",
+      "updatedFeatures": [
+        "Se añadió auditoría de equidad semántica a nivel de token en grupos de atributos protegidos.",
+        "Se añadió una etapa de matriz de validación de paridad multidemográfica al pipeline de auditoría.",
+        "Se vinculó la salida de auditoría al nodo biasguard.audit del DAG de arquitectura del sistema.",
+        "Se añadió una entrada de registro de mitigación por cada brecha de equidad marcada."
+      ]
+    },
+    "FeedbackLoop": {
+      "description": "Un pipeline RLHF completo para modelos de reclutamiento. El sistema de recompensa ejecuta PPO u Optimización Directa de Preferencias desde un único interruptor de configuración.",
+      "updatedFeatures": [
+        "Se actualizó el sistema de recompensa para admitir PPO y Optimización Directa de Preferencias.",
+        "Se añadió la recolección de pares de preferencia con puntuación de acuerdo entre revisores.",
+        "Se añadió un monitor de deriva del modelo de recompensa a lo largo de rondas sucesivas de alineación.",
+        "Se publicó un script de evaluación reproducible para cada ronda de alineación."
+      ]
+    },
+    "ConfidenceCoach": {
+      "description": "Una aplicación personalizada de ritmo y coaching con IA. Utiliza memoria segura con vectores embebidos para bucles de evaluación contextual de sentimiento.",
+      "updatedFeatures": [
+        "Se añadió memoria segura con vectores embebidos para el contexto del estudiante a largo plazo.",
+        "Se añadieron bucles de evaluación contextual de sentimiento que ajustan la dificultad del ritmo.",
+        "Se añadieron controles de redacción de memoria para la entrada sensible del estudiante.",
+        "Se añadió telemetría de ritmo que reporta la mejora del coaching por sesión."
+      ]
+    },
+    "AgriMANET-Scheduler": {
+      "description": "Un algoritmo de planificación Round Robin Ponderado entre Capas de bajo nivel y consciente de los datos. Despacha primero los vectores de seguimiento de alta prioridad y difiere los registros genéricos en lotes acotados.",
+      "updatedFeatures": [
+        "Se añadió ponderación de colas consciente de los datos entre las capas de red y de aplicación.",
+        "Se añadió despacho inmediato para vectores de seguimiento de alta prioridad.",
+        "Se añadió diferimiento acotado para el tráfico de registros genéricos.",
+        "Se añadió un informe de equidad y latencia para cada ejecución de planificación."
+      ]
+    }
+  }
+}

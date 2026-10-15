@@ -1,48 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  /* ===========================
-     EDITOR THEME (semantic tokens)
-     =========================== */
+/* ============================================================
+   EVIDENCE — the design language for this portfolio.
 
-  /* Core surfaces */
-  --syntax-background: #121417;
-  --syntax-surface: #181c24;
-  --syntax-surface-muted: #1f232a;
+   The subject is measurement. The interface behaves like a
+   technical dossier: a serif headline with character, a clean
+   sans for reading, monospace for every figure, and one hot
+   accent reserved for exact numbers.
 
-  /* Borders */
-  --syntax-border: #232a34;
-  --syntax-border-soft: #2e3744;
+   Type     Fraunces (display) · Inter (body) · JetBrains Mono (data)
+   Colour   warm near-black canvas · amber evidence · teal method
+   Rule     hairline separators, hard offset plates
+   ============================================================ */
 
-  /* Text */
-  --syntax-text: #e5e9f0;
-  --syntax-muted: #8f97a6;
-  --syntax-comment: #6f7788;
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
 
-  /* Semantic syntax */
-  --syntax-heading: #d99d5f;
-  --syntax-command: #7db7e8;
-  --syntax-tech: #5ac4d1;
-  --syntax-concept: #ab82ef;
-  --syntax-branch: #7ccf8f;
-  --syntax-number: #d7a860;
-  --syntax-warning: #dcb45f;
-  --syntax-error: #e07c79;
-  --syntax-success: #7bd7a2;
-  --syntax-link: #8ec4ff;
+  /* Canvas: warm near-black, so amber reads as heat rather than as an alert */
+  --syntax-background: #0c0a08;
+  --syntax-surface: #161310;
+  --syntax-surface-muted: #211d18;
 
-  /* Explorer */
-  --syntax-folder: #5ac4d1;
-  --syntax-file: #d7a860;
+  --syntax-border: rgba(245, 240, 232, 0.14);
+  --syntax-border-soft: rgba(245, 240, 232, 0.07);
 
-  /* Layout font provided by next/font/google (do not declare locally) */
+  /* Ink */
+  --syntax-text: #f5f0e8;
+  --syntax-muted: #a8a29a;
+  --syntax-comment: #736d64;
 
-  /* Scrollbar theme */
-  --editor-scrollbar-track: #0b0f14;
-  --editor-scrollbar-thumb: #2d3746;
-  --editor-scrollbar-thumb-hover: #42526b;
+  /* Amber: the evidence accent. Every exact figure wears it. */
+  --syntax-heading: #f5f0e8;
+  --syntax-command: #f0a02a;
+  --syntax-number: #f0a02a;
 
-  /* Compatibility aliases for existing code */
+  /* Teal: method, source, structure */
+  --syntax-tech: #63c6b8;
+  --syntax-link: #63c6b8;
+
+  /* Verdict spectrum */
+  --syntax-branch: #7fd4a0;
+  --syntax-success: #7fd4a0;
+  --syntax-warning: #f0a02a;
+  --syntax-error: #ff6b5e;
+
+  --syntax-concept: #b79cf5;
+
+  --syntax-folder: #63c6b8;
+  --syntax-file: #f0a02a;
+
+  --syntax-tabbar: #100e0b;
+  --syntax-cell-gutter: #12100d;
+  --syntax-hover: rgba(245, 240, 232, 0.055);
+  --syntax-selection: rgba(240, 160, 42, 0.26);
+  --syntax-shadow: rgba(0, 0, 0, 0.56);
+
+  --editor-scrollbar-track: #0c0a08;
+  --editor-scrollbar-thumb: #34302a;
+  --editor-scrollbar-thumb-hover: #4d473e;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Bone paper */
+  --syntax-background: #f6f3ec;
+  --syntax-surface: #ece7dd;
+  --syntax-surface-muted: #e3ddd0;
+
+  --syntax-border: rgba(24, 21, 18, 0.2);
+  --syntax-border-soft: rgba(24, 21, 18, 0.09);
+
+  --syntax-text: #181512;
+  --syntax-muted: #4a453f;
+  --syntax-comment: #736d64;
+
+  --syntax-heading: #181512;
+  /* Amber darkened for paper legibility; still the only hot colour */
+  --syntax-command: #b4600a;
+  --syntax-number: #b4600a;
+
+  --syntax-tech: #0b6b60;
+  --syntax-link: #0b6b60;
+
+  --syntax-branch: #1a7f37;
+  --syntax-success: #1a7f37;
+  --syntax-warning: #a35c00;
+  --syntax-error: #c02b2b;
+
+  --syntax-concept: #6f42c1;
+
+  --syntax-folder: #0b6b60;
+  --syntax-file: #b4600a;
+
+  --syntax-tabbar: #ece7dd;
+  --syntax-cell-gutter: #f0ece2;
+  --syntax-hover: rgba(24, 21, 18, 0.05);
+  --syntax-selection: rgba(180, 96, 10, 0.18);
+  --syntax-shadow: rgba(24, 21, 18, 0.14);
+
+  --editor-scrollbar-track: #ece7dd;
+  --editor-scrollbar-thumb: #c2bbaa;
+  --editor-scrollbar-thumb-hover: #a49c8a;
+}
+
+/* Compatibility aliases shared by every archetype */
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
   --editor-bg: var(--syntax-background);
   --editor-surface: var(--syntax-surface);
   --editor-surface-2: var(--syntax-surface-muted);
@@ -76,103 +142,267 @@ body {
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow: hidden;
 
   background: var(--syntax-background);
   color: var(--syntax-text);
 
-  font-family: var(--font-mono);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.01), transparent 18%),
-    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.006), transparent 22%);
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
-::selection {  background: rgba(128, 180, 255, 0.18);  color: var(--syntax-text);}::-moz-selection {  background: rgba(128, 180, 255, 0.18);  color: var(--syntax-text);}
-
-/* Semantic utility classes backed by syntax theme variables */
-.text-syntax-text{color:var(--syntax-text);} 
-.text-syntax-muted{color:var(--syntax-muted);} 
-.text-syntax-comment{color:var(--syntax-comment);} 
-.text-syntax-heading{color:var(--syntax-heading);} 
-.text-syntax-command{color:var(--syntax-command);} 
-.text-syntax-tech{color:var(--syntax-tech);} 
-.text-syntax-concept{color:var(--syntax-concept);} 
-.text-syntax-branch{color:var(--syntax-branch);} 
-.text-syntax-number{color:var(--syntax-number);} 
-.text-syntax-warning{color:var(--syntax-warning);} 
-.text-syntax-error{color:var(--syntax-error);} 
-.text-syntax-success{color:var(--syntax-success);} 
-.text-syntax-link{color:var(--syntax-link);} 
-.text-syntax-folder{color:var(--syntax-folder);} 
-.text-syntax-file{color:var(--syntax-file);} 
-
-.text-editor-text{color:var(--editor-text);} 
-.text-editor-muted{color:var(--editor-muted);} 
-.text-editor-comment{color:var(--editor-comment);} 
-.text-editor-heading{color:var(--editor-heading);} 
-.text-editor-keyword{color:var(--editor-keyword);} 
-.text-editor-concept{color:var(--editor-concept);} 
-.text-editor-important{color:var(--editor-important);} 
-.text-editor-number{color:var(--editor-number);} 
-.text-editor-link{color:var(--editor-link);} 
-.text-editor-success{color:var(--editor-success);} 
-.text-editor-warning{color:var(--editor-warning);} 
-.text-editor-folder{color:var(--editor-folder);} 
-.text-editor-file{color:var(--editor-file);} 
-
-.bg-syntax-background{background-color:var(--syntax-background);} 
-.bg-syntax-surface{background-color:var(--syntax-surface);} 
-.bg-syntax-surface-muted{background-color:var(--syntax-surface-muted);} 
-.border-syntax-branch{border-color:var(--syntax-branch);} 
-.border-syntax-border{border-color:var(--syntax-border);} 
-
-.bg-editor-bg{background-color:var(--editor-bg);} 
-.bg-editor-surface{background-color:var(--editor-surface);} 
-.bg-editor-surface-2{background-color:var(--editor-surface-2);} 
-.bg-editor-border{background-color:var(--editor-border);} 
-
-.border-editor-border{border-color:var(--editor-border);} 
-.border-editor-border-light{border-color:var(--editor-border-light);} 
-
-a{
-    color:inherit;
-    text-decoration:none;
+::selection {
+  background: var(--syntax-selection);
+  color: var(--syntax-text);
 }
 
-code{
-    font-family:inherit;
+/* Typography roles -------------------------------------------------- */
+
+.display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 96;
+  letter-spacing: -0.022em;
+  line-height: 1.04;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+.display-tight {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 24;
+  letter-spacing: -0.012em;
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
 }
 
+/* Every exact figure is monospace and tabular */
+.figure-value {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Palette utilities ------------------------------------------------- */
+
+.text-syntax-text{color:var(--syntax-text);}
+.text-syntax-muted{color:var(--syntax-muted);}
+.text-syntax-comment{color:var(--syntax-comment);}
+.text-syntax-heading{color:var(--syntax-heading);}
+.text-syntax-command{color:var(--syntax-command);}
+.text-syntax-tech{color:var(--syntax-tech);}
+.text-syntax-concept{color:var(--syntax-concept);}
+.text-syntax-branch{color:var(--syntax-branch);}
+.text-syntax-number{color:var(--syntax-number);}
+.text-syntax-warning{color:var(--syntax-warning);}
+.text-syntax-error{color:var(--syntax-error);}
+.text-syntax-success{color:var(--syntax-success);}
+.text-syntax-link{color:var(--syntax-link);}
+.text-syntax-folder{color:var(--syntax-folder);}
+.text-syntax-file{color:var(--syntax-file);}
+
+.text-editor-text{color:var(--editor-text);}
+.text-editor-muted{color:var(--editor-muted);}
+.text-editor-comment{color:var(--editor-comment);}
+.text-editor-heading{color:var(--editor-heading);}
+.text-editor-keyword{color:var(--editor-keyword);}
+.text-editor-concept{color:var(--editor-concept);}
+.text-editor-important{color:var(--editor-important);}
+.text-editor-number{color:var(--editor-number);}
+.text-editor-link{color:var(--editor-link);}
+.text-editor-success{color:var(--editor-success);}
+.text-editor-warning{color:var(--editor-warning);}
+.text-editor-folder{color:var(--editor-folder);}
+.text-editor-file{color:var(--editor-file);}
+
+.bg-syntax-background{background-color:var(--syntax-background);}
+.bg-syntax-surface{background-color:var(--syntax-surface);}
+.bg-syntax-surface-muted{background-color:var(--syntax-surface-muted);}
+.bg-syntax-tabbar{background-color:var(--syntax-tabbar);}
+.bg-syntax-cell-gutter{background-color:var(--syntax-cell-gutter);}
+.bg-syntax-text{background-color:var(--syntax-text);}
+.bg-syntax-muted{background-color:var(--syntax-muted);}
+.bg-syntax-comment{background-color:var(--syntax-comment);}
+.bg-syntax-heading{background-color:var(--syntax-heading);}
+.bg-syntax-command{background-color:var(--syntax-command);}
+.bg-syntax-tech{background-color:var(--syntax-tech);}
+.bg-syntax-concept{background-color:var(--syntax-concept);}
+.bg-syntax-branch{background-color:var(--syntax-branch);}
+.bg-syntax-number{background-color:var(--syntax-number);}
+.bg-syntax-warning{background-color:var(--syntax-warning);}
+.bg-syntax-error{background-color:var(--syntax-error);}
+.bg-syntax-success{background-color:var(--syntax-success);}
+.bg-syntax-link{background-color:var(--syntax-link);}
+
+.border-syntax-border{border-color:var(--syntax-border);}
+.border-syntax-border-soft{border-color:var(--syntax-border-soft);}
+.border-syntax-branch{border-color:var(--syntax-branch);}
+.border-syntax-command{border-color:var(--syntax-command);}
+.border-syntax-tech{border-color:var(--syntax-tech);}
+.border-syntax-concept{border-color:var(--syntax-concept);}
+.border-syntax-number{border-color:var(--syntax-number);}
+.border-syntax-warning{border-color:var(--syntax-warning);}
+.border-syntax-success{border-color:var(--syntax-success);}
+.border-syntax-error{border-color:var(--syntax-error);}
+.border-syntax-link{border-color:var(--syntax-link);}
+.border-syntax-muted{border-color:var(--syntax-muted);}
+
+.bg-editor-bg{background-color:var(--editor-bg);}
+.bg-editor-surface{background-color:var(--editor-surface);}
+.bg-editor-surface-2{background-color:var(--editor-surface-2);}
+.border-editor-border{border-color:var(--editor-border);}
+.border-editor-border-light{border-color:var(--editor-border-light);}
+
+.hover-syntax:hover{background-color:var(--syntax-hover);}
+
+a{color:inherit;text-decoration:none;}
+code{font-family:inherit;}
+
+/* Focus: visible, consistent, never removed ------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--syntax-command);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Plates and rules -------------------------------------------------- */
+
+.plate {
+  border: 1px solid var(--syntax-border);
+  background: var(--syntax-surface);
+  box-shadow: 3px 3px 0 var(--syntax-border-soft);
+}
+
+.plate-flat {
+  border: 1px solid var(--syntax-border);
+  background: var(--syntax-surface);
+}
+
+.figure-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--syntax-command);
+}
+
+/* Motion ------------------------------------------------------------ */
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: reveal-up 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fig-reveal {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fig-reveal {
+  animation: fig-reveal 340ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fig-stroke {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+.fig-stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: fig-stroke 1500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes kernel-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.kernel-running {
+  animation: kernel-pulse 1.1s ease-in-out infinite;
+}
+
+/* Underline that grows on hover, for actionable text ----------------- */
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Reduced motion: honoured by the toggle and by the OS -------------- */
+
+[data-reduce-motion="true"] *,
+[data-reduce-motion="true"] *::before,
+[data-reduce-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+[data-reduce-motion="true"] .reveal {
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1 !important; }
+}
+
+/* Scrollbars -------------------------------------------------------- */
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--editor-scrollbar-track); }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--editor-scrollbar-thumb);
   border-radius: 9999px;
-  border: 2px solid rgba(15, 19, 25, 0.9);
+  border: 2px solid var(--editor-scrollbar-track);
   background-clip: padding-box;
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.28);
-}
+::-webkit-scrollbar-thumb:hover { background: var(--editor-scrollbar-thumb-hover); }
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.18) rgba(255, 255, 255, 0.04);
+  scrollbar-color: var(--editor-scrollbar-thumb) var(--editor-scrollbar-track);
+  scroll-behavior: smooth;
 }
