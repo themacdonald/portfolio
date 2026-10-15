@@ -1,0 +1,121 @@
+{
+  "pipelineVersion": "1.0.0",
+  "compiledTimestamp": "2026-10-15T14:55:19Z",
+  "checksRun": 1908,
+  "errors": [],
+  "warnings": [
+    "en: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "en: dashboardLabels.sourceLabels carries unused keys ['config']",
+    "fr: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "fr: dashboardLabels.sourceLabels carries unused keys ['config']",
+    "es: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "es: dashboardLabels.sourceLabels carries unused keys ['config']",
+    "de: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "de: dashboardLabels.sourceLabels carries unused keys ['config']",
+    "ru: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "ru: dashboardLabels.sourceLabels carries unused keys ['config']",
+    "ja: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "ja: dashboardLabels.sourceLabels carries unused keys ['config']",
+    "zh: dashboardLabels.metricLabels carries unused keys ['context_active_days', 'context_busiest_day', 'context_commits_read', 'context_correlation', 'context_datasets', 'context_excluding_forks']",
+    "zh: dashboardLabels.sourceLabels carries unused keys ['config']"
+  ],
+  "locales": [
+    "en",
+    "fr",
+    "es",
+    "de",
+    "ru",
+    "ja",
+    "zh"
+  ],
+  "notebookCells": 4,
+  "dagNodes": 22,
+  "dagEdges": 28,
+  "dagDomainWeight": {
+    "alignment": 4.5,
+    "analytics": 3.83,
+    "telemetry": 3.17,
+    "quality": 2.69,
+    "network": 1.58,
+    "memory": 1.44,
+    "coaching": 0.68
+  },
+  "payloadBytes": 323155,
+  "artifacts": [
+    "data/portfolio.payload.json",
+    "data/telemetry.dataset.ts",
+    "pipeline/portfolio.schema.json"
+  ],
+  "telemetry": [
+    {
+      "langKey": "en",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 19203,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "1af8df86844212e9"
+    },
+    {
+      "langKey": "fr",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 21801,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "ec571ddde1b20cd1"
+    },
+    {
+      "langKey": "es",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 21485,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "fbd2de2ea9623aca"
+    },
+    {
+      "langKey": "de",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 20774,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "8cf51f57e277bdfa"
+    },
+    {
+      "langKey": "ru",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 20450,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "90bc652f90d29a6f"
+    },
+    {
+      "langKey": "ja",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 13529,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "9d91cbc7d343f981"
+    },
+    {
+      "langKey": "zh",
+      "narrativeLines": 22,
+      "codeLines": 196,
+      "translatedCharacters": 11696,
+      "telemetryRecords": 9,
+      "growthFeatures": 16,
+      "cells": 4,
+      "digest": "1ec57df5a407ce5e"
+    }
+  ]
+}

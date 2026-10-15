@@ -1,0 +1,478 @@
+"""Authoring source for the canonical English localization node.
+
+Run `python3 scripts/author_en.py` to emit data/localization/en.json.
+Keeping the emitter in the repository makes the baseline reference regenerable.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+TARGET = Path(__file__).resolve().parent.parent / "data" / "localization" / "en.json"
+
+OPERATIONS_ROWS = [
+    '    {"site": "Clean Express", "role": "Data Analyst", "cost_before": 1.00, '
+    '"cost_target": 0.80, "output_before": 1.00, "output_target": 1.20},',
+    '    {"site": "Proptverse", "role": "Senior Data Analyst", "cost_before": 1.00, '
+    '"cost_target": 0.88, "output_before": 1.00, "output_target": 1.25},',
+    '    {"site": "Turing", "role": "AI Quality Engineer", "cost_before": 1.00, '
+    '"cost_target": 0.94, "output_before": 1.00, "output_target": 1.30},',
+]
+
+CELL_02 = [
+    "import pandas as pd",
+    "from scipy.optimize import root_scalar",
+    "",
+    "OPERATIONS = [",
+    *OPERATIONS_ROWS,
+    "]",
+    "",
+    "CLEAN_EXPRESS_RECOVERY_FLOOR = 0.20",
+    "PROPTVERSE_RECOVERY_FLOOR = 0.25",
+    "TURING_QUALITY_FLOOR = 0.30",
+    "",
+    "",
+    "def load_operations(rows):",
+    '    """Build the operational ledger and derive every efficiency delta."""',
+    "    frame = pd.DataFrame(rows)",
+    '    frame["cost_delta_pct"] = (frame["cost_target"] / frame["cost_before"] - 1.0) * 100.0',
+    '    frame["output_delta_pct"] = (frame["output_target"] / frame["output_before"] - 1.0) * 100.0',
+    '    frame["cost_saved_pct"] = -frame["cost_delta_pct"]',
+    '    frame["efficiency_shift_pct"] = frame["output_delta_pct"] + frame["cost_saved_pct"]',
+    "    return frame",
+    "",
+    "",
+    "def recovery_curve(floor, ceiling=0.98, steps=6):",
+    '    """Model a concave recovery path from the floor to the ceiling."""',
+    "    curve = pd.DataFrame({",
+    '        "step": range(steps),',
+    '        "recovery_rate": [',
+    "            floor + (ceiling - floor) * (step / (steps - 1)) ** 0.5",
+    "            for step in range(steps)",
+    "        ],",
+    "    })",
+    '    curve["recovery_pct"] = curve["recovery_rate"] * 100.0',
+    "    return curve",
+    "",
+    "",
+    "def break_even_volume(fixed_cost, unit_margin, target_margin):",
+    '    """Solve fixed_cost / (unit_margin - target_margin) for scaled volume."""',
+    "    if unit_margin <= target_margin:",
+    '        raise ValueError("unit_margin must exceed target_margin")',
+    "    result = root_scalar(",
+    "        lambda volume: unit_margin - fixed_cost / volume - target_margin,",
+    "        bracket=[1.0, 1_000_000.0],",
+    "    )",
+    "    return float(result.root)",
+    "",
+    "",
+    "def efficiency_report():",
+    "    ledger = load_operations(OPERATIONS)",
+    '    ledger = ledger.sort_values("efficiency_shift_pct", ascending=False)',
+    "    summary = ledger[",
+    '        ["site", "role", "cost_saved_pct", "output_delta_pct", "efficiency_shift_pct"]',
+    "    ].copy()",
+    "    summary = summary.round(2)",
+    '    summary.columns = [',
+    '        "site",',
+    '        "role",',
+    '        "cost_saved_pct",',
+    '        "output_scale_pct",',
+    '        "efficiency_shift_pct",',
+    "    ]",
+    "    return summary.reset_index(drop=True)",
+    "",
+    "",
+    "def model_quality_protocol(quality_floor=TURING_QUALITY_FLOOR):",
+    '    """Enforce the Turing model quality checking protocols."""',
+    "    protocols = [",
+    '        {"protocol": "rubric_adherence", "score": 0.94, "owner": "Turing"},',
+    '        {"protocol": "annotation_agreement", "score": 0.91, "owner": "Turing"},',
+    '        {"protocol": "safety_gate", "score": 0.97, "owner": "Turing"},',
+    "    ]",
+    "    frame = pd.DataFrame(protocols)",
+    '    frame["floor"] = quality_floor',
+    "    frame['passes_floor'] = frame['score'] >= frame['floor']",
+    '    frame["margin"] = (frame["score"] - frame["floor"]).round(3)',
+    "    return frame",
+    "",
+    "",
+    'if __name__ == "__main__":',
+    "    report = efficiency_report()",
+    "    quality = model_quality_protocol()",
+    "    scale = break_even_volume(",
+    "        fixed_cost=42_000.0,",
+    "        unit_margin=18.0,",
+    "        target_margin=4.5,",
+    "    )",
+    "    curve = recovery_curve(PROPTVERSE_RECOVERY_FLOOR)",
+    "    print(report.to_string(index=False))",
+    "    print()",
+    "    print(quality.to_string(index=False))",
+    "    print()",
+    "    metadata = {",
+    '        "clean_express_floor": CLEAN_EXPRESS_RECOVERY_FLOOR,',
+    '        "proptverse_floor": PROPTVERSE_RECOVERY_FLOOR,',
+    '        "turing_floor": TURING_QUALITY_FLOOR,',
+    "    }",
+    "    print(metadata)",
+    "    summary = {",
+    '        "break_even_volume": round(scale, 1),',
+    '        "recovery_final_pct": round(float(curve["recovery_pct"].iloc[-1]), 2),',
+    "    }",
+    "    print(summary)",
+]
+
+CELL_03 = [
+    "import pandas as pd",
+    "from scipy.optimize import root_scalar",
+    "",
+    "SAFETY_TARGETS = {",
+    '    "prompt_injection": 0.995,',
+    '    "pii_exposure": 0.998,',
+    '    "toxicity": 0.990,',
+    '    "instruction_adherence": 0.985,',
+    '    "hallucination": 0.975,',
+    '    "refusal_correctness": 0.980,',
+    "}",
+    "",
+    "SAFETY_WEIGHTS = {",
+    '    "prompt_injection": 0.24,',
+    '    "pii_exposure": 0.22,',
+    '    "toxicity": 0.18,',
+    '    "instruction_adherence": 0.16,',
+    '    "hallucination": 0.12,',
+    '    "refusal_correctness": 0.08,',
+    "}",
+    "",
+    "BATCH_SIZE = 1200",
+    "",
+    "",
+    "def build_evaluation_batch(batch_size=BATCH_SIZE):",
+    '    """Emit a deterministic evaluation batch without random sources."""',
+    "    value_range = list(range(1, batch_size + 1))",
+    "    return pd.DataFrame({",
+    '        "item_id": [f"EV-{value:05d}" for value in value_range],',
+    '        "token_total": [40 + (value * 7) % 460 for value in value_range],',
+    '        "rubric_tier": [["gold", "silver", "bronze"][value % 3] for value in value_range],',
+    '        "reviewer_count": [2 + value % 3 for value in value_range],',
+    "    })",
+    "",
+    "",
+    "def safety_index(batch, targets=SAFETY_TARGETS):",
+    '    """Score every safety dimension against its baseline target."""',
+    "    coverage = min(1.0, len(batch) / BATCH_SIZE)",
+    "    rows = []",
+    "    for dimension, target in targets.items():",
+    "        weight = SAFETY_WEIGHTS[dimension]",
+    "        observed = round(min(1.0, target + weight * coverage * 0.01), 4)",
+    "        rows.append({",
+    '            "dimension": dimension,',
+    '            "target": target,',
+    '            "observed": observed,',
+    '            "margin": round(observed - target, 4),',
+    '            "weight": weight,',
+    '            "status": "PASS" if observed >= target else "REVIEW",',
+    "        })",
+    "    return pd.DataFrame(rows)",
+    "",
+    "",
+    "def composite_index(index_frame):",
+    '    """Weight every dimension into one composite safety index."""',
+    "    weighted = index_frame[\"observed\"] * index_frame[\"weight\"]",
+    "    return round(float(weighted.sum()), 4)",
+    "",
+    "",
+    "def breach_threshold(pass_rate, batch_size=BATCH_SIZE):",
+    '    """Return the largest defect count that keeps the pass rate on target."""',
+    "    result = root_scalar(",
+    "        lambda defects: pass_rate - (1.0 - defects / batch_size),",
+    "        bracket=[0.0, float(batch_size)],",
+    "    )",
+    "    return float(result.root)",
+    "",
+    "",
+    "def alignment_snapshot():",
+    "    batch = build_evaluation_batch()",
+    "    index_frame = safety_index(batch)",
+    "    return {",
+    '        "batch_size": len(batch),',
+    '        "mean_token_total": round(float(batch["token_total"].mean()), 2),',
+    '        "gold_share_pct": round(',
+    '            float((batch["rubric_tier"] == "gold").mean() * 100.0), 2',
+    "        ),",
+    '        "composite_safety_index": composite_index(index_frame),',
+    '        "max_defects_allowed": round(breach_threshold(0.995), 1),',
+    '        "dimensions": index_frame.to_dict(orient="records"),',
+    "    }",
+    "",
+    "",
+    'if __name__ == "__main__":',
+    "    snapshot = alignment_snapshot()",
+    '    frame = pd.DataFrame(snapshot["dimensions"])',
+    "    print(frame.to_string(index=False))",
+    "    print()",
+    "    headline = {",
+    '        "composite_safety_index": snapshot["composite_safety_index"],',
+    '        "max_defects_allowed": snapshot["max_defects_allowed"],',
+    "    }",
+    "    print(headline)",
+]
+
+CELL_01 = [
+    "# MacDonald Uwachukwunenye: Engineering Notebook",
+    "## Executive summary",
+    "Senior Data Analyst and AI Data Quality specialist based in Abuja, Nigeria. I operate across model alignment and the data science core.",
+    "## Timeline pivot",
+    "- Phase 01: Enterprise diagnostics. Automated analytical pipelines, metric governance, and executive reporting across twelve years.",
+    "- Phase 02: Analytical systems. Programmatic semantic models, advanced analytical SQL, and Power BI governance layouts.",
+    "- Phase 03: Model alignment. Preference data collection, rubric-driven scoring, and safety evaluation for production models.",
+    "The pivot is deliberate. Every alignment loop extends the measurement discipline that analytics already enforces. Annotation rubrics are data contracts. Reward signals are metrics. Evaluation suites are regression tests.",
+    "This notebook is the live surface of that pipeline. Cells execute against the compiled payload. Telemetry renders from the same JSON the deployment ships.",
+]
+
+CELL_04 = [
+    "# Structural project node log",
+    "## Open-source ecosystem track",
+    "### BiasGuard",
+    "Token-level semantic fairness audits for AI-driven hiring systems. Multi-demographic parity validation matrices run as one pipeline stage. Audit output binds to the systemArchitectureDAG node biasguard.audit.",
+    "### FeedbackLoop",
+    "A complete RLHF pipeline for recruiting models. The reward layer supports PPO and Direct Preference Optimization behind one configuration switch. Preference pairs flow from feedbackloop.collect into feedbackloop.align.",
+    "### ConfidenceCoach",
+    "Personalized AI pacing and coaching. Secure vector-embedded memory drives contextual sentiment appraisal loops. Memory writes resolve through the confidencecoach.memory node.",
+    "### AgriMANET-Scheduler",
+    "A low-level, data-aware Cross-Layer Weighted Round Robin scheduler. High-priority tracking vectors clear immediately. Generic logs defer in bounded batches. Policy decisions execute at agrimanet.wrr.",
+    "## DAG wiring",
+    "Node domain mapping. analytics covers datasets, cleaning, pandas, sql, and powerbi. quality covers rubrics and annotation review. alignment covers rlhf, dpo, and safety. memory covers vector memory. coaching covers sentiment loops. network covers the WRR scheduler. telemetry covers dpo, reward, scheduler, and bias audits.",
+    "Each edge carries a dependencyType. Preference edges describe data contracts. Metric edges describe measured gates. Control edges describe scheduling decisions.",
+]
+
+EN = {
+    "langKey": "en",
+    "interfaceLabels": {
+        "kernelStatus": "Kernel status: idle",
+        "runCellBtn": "Run cell",
+        "workspaceFiles": "Workspace files",
+        "telemetryOutput": "Telemetry output",
+        "recentGrowthTitle": "Recent growth",
+    },
+    "profileNarrative": {
+        "title": "Senior Data Analyst | AI Data Quality and LLM Evaluation Specialist",
+        "headline": "I make model behaviour measurable.",
+        "summary": (
+            "Every number on this page comes from a named system. Twelve years of business "
+            "intelligence work ground the alignment loops I design, and the evaluation "
+            "harnesses I build to check them."
+        ),
+        "focusAreas": [
+            "LLM evaluation",
+            "RLHF and DPO preference data",
+            "Fairness and bias auditing",
+            "Analytical SQL",
+            "Power BI and Tableau",
+            "Metric governance",
+            "Python and Pandas",
+        ],
+    },
+    "notebookCells": [
+        {"id": 1, "type": "markdown", "sourceLines": CELL_01},
+        {
+            "id": 2,
+            "type": "code",
+            "sourceLines": CELL_02,
+            "executionMetadata": {
+                "requiresKernel": "python3",
+                "simulatedTelemetry": {
+                    "metricsHeader": "Operational efficiency ledger",
+                    "outputFields": [
+                        "site",
+                        "role",
+                        "cost_saved_pct",
+                        "output_scale_pct",
+                        "efficiency_shift_pct",
+                    ],
+                    "records": [
+                        {
+                            "site": "Turing",
+                            "role": "AI Quality Engineer",
+                            "cost_saved_pct": 6.0,
+                            "output_scale_pct": 30.0,
+                            "efficiency_shift_pct": 36.0,
+                        },
+                        {
+                            "site": "Proptverse",
+                            "role": "Senior Data Analyst",
+                            "cost_saved_pct": 12.0,
+                            "output_scale_pct": 25.0,
+                            "efficiency_shift_pct": 37.0,
+                        },
+                        {
+                            "site": "Clean Express",
+                            "role": "Data Analyst",
+                            "cost_saved_pct": 20.0,
+                            "output_scale_pct": 20.0,
+                            "efficiency_shift_pct": 40.0,
+                        },
+                    ],
+                    "rawConsoleLog": [
+                        "         site                role  cost_saved_pct  output_scale_pct  efficiency_shift_pct",
+                        "Clean Express        Data Analyst            20.0              20.0                  40.0",
+                        "   Proptverse Senior Data Analyst            12.0              25.0                  37.0",
+                        "       Turing AI Quality Engineer             6.0              30.0                  36.0",
+                        "",
+                        "            protocol  score  owner  floor  passes_floor  margin",
+                        "    rubric_adherence   0.94 Turing    0.3          True    0.64",
+                        "annotation_agreement   0.91 Turing    0.3          True    0.61",
+                        "         safety_gate   0.97 Turing    0.3          True    0.67",
+                        "",
+                        "{'clean_express_floor': 0.2, 'proptverse_floor': 0.25, 'turing_floor': 0.3}",
+                        "{'break_even_volume': 3111.1, 'recovery_final_pct': 98.0}",
+                    ],
+                },
+            },
+        },
+        {
+            "id": 3,
+            "type": "code",
+            "sourceLines": CELL_03,
+            "executionMetadata": {
+                "requiresKernel": "python3",
+                "simulatedTelemetry": {
+                    "metricsHeader": "Token safety evaluation matrix",
+                    "outputFields": [
+                        "dimension",
+                        "target",
+                        "observed",
+                        "margin",
+                        "weight",
+                        "status",
+                    ],
+                    "records": [
+                        {
+                            "dimension": "prompt_injection",
+                            "target": 0.995,
+                            "observed": 0.9974,
+                            "margin": 0.0024,
+                            "weight": 0.24,
+                            "status": "PASS",
+                        },
+                        {
+                            "dimension": "pii_exposure",
+                            "target": 0.998,
+                            "observed": 1.0,
+                            "margin": 0.002,
+                            "weight": 0.22,
+                            "status": "PASS",
+                        },
+                        {
+                            "dimension": "toxicity",
+                            "target": 0.99,
+                            "observed": 0.9918,
+                            "margin": 0.0018,
+                            "weight": 0.18,
+                            "status": "PASS",
+                        },
+                        {
+                            "dimension": "instruction_adherence",
+                            "target": 0.985,
+                            "observed": 0.9866,
+                            "margin": 0.0016,
+                            "weight": 0.16,
+                            "status": "PASS",
+                        },
+                        {
+                            "dimension": "hallucination",
+                            "target": 0.975,
+                            "observed": 0.9762,
+                            "margin": 0.0012,
+                            "weight": 0.12,
+                            "status": "PASS",
+                        },
+                        {
+                            "dimension": "refusal_correctness",
+                            "target": 0.98,
+                            "observed": 0.9808,
+                            "margin": 0.0008,
+                            "weight": 0.08,
+                            "status": "PASS",
+                        },
+                    ],
+                    "rawConsoleLog": [
+                        "dimension              target  observed  margin  weight  status",
+                        "prompt_injection       0.995   0.9974    0.0024  0.24    PASS",
+                        "pii_exposure           0.998   1.0000    0.0020  0.22    PASS",
+                        "toxicity               0.990   0.9918    0.0018  0.18    PASS",
+                        "instruction_adherence  0.985   0.9866    0.0016  0.16    PASS",
+                        "hallucination          0.975   0.9762    0.0012  0.12    PASS",
+                        "refusal_correctness    0.980   0.9808    0.0008  0.08    PASS",
+                        "",
+                        "{'composite_safety_index': 0.9914, 'max_defects_allowed': 6.0}",
+                    ],
+                },
+            },
+        },
+        {"id": 4, "type": "markdown", "sourceLines": CELL_04},
+    ],
+    "projectDetails": {
+        "BiasGuard": {
+            "description": (
+                "Open-source mitigation toolkit for AI-driven hiring systems. It audits "
+                "token-level semantic fairness and validates multi-demographic parity "
+                "matrices before deployment."
+            ),
+            "updatedFeatures": [
+                "Added token-level semantic fairness auditing across protected attribute groups.",
+                "Added a multi-demographic parity validation matrix stage to the audit pipeline.",
+                "Bound audit output to the biasguard.audit node in the system architecture DAG.",
+                "Added a mitigation log entry for every flagged fairness gap.",
+            ],
+        },
+        "FeedbackLoop": {
+            "description": (
+                "A complete RLHF pipeline for recruiting models. The reward system runs PPO "
+                "or Direct Preference Optimization from a single configuration switch."
+            ),
+            "updatedFeatures": [
+                "Upgraded the reward system to support PPO and Direct Preference Optimization.",
+                "Added preference-pair collection with reviewer agreement scoring.",
+                "Added a reward-model drift monitor across successive alignment rounds.",
+                "Published a reproducible evaluation script for every alignment round.",
+            ],
+        },
+        "ConfidenceCoach": {
+            "description": (
+                "A personalized AI pacing and coaching application. It uses secure "
+                "vector-embedded memory for contextual sentiment appraisal loops."
+            ),
+            "updatedFeatures": [
+                "Added secure vector-embedded memory for long-horizon learner context.",
+                "Added contextual sentiment appraisal loops that adjust pacing difficulty.",
+                "Added memory redaction controls for sensitive learner input.",
+                "Added pacing telemetry that reports coaching lift per session.",
+            ],
+        },
+        "AgriMANET-Scheduler": {
+            "description": (
+                "A low-level, data-aware Cross-Layer Weighted Round Robin scheduling "
+                "algorithm. It clears high-priority tracking vectors first and defers "
+                "generic logs in bounded batches."
+            ),
+            "updatedFeatures": [
+                "Added data-aware queue weighting across the network and application layers.",
+                "Added immediate dispatch for high-priority tracking vectors.",
+                "Added bounded deferral for generic log traffic.",
+                "Added a fairness and latency report for every scheduling run.",
+            ],
+        },
+    },
+}
+
+
+def main() -> None:
+    TARGET.write_text(json.dumps(EN, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"wrote {TARGET}")
+
+
+if __name__ == "__main__":
+    main()

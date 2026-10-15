@@ -1,0 +1,235 @@
+"""One-shot injection of the IDE shell label block into every localization node.
+
+The shell labels drive the workspace chrome around the notebook: top bar
+actions, the summary chips, telemetry placeholders, project node badges, and the
+architecture DAG panel. They live inside each localization node so switching
+langKey switches the entire workspace.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+LOCALES = ROOT / "data" / "localization"
+
+SHELL_LABELS: dict[str, dict[str, str]] = {
+    "en": {
+        "runAllBtn": "Execute all",
+        "clearBtn": "Clear outputs",
+        "cellLabel": "cell {n}",
+        "localeLabel": "{n} locales",
+        "cellsLabel": "{n} cells",
+        "narrativeLinesLabel": "narrative lines {n}",
+        "codeLinesLabel": "code lines {n}",
+        "telemetryRowsLabel": "telemetry rows {n}",
+        "growthItemsLabel": "growth items {n}",
+        "dagPayloadLabel": "architecture DAG data",
+        "outputIdle": "awaiting execution. execute the cell to stream telemetry.",
+        "outputRunning": "executing cell...",
+        "rawConsoleLabel": "raw console trace",
+        "repositoryLabel": "repository",
+        "domainLabel": "domain",
+        "weightLabel": "weight",
+        "edgeManifestLabel": "edge manifest",
+        "highestCriticalityLabel": "highest criticality",
+        "nodesLabel": "{n} nodes",
+        "edgesLabel": "{n} edges",
+        "viewModeRecruiter": "Recruiter view",
+        "viewModeTechnical": "Technical view",
+        "menuLabel": "Menu",
+        "reduceMotionLabel": "Reduce motion",
+        "viewDashboard": "See the numbers",
+        "viewWork": "Read the work",
+    },
+    "fr": {
+        "runAllBtn": "Exécuter tout",
+        "clearBtn": "Effacer les sorties",
+        "cellLabel": "cellule {n}",
+        "localeLabel": "{n} langues",
+        "cellsLabel": "{n} cellules",
+        "narrativeLinesLabel": "lignes narratives {n}",
+        "codeLinesLabel": "lignes de code {n}",
+        "telemetryRowsLabel": "lignes de télémétrie {n}",
+        "growthItemsLabel": "éléments de croissance {n}",
+        "dagPayloadLabel": "données DAG d'architecture",
+        "outputIdle": "en attente d'exécution. exécutez la cellule pour diffuser la télémétrie.",
+        "outputRunning": "exécution de la cellule...",
+        "rawConsoleLabel": "trace console brute",
+        "repositoryLabel": "dépôt",
+        "domainLabel": "domaine",
+        "weightLabel": "poids",
+        "edgeManifestLabel": "manifeste des arêtes",
+        "highestCriticalityLabel": "criticité la plus élevée",
+        "nodesLabel": "{n} nœuds",
+        "edgesLabel": "{n} arêtes",
+        "viewModeRecruiter": "Vue recruteur",
+        "viewModeTechnical": "Vue technique",
+        "menuLabel": "Menu",
+        "reduceMotionLabel": "Réduire les animations",
+        "viewDashboard": "Voir les chiffres",
+        "viewWork": "Lire le travail",
+    },
+    "es": {
+        "runAllBtn": "Ejecutar todo",
+        "clearBtn": "Limpiar salidas",
+        "cellLabel": "celda {n}",
+        "localeLabel": "idiomas {n}",
+        "cellsLabel": "celdas {n}",
+        "narrativeLinesLabel": "líneas narrativas {n}",
+        "codeLinesLabel": "líneas de código {n}",
+        "telemetryRowsLabel": "filas de telemetría {n}",
+        "growthItemsLabel": "elementos de crecimiento {n}",
+        "dagPayloadLabel": "datos del DAG de arquitectura",
+        "outputIdle": "en espera de ejecución. ejecuta la celda para emitir telemetría.",
+        "outputRunning": "ejecutando celda...",
+        "rawConsoleLabel": "traza de consola sin procesar",
+        "repositoryLabel": "repositorio",
+        "domainLabel": "dominio",
+        "weightLabel": "peso",
+        "edgeManifestLabel": "manifiesto de aristas",
+        "highestCriticalityLabel": "criticidad más alta",
+        "nodesLabel": "nodos {n}",
+        "edgesLabel": "aristas {n}",
+        "viewModeRecruiter": "Vista de reclutador",
+        "viewModeTechnical": "Vista técnica",
+        "menuLabel": "Menú",
+        "reduceMotionLabel": "Reducir movimiento",
+        "viewDashboard": "Ver los números",
+        "viewWork": "Leer el trabajo",
+    },
+    "de": {
+        "runAllBtn": "Alle ausführen",
+        "clearBtn": "Ausgaben löschen",
+        "cellLabel": "Zelle {n}",
+        "localeLabel": "Sprachen {n}",
+        "cellsLabel": "Zellen {n}",
+        "narrativeLinesLabel": "Erzählzeilen {n}",
+        "codeLinesLabel": "Codezeilen {n}",
+        "telemetryRowsLabel": "Telemetriezeilen {n}",
+        "growthItemsLabel": "Wachstumseinträge {n}",
+        "dagPayloadLabel": "Architektur-DAG-Daten",
+        "outputIdle": "warte auf ausführung. führe die zelle aus, um telemetrie zu streamen.",
+        "outputRunning": "führe zelle aus...",
+        "rawConsoleLabel": "rohes Konsolenprotokoll",
+        "repositoryLabel": "Repository",
+        "domainLabel": "Domäne",
+        "weightLabel": "Gewicht",
+        "edgeManifestLabel": "Kantenmanifest",
+        "highestCriticalityLabel": "höchste Kritikalität",
+        "nodesLabel": "Knoten {n}",
+        "edgesLabel": "Kanten {n}",
+        "viewModeRecruiter": "Recruiter-Ansicht",
+        "viewModeTechnical": "Technische Ansicht",
+        "menuLabel": "Menü",
+        "reduceMotionLabel": "Bewegung reduzieren",
+        "viewDashboard": "Die Zahlen ansehen",
+        "viewWork": "Die Arbeit lesen",
+    },
+    "ru": {
+        "runAllBtn": "Выполнить все",
+        "clearBtn": "Очистить вывод",
+        "cellLabel": "ячейка {n}",
+        "localeLabel": "локали {n}",
+        "cellsLabel": "ячейки {n}",
+        "narrativeLinesLabel": "строки повествования {n}",
+        "codeLinesLabel": "строки кода {n}",
+        "telemetryRowsLabel": "строки телеметрии {n}",
+        "growthItemsLabel": "элементы роста {n}",
+        "dagPayloadLabel": "данные DAG архитектуры",
+        "outputIdle": "ожидание выполнения. выполните ячейку, чтобы получать телеметрию.",
+        "outputRunning": "выполнение ячейки...",
+        "rawConsoleLabel": "необработанная трассировка консоли",
+        "repositoryLabel": "репозиторий",
+        "domainLabel": "домен",
+        "weightLabel": "вес",
+        "edgeManifestLabel": "манифест рёбер",
+        "highestCriticalityLabel": "наивысшая критичность",
+        "nodesLabel": "узлы {n}",
+        "edgesLabel": "рёбра {n}",
+        "viewModeRecruiter": "Вид для рекрутера",
+        "viewModeTechnical": "Технический вид",
+        "menuLabel": "Меню",
+        "reduceMotionLabel": "Уменьшить анимацию",
+        "viewDashboard": "Смотреть цифры",
+        "viewWork": "Читать работы",
+    },
+    "ja": {
+        "runAllBtn": "すべて実行",
+        "clearBtn": "出力をクリア",
+        "cellLabel": "セル {n}",
+        "localeLabel": "ロケール {n}",
+        "cellsLabel": "セル数 {n}",
+        "narrativeLinesLabel": "ナラティブ行 {n}",
+        "codeLinesLabel": "コード行 {n}",
+        "telemetryRowsLabel": "テレメトリ行 {n}",
+        "growthItemsLabel": "成長項目 {n}",
+        "dagPayloadLabel": "アーキテクチャDAGデータ",
+        "outputIdle": "実行待機中。セルを実行してテレメトリを流します。",
+        "outputRunning": "セルを実行中...",
+        "rawConsoleLabel": "生のコンソールトレース",
+        "repositoryLabel": "リポジトリ",
+        "domainLabel": "ドメイン",
+        "weightLabel": "重み",
+        "edgeManifestLabel": "エッジマニフェスト",
+        "highestCriticalityLabel": "最高重要度",
+        "nodesLabel": "ノード {n}",
+        "edgesLabel": "エッジ {n}",
+        "viewModeRecruiter": "採用担当者ビュー",
+        "viewModeTechnical": "技術ビュー",
+        "menuLabel": "メニュー",
+        "reduceMotionLabel": "動きを減らす",
+        "viewDashboard": "数字を見る",
+        "viewWork": "仕事を読む",
+    },
+    "zh": {
+        "runAllBtn": "全部执行",
+        "clearBtn": "清除输出",
+        "cellLabel": "单元格 {n}",
+        "localeLabel": "语言环境 {n}",
+        "cellsLabel": "单元格 {n}",
+        "narrativeLinesLabel": "叙述行 {n}",
+        "codeLinesLabel": "代码行 {n}",
+        "telemetryRowsLabel": "遥测行 {n}",
+        "growthItemsLabel": "增长项 {n}",
+        "dagPayloadLabel": "架构 DAG 数据",
+        "outputIdle": "等待执行。执行该单元格即可流式输出遥测。",
+        "outputRunning": "正在执行单元格…",
+        "rawConsoleLabel": "原始控制台追踪",
+        "repositoryLabel": "代码仓库",
+        "domainLabel": "领域",
+        "weightLabel": "权重",
+        "edgeManifestLabel": "边清单",
+        "highestCriticalityLabel": "最高关键度",
+        "nodesLabel": "节点 {n}",
+        "edgesLabel": "边 {n}",
+        "viewModeRecruiter": "招聘视图",
+        "viewModeTechnical": "技术视图",
+        "menuLabel": "菜单",
+        "reduceMotionLabel": "减少动画",
+        "viewDashboard": "查看数据",
+        "viewWork": "阅读项目",
+    },
+}
+
+KEY_ORDER = tuple(SHELL_LABELS["en"].keys())
+
+
+def main() -> None:
+    for lang in SHELL_LABELS:
+        ordered = {key: SHELL_LABELS[lang][key] for key in KEY_ORDER}
+        if list(ordered) != list(KEY_ORDER):
+            raise ValueError(f"{lang}: shell label key order drifted")
+
+        path = LOCALES / f"{lang}.json"
+        node = json.loads(path.read_text(encoding="utf-8"))
+        node["shellLabels"] = ordered
+        path.write_text(
+            json.dumps(node, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        print(f"shell labels injected into {path.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()
